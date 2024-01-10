@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "8h9rbvyHcHJQcy1TZDC9OinkjzrwAhQOHQ8X+G6CYhAq8xMsjOYJglnJqb3tRAIi1029TTZQFXJ9RR1A2mpqbQ==",
+  "dgSpecHash": "S5nhVYU1AJi+3JIQpoux/1o0He58bONibYRIxY0kAqqws8erwSUVLW2iIlE182ibncv1GDVIarpgGQcNbbpNfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Josip Čeprnić\\Desktop\\shop\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\API.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
