@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]")] // https://localhost:5001/WeatherForecast, controller je ignoriran
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
