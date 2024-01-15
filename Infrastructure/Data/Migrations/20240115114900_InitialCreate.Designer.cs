@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20240115111530_InitialCreate")]
+    [Migration("20240115114900_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -82,7 +82,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductsTypes");
+                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("Core.Entities.Product", b =>

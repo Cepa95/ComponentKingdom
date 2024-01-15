@@ -79,7 +79,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductsTypes");
+                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("Core.Entities.Product", b =>
