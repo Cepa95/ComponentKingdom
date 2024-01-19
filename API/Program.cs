@@ -16,6 +16,7 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 });
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 
@@ -36,11 +37,13 @@ var services = scope.ServiceProvider;
 var context = services.GetRequiredService<StoreContext>();
 var logger = services.GetRequiredService<ILogger<Program>>();
 
-try{
+try
+{
     await context.Database.MigrateAsync();
     await StoreContextSeed.SeedAsync(context);
 }
-catch(Exception ex){
+catch (Exception ex)
+{
     logger.LogError(ex, "An error occurred while migrating");
 }
 
