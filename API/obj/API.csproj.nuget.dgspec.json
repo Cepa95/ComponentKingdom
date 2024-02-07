@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\api\\API.csproj": {}
+    "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\api\\API.csproj": {
+    "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\api\\API.csproj",
+        "projectPath": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\api\\obj\\",
+        "outputPath": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
