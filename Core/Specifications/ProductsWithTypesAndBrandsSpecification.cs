@@ -3,9 +3,13 @@ using Core.Entities;
 
 namespace Core.Specifications
 {
+    //ako brandId nije nula ili je productBrandId jednak brandIdu filtrirat ce se po tome
     public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsSpecification(string sort)
+        public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId) 
+        : base( x => 
+        (!brandId.HasValue || x.ProductBrandId == brandId) &&
+        (!typeId.HasValue || x.ProductTypeId == typeId))
         {
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
