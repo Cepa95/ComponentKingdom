@@ -6,8 +6,11 @@ namespace Core.Specifications
     //ako brandId nije nula ili je productBrandId jednak brandIdu filtrirat ce se po tome
     public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
     {
-        public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams) 
-        : base( x => 
+        public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams)
+        : base(x =>
+        //u slucaju da korisnik upise BOARD, umisto board
+        (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains(productParams
+        .Search)) &&
         (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId) &&
         (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId))
         {
