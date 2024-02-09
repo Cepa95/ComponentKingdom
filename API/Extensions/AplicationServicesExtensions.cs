@@ -8,7 +8,7 @@ namespace API.Extensions
 {
     public static class AplicationServicesExtensions
     {
-        public static IServiceCollection AddAplicationServices(this IServiceCollection services, IConfiguration config)
+        public static object AddAplicationServices(this IServiceCollection services, IConfiguration config)
         {
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
@@ -35,6 +35,15 @@ namespace API.Extensions
                     };
                     return new BadRequestObjectResult(errorResponse);
                 };
+            });
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy ("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                }
+                );
             });
 
             return services;
