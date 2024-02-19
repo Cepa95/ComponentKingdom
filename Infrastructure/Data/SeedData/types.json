@@ -1,18 +1,34 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Name": "Central processing units (CPU)"
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Name": "Graphics processing units (GPU)"
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "Name": "Hard disk drives (HDD)"
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "Name": "Motherboards"
+  },
+  {
+    "Id": 5,
+    "Name": "PC fans"
+  },
+  {
+    "Id": 6,
+    "Name": "Power supply units"
+  },
+  {
+    "Id": 7,
+    "Name": "Random-access memories (RAM)"
+  },
+  {
+    "Id": 8,
+    "Name": "Solid state drives (SSD)"
   }
 ]

@@ -1,26 +1,34 @@
 [
   {
     "Id": 1,
-    "Name": "Angular"
+    "Name": "Acer"
   },
   {
     "Id": 2,
-    "Name": "NetCore"
+    "Name": "AMD"
   },
   {
     "Id": 3,
-    "Name": "VS Code"
+    "Name": "ASUS"
   },
   {
     "Id": 4,
-    "Name": "React"
+    "Name": "Corsair"
   },
   {
     "Id": 5,
-    "Name": "Typescript"
+    "Name": "GIGABYTE"
   },
   {
     "Id": 6,
-    "Name": "Redis"
+    "Name": "Intel"
+  },
+  {
+    "Id": 7,
+    "Name": "Toshiba"
+  },
+  {
+    "Id": 8,
+    "Name": "Western Digital"
   }
 ]

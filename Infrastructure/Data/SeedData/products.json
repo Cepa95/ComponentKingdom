@@ -1,9 +1,9 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
+    "Name": "AMD Ryzen 5 3600",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 200,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
+    "PictureUrl": "https://www.njuskalo.hr/image-w920x690/procesori/procesor-amd-ryzen-5-3600-6c-12t-3.6ghz-4.2ghz-32mb-am4-slika-184634530.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
@@ -59,7 +59,7 @@
     "Name": "Green React Woolen Hat",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 8,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
+    "PictureUrl": "https://bit-tech.net/media/image/2019/8/ee7f0bc0-6579-4e27-8177-b65a1204d8af.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 4
   },
@@ -67,7 +67,7 @@
     "Name": "Purple React Woolen Hat",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 15,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
+    "PictureUrl": "https://www.proshop.dk/Images/915x900/2776912_826a8872e098.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 4
   },
@@ -83,7 +83,7 @@
     "Name": "Green Code Gloves",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 15,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
+    "PictureUrl": "https://www.computerhope.com/jargon/c/compute.png",
     "ProductTypeId": 4,
     "ProductBrandId": 3
   },
