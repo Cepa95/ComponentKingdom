@@ -9,7 +9,7 @@
       </select>
 
       <h5 class="text-primary">Brands</h5>
-      <select class="form-select mb-5" (change)="onBrandSelected($event)">
+      <select class="form-select mb-5"  data-style="btn-info" (change)="onBrandSelected($event)">
         <option *ngFor="let brand of brands" [value]="brand.id">
           {{ brand.name }}
         </option>
@@ -56,6 +56,7 @@
               [totalItems]="totalCount"
               [itemsPerPage]="shopParams.pageSize"
               [maxSize]="3"
+              (pageChanged)="onPageChanged($event)"
             ></pagination>
           </div>
         </div>
