@@ -22,6 +22,7 @@ export class ShopComponent implements OnInit {
     {name: 'Price: Low to High', value: 'priceAsc'},
     {name: 'Price: High to Low', value: 'priceDesc'},
   ];
+  showBoundaryLinks = true;
   
 
   constructor(private shopService: ShopService) {}
