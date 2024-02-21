@@ -15,10 +15,10 @@
     </div>
 </header> -->
 <nav
-  class="navbar navbar-dark bg-dark justify-content-between p-3 px-4 mb-4 fixed-top"
+  class="navbar navbar-dark bg-dark px-2 fixed-top"
 >
-  <a class="navbar-brand" href="#">
-    <img src="/assets/images/logo.png" alt="logo" style="max-height: 50px" />
+  <a routerLink="/" >
+    <img src="/assets/images/logo.png" alt="logo" style="max-height: 45px" />
   </a>
 
   <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
@@ -28,25 +28,25 @@
   <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
     <ul class="navbar-nav">
       <li>
-        <a class="nav-link" routerLink="/" (click)="closeNavbar()">HOME</a>
+        <a class="nav-link px-2" routerLink="/" (click)="closeNavbar()">HOME</a>
       </li>
 
       <li>
-        <a class="nav-link" routerLink="/shop" (click)="closeNavbar()">SHOP</a>
+        <a class="nav-link px-2" routerLink="/shop" (click)="closeNavbar()">SHOP</a>
       </li>
 
       <li>
-        <a class="nav-link" routerLink="/contact" (click)="closeNavbar()">CONTRACT</a>
+        <a class="nav-link px-2" routerLink="/contact" (click)="closeNavbar()">CONTRACT</a>
       </li>
       <li>
-        <a class="nav-link" routerLink="/" (click)="closeNavbar()">LOGIN</a>
+        <a class="nav-link px-2" routerLink="/" (click)="closeNavbar()">LOGIN</a>
       </li>
       <li>
-        <a class="nav-link" routerLink="/" (click)="closeNavbar()">SIGN UP</a>
+        <a class="nav-link px-2" routerLink="/" (click)="closeNavbar()">SIGN UP</a>
       </li>
     </ul>
 
-    <a class="position-relative mr-1 cart-link">
+    <a class="position-relative mr-1 px-2">
       <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
       <div class="cart-no">5</div>
     </a>
