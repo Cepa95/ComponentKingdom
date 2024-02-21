@@ -14,40 +14,41 @@
         <a href="" class="btn btn-outline-secondary me-3">Sign up</a>
     </div>
 </header> -->
-<nav class="navbar navbar-dark bg-dark justify-content-between p-3 px-4 mb-4 fixed-top">
-    <a class="navbar-brand" href="#">
-        <img src="/assets/images/logo.png" alt="logo" style="max-height: 50px;"> 
-      </a> 
-  
-    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
-      <ul class="navbar-nav">
-        <li>
-          <a class="nav-link" href="#">HOME</a>
-        </li>
-  
-        <li>
-          <a class="nav-link" href="#">SHOP</a>
-        </li>
-  
-        <li>
-          <a class="nav-link" href="#">CONTRACT</a>
-        </li>
-        <li >
-            <a class="nav-link" href="#">LOGIN</a>
-          </li>
-          <li >
-            <a class="nav-link" href="#">SIGN UP</a>
-          </li>
-      </ul>
-  
-    <a class="position-relative mr-1 cart-link"> 
-        <img src="/assets/cart.png" alt="logo" style="max-height: 40px;">
-        <div class="cart-no">5</div>
+<nav
+  class="navbar navbar-dark bg-dark justify-content-between p-3 px-4 mb-4 fixed-top"
+>
+  <a class="navbar-brand" href="#">
+    <img src="/assets/images/logo.png" alt="logo" style="max-height: 50px" />
+  </a>
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link" routerLink="/" (click)="closeNavbar()">HOME</a>
+      </li>
+
+      <li>
+        <a class="nav-link" routerLink="/shop" (click)="closeNavbar()">SHOP</a>
+      </li>
+
+      <li>
+        <a class="nav-link" routerLink="/contact" (click)="closeNavbar()">CONTRACT</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/" (click)="closeNavbar()">LOGIN</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/" (click)="closeNavbar()">SIGN UP</a>
+      </li>
+    </ul>
+
+    <a class="position-relative mr-1 cart-link">
+      <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
+      <div class="cart-no">5</div>
     </a>
-    </div>
-  </nav>
-      
+  </div>
+</nav>

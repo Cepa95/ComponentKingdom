@@ -8,8 +8,8 @@
   </a>
   <span class="mb-2"> {{product.price | currency: 'EUR' }}</span>
   <div class="btn-group mt-auto">
-    <button class="btn btn-outline-secondary ml-5"> Buy</button>
-    <button class="btn btn-outline-secondary"> View</button>
+    <button class="btn btn-outline-secondary ml-5" > Buy</button>
+    <button routerLink="/shop/{{product.id}}" class="btn btn-outline-secondary"> View</button>
 
 
   </div>
