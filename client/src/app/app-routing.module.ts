@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'shop/:id', component: ProductDetailsComponent },
+  { path: 'shop/type/:id', component: ShopComponent },
+  
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

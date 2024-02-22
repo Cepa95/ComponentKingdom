@@ -4,6 +4,7 @@ import { ShopService } from './shop.service';
 import { Type } from '../shared/models/type';
 import { Brand } from '../shared/models/brand';
 import { ShopParams } from '../shared/models/shopParams';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -23,14 +24,25 @@ export class ShopComponent implements OnInit {
     { name: 'Price: High to Low', value: 'priceDesc' },
   ];
   totalCount = 0;
+  routeSubscription: any;
 
-  constructor(private shopService: ShopService) {}
+  constructor(private activatedRoute: ActivatedRoute, private shopService: ShopService) { }
 
   ngOnInit(): void {
     this.getProducts();
     this.getBrands();
     this.getTypes();
+    this.loadProductType();
   }
+
+
+  loadProductType() {
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    if(id) this.shopParams.typeId = +id;
+    this.shopParams.pageIndex = 1;
+    this.getProducts();
+  }
+
 
   getProducts() {
     this.shopService.getProducts(this.shopParams).subscribe({
