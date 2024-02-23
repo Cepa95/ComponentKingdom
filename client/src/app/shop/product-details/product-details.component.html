@@ -1,2 +1,19 @@
-<div *ngIf="product">
-<h1>{{product.name}}</h1></div>
+<div class="row" *ngIf="product">
+    <div class="col-md-6">
+        <img src="{{product.pictureUrl}}" alt="{{product.name}}" class="w-100">
+    </div>
+    <div class="col-md-6 mt-5">
+        <h2>{{product.name}}</h2>
+        <p>{{product.price | currency: 'EUR'}}</p>
+        <div class="d-flex justify-content-start align-items-center">
+            <i class="text-primary mx-1" style="cursor: pointer; font-size: 2.2em;">-</i>
+            <span class="font-weight-bold" style="font-size: 1.5em;">2</span>
+            <i class="text-primary" style="cursor: pointer; font-size: 1.8em;">+</i>
+            <button class="btn btn-outline-secondary ms-4">Add to cart</button>
+        </div>
+        <div class="row mt-4">
+            <h4>Description</h4>
+            <p>{{product.description}}</p>
+        </div>
+    </div>
+</div>

@@ -41,6 +41,7 @@
           class="nav-link px-2"
           routerLink="/shop"
           routerLinkActive="text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
           (click)="closeNavbar()"
           >SHOP</a
         >
