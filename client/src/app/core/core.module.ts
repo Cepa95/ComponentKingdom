@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ServerErrorComponent } from './server-error/server-error.component';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -11,7 +11,7 @@ import { ServerErrorComponent } from './server-error/server-error.component';
   declarations: [
     NavBarComponent,
     NotFoundComponent,
-    ServerErrorComponent,
+    ErrorComponent,
   ],
   imports: [
     CommonModule,

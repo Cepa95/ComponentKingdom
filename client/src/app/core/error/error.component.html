@@ -1,0 +1,13 @@
+<div class="container mt-5">
+    <div class="card border-danger">
+      <div class="card-body">
+        <h1 class="card-title text-danger">An error occurred!</h1>
+        <ng-container *ngIf="error">
+          <div class="alert alert-danger" role="alert">
+            <strong>Error:</strong> {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  
