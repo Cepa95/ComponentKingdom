@@ -1,19 +1,23 @@
-<div class="row" *ngIf="product">
-    <div class="col-md-6">
-        <img src="{{product.pictureUrl}}" alt="{{product.name}}" class="w-100">
-    </div>
-    <div class="col-md-6 mt-5">
-        <h2>{{product.name}}</h2>
-        <p>{{product.price | currency: 'EUR'}}</p>
-        <div class="d-flex justify-content-start align-items-center">
-            <i class="text-primary mx-1" style="cursor: pointer; font-size: 2.2em;">-</i>
-            <span class="font-weight-bold" style="font-size: 1.5em;">2</span>
-            <i class="text-primary" style="cursor: pointer; font-size: 1.8em;">+</i>
-            <button class="btn btn-outline-secondary ms-4">Add to cart</button>
+<div class="container my-5" *ngIf="product">
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <img src="{{product.pictureUrl}}" alt="{{product.name}}" class="img-fluid">
         </div>
-        <div class="row mt-4">
-            <h4>Description</h4>
-            <p>{{product.description}}</p>
+        <div class="col-lg-6 mt-5">
+            <h2 class="fw-bold mb-4">{{product.name}}</h2>
+            <p class="fw-bold fs-5 mb-4">{{product.price | currency: 'EUR'}}</p>
+            <div class="d-flex justify-content-start align-items-center mb-4">
+                <button class="btn btn-outline-primary me-2">-</button>
+                <span class="fw-bold fs-4">2</span>
+                <button class="btn btn-outline-primary ms-2">+</button>
+                <button class="btn btn-primary ms-4">Add to cart</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4 class="fw-bold mb-3">Description</h4>
+                    <p>{{product.description}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
