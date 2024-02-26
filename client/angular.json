@@ -37,8 +37,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "https://www.w3schools.com/w3css/4/w3.css" 
+              "https://www.w3schools.com/w3css/4/w3.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/bootswatch/dist/morph/bootstrap.min.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -109,9 +112,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+              "src/styles.scss"
             ],
             
             "scripts": []
