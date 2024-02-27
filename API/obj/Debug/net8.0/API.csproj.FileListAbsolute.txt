@@ -133,3 +133,5 @@ C:\Users\Josip Čeprnić\Desktop\Webshop\API\bin\Debug\net8.0\Core.pdb
 C:\Users\Josip Čeprnić\Desktop\Webshop\API\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Josip Čeprnić\Desktop\Webshop\API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Josip Čeprnić\Desktop\Webshop\API\bin\Debug\net8.0\API.staticwebassets.runtime.json
+C:\Users\Josip Čeprnić\Desktop\Webshop\API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\Josip Čeprnić\Desktop\Webshop\API\bin\Debug\net8.0\StackExchange.Redis.dll

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g28OEaw7B9W04sFIzX3Qt8MwgtoihGNB4dNkcQYHGBQBmfDVU3V6Y/IEUaHhRdrolMuKZ6jrP0VNLJiWpLcOCQ==",
+  "dgSpecHash": "lGsjJi0DChwJn2T6Vw4WuLenVTSLYArC9LDFTK9ML2Wc36r4Ospe+7RlPcRhSHfMW931WLkECRE9Yi9Xma42zg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -35,10 +35,12 @@
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.6\\sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
+    "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\stackexchange.redis\\2.7.23\\stackexchange.redis.2.7.23.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
