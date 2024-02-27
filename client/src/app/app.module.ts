@@ -10,6 +10,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CoreModule} from './core/core.module'
 import { HomeModule } from './home/home.module';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,

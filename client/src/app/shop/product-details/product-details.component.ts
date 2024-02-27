@@ -33,7 +33,7 @@ export class ProductDetailsComponent implements OnInit {
         },
         error: error => {
           console.error('Error loading product:', error);
-          this.errorMessage = 'Failed to load product.'; 
+          this.errorMessage = 'Failed to load product. No product found!'; 
           this.errorCode = error.status;
         }
       });
