@@ -21,3 +21,10 @@
         </div>
     </div>
 </div>
+<div class="container" *ngIf="errorMessage">
+    <div class="card border-danger">
+      <div class="card-body">
+        <h1 class="card-title text-danger">Error {{ errorCode }}: {{ errorMessage }}</h1>
+      </div>
+    </div>
+  </div>

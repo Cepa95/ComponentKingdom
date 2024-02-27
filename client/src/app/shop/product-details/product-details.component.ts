@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailsComponent implements OnInit {
   product?: Product;
+  errorMessage: string | undefined;
+  errorCode: number | undefined;
+
 
   constructor(
     public shopService: ShopService,
@@ -18,13 +21,26 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProduct();
+    
   }
 
   loadProduct() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    if (id) this.shopService.getProduct(+id).subscribe({
-      next:product => this.product = product,
-      error: error => console.log(error)
-    });
+    if (id) {
+      this.shopService.getProduct(+id).subscribe({
+        next: product => {
+          this.product = product;
+        },
+        error: error => {
+          console.error('Error loading product:', error);
+          this.errorMessage = 'Failed to load product.'; 
+          this.errorCode = error.status;
+        }
+      });
+    } else {
+      this.errorMessage = 'Failed to load product.'; 
+    }
   }
+
+  
 }

@@ -1,10 +1,11 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pagination } from '../shared/models/pagination';
 import { Product } from '../shared/models/product';
 import { Brand } from '../shared/models/brand';
 import { Type } from '../shared/models/type';
 import { ShopParams } from '../shared/models/shopParams';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -52,4 +53,22 @@ export class ShopService {
   getProduct(id: number) {
     return this.http.get<Product>(this.baseUrl + 'products/' + id);
   }
+  
+
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unknown error occurred';
+    if (error.error instanceof ErrorEvent) {
+      errorMessage = `Error: ${error.error.message}`;
+    } else if (error.status === 404) {
+      errorMessage = 'Product not found';
+    } else if (error.error && error.error.message) {
+      errorMessage = error.error.message;
+    }
+    return throwError(errorMessage);
+  }
+
+
+
+
+
 }
