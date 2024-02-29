@@ -8,7 +8,7 @@
     </a>
     <span class="mb-2"> {{ product.price | currency : "EUR" }}</span>
     <div class="btn-group mt-auto">
-      <button class="btn btn-outline-primary">Buy</button>
+      <button class="btn btn-outline-primary" (click)="addItemToBasket()">Buy</button>
       <button routerLink="/shop/{{ product.id }}" class="btn btn-outline-primary">View</button>
     </div>
   </div>
