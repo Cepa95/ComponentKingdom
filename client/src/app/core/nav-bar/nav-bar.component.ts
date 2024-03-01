@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { BasketService } from '../../basket/basket.service';
+import { BasketItem } from '../../shared/models/basket';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class NavBarComponent {
   navbarOpen = false;
 
-  constructor(private router: Router) { }
+  constructor(public basketService: BasketService) { }
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
@@ -19,6 +20,11 @@ export class NavBarComponent {
     if (this.navbarOpen) {
       this.navbarOpen = false;
     }
+  }
+
+  getCount(items: BasketItem[])
+  {
+    return items.reduce((sum, item) => sum + item.quantity, 0);
   }
 
 }

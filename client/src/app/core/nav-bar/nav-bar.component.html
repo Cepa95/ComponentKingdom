@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark px-2 fixed-top">
+<!-- <nav class="navbar navbar-dark bg-dark px-2 fixed-top">
   <a routerLink="/" (click)="closeNavbar()">
     <img src="/assets/images/logo.png" alt="logo" style="max-height: 45px"  />
   </a>
@@ -50,7 +50,74 @@
 
     <a class="position-relative mr-1 px-2" routerLink="/basket" (click)="closeNavbar()">
       <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
-      <div class="cart-no">5</div>
+      <div *ngIf="(basketService.basketSource$ | async) as basket" class="cart-no">
+      {{getCount(basket.items)}}</div>
     </a>
   </div>
-</nav>
+</nav> -->
+
+<nav class="navbar navbar-dark bg-dark px-2 fixed-top">
+  <div class="d-flex align-items-center mr-auto">
+    <a routerLink="/" (click)="closeNavbar()">
+      <img src="/assets/images/logo.png" alt="logo" style="max-height: 45px" />
+    </a>
+
+    <button class="navbar-toggler mr-5" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+  <a class="position-relative mr-1 px-2" routerLink="/basket" (click)="closeNavbar()">
+    <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
+    <div *ngIf="(basketService.basketSource$ | async) as basket" class="cart-no">
+      {{getCount(basket.items)}}
+    </div>
+  </a>
+
+  <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
+    <ul class="navbar-nav">
+      <li>
+        <a
+          class="nav-link px-2"
+          routerLink="/"
+          routerLinkActive="text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeNavbar()"
+        >HOME</a>
+      </li>
+
+      <li>
+        <a
+          class="nav-link px-2"
+          routerLink="/shop"
+          routerLinkActive="text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeNavbar()"
+          >SHOP</a
+        >
+      </li>
+
+      <li>
+        <a class="nav-link px-2" routerLink="/contact" routerLinkActive="text-white" (click)="closeNavbar()"
+          >CONTRACT</a
+        >
+      </li>
+      <li>
+        <a class="nav-link px-2" routerLink="/login" routerLinkActive="text-white" (click)="closeNavbar()"
+          >LOGIN</a
+        >
+      </li>
+      <li>
+        <a class="nav-link px-2" routerLink="/" (click)="closeNavbar()"
+          >SIGN UP</a
+        >
+      </li>
+    </ul>
+
+    <a class="position-relative mr-1 px-2" routerLink="/basket" (click)="closeNavbar()">
+      <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
+      <div *ngIf="(basketService.basketSource$ | async) as basket" class="cart-no">
+      {{getCount(basket.items)}}</div>
+    </a>
+  </div>
+</nav> 
