@@ -7,5 +7,6 @@ import { BasketService } from './basket.service';
   styleUrl: './basket.component.scss',
 })
 export class BasketComponent {
+basket: any;
   constructor(public basketService: BasketService) {}
 }
