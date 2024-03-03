@@ -1,26 +1,20 @@
-
 <h4 class="bg-dark px-4 py-3 text-primary">ORDER</h4>
 <div class="bg-light p-4">
-  <p>
-    Shipping costs will be determined according to the selections made during
-    the checkout process!
-  </p>
-  <ul
-    class="list-unstyled mb-4"
-    *ngIf="basketService.basketTotalSource$ | async as totals"
-  >
-    <li class="d-flex justify-content-between py-3 border-bottom">
-      <strong class="text-muted">Order subtotal</strong>
-      <strong>{{ totals.subtotal | currency : "EUR" }}</strong>
-    </li>
-    <li class="d-flex justify-content-between py-3 border-bottom">
-      <strong class="text-muted">Shipping and handling</strong>
-      <strong>{{ totals.shipping | currency : "EUR" }}</strong>
-    </li>
-    <li class="d-flex justify-content-between py-3 border-bottom">
-      <strong class="text-muted">Total</strong>
-      <strong>{{ totals.total | currency : "EUR" }}</strong>
-    </li>
-  </ul>
+  <p>Shipping costs will be determined according to the selections made during the checkout process!</p>
+  <table class="table">
+    <tbody *ngIf="basketService.basketTotalSource$ | async as totals">
+      <tr>
+        <td><strong class="text-muted">Order subtotal:</strong></td>
+        <td><strong>{{ totals.subtotal | currency : "EUR" }}</strong></td>
+      </tr>
+      <tr>
+        <td><strong class="text-muted">Shipping:</strong></td>
+        <td><strong>{{ totals.shipping | currency : "EUR" }}</strong></td>
+      </tr>
+      <tr>
+        <td><strong class="text-muted">Total:</strong></td>
+        <td><strong>{{ totals.total | currency : "EUR" }}</strong></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
