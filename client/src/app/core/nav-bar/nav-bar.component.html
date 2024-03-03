@@ -67,13 +67,6 @@
     </button>
   </div>
 
-  <a class="position-relative mr-1 px-2" routerLink="/basket" (click)="closeNavbar()">
-    <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
-    <div *ngIf="(basketService.basketSource$ | async) as basket" class="cart-no">
-      {{getCount(basket.items)}}
-    </div>
-  </a>
-
   <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
     <ul class="navbar-nav">
       <li>
@@ -99,7 +92,7 @@
 
       <li>
         <a class="nav-link px-2" routerLink="/contact" routerLinkActive="text-white" (click)="closeNavbar()"
-          >CONTRACT</a
+          >CONTACT</a
         >
       </li>
       <li>
@@ -113,11 +106,14 @@
         >
       </li>
     </ul>
-
-    <a class="position-relative mr-1 px-2" routerLink="/basket" (click)="closeNavbar()">
-      <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
-      <div *ngIf="(basketService.basketSource$ | async) as basket" class="cart-no">
-      {{getCount(basket.items)}}</div>
-    </a>
   </div>
-</nav> 
+
+  <!-- Cart icon always visible on the right -->
+  <a class="position-relative mr-1 px-2" routerLink="/basket" (click)="closeNavbar()">
+    <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
+    <div *ngIf="(basketService.basketSource$ | async) as basket" class="cart-no">
+      {{getCount(basket.items)}}
+    </div>
+  </a>
+</nav>
+
