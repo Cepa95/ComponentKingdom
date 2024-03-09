@@ -22,7 +22,6 @@ namespace API.Extensions
             });
 
             services.AddIdentityCore<AppUser>(opt => { })
-            .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddSignInManager<SignInManager<AppUser>>();
 
