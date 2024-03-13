@@ -34,10 +34,31 @@ namespace API.Controllers
             return new UserDto
             {
                 Email = user.Email,
-                Token ="token",
+                Token = "token",
                 DisplayName = user.DisplayName
             };
-            
+
+        }
+        [HttpPost("register")]
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+        {
+            var user = new AppUser
+            {
+                DisplayName = registerDto.DisplayName,
+                Email = registerDto.Email,
+                UserName = registerDto.Email
+            };
+
+            var result = await _userManager.CreateAsync(user, registerDto.Password);
+
+            if (!result.Succeeded) return BadRequest(new ApiResponse(400));
+
+            return new UserDto
+            {
+                DisplayName = user.DisplayName,
+                Token = "This will be a token",
+                Email = user.Email
+            };
         }
     }
 }
