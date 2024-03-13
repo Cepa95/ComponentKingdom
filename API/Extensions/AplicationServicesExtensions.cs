@@ -4,6 +4,7 @@ using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
+using Infrastructure.Services;
 
 namespace API.Extensions
 {
@@ -26,6 +27,7 @@ namespace API.Extensions
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<ITokenService, TokenService>();
 
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
