@@ -4,6 +4,8 @@ using Core.Entities.identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 
 namespace API.Controllers
@@ -16,7 +18,7 @@ namespace API.Controllers
         private readonly ITokenService _tokenService;
 
 
-        public AccountController(UserManager<AppUser> userManager, 
+        public AccountController(UserManager<AppUser> userManager,
         SignInManager<AppUser> signInManager, ITokenService tokenService)
         {
 
@@ -65,6 +67,39 @@ namespace API.Controllers
                 Token = _tokenService.CreateToken(user),
                 Email = user.Email
             };
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult<UserDto>> GetCurrentUser()
+        {
+            var email = User.FindFirstValue(ClaimTypes.Email);
+
+            var user = await _userManager.FindByEmailAsync(email);
+
+            return new UserDto
+            {
+                DisplayName = user.DisplayName,
+                Token = _tokenService.CreateToken(user),
+                Email = user.Email
+            };
+        }
+
+        [HttpGet("emailexists")]
+        public async Task<ActionResult<Boolean>> CheckEmailExists([FromQuery] string email)
+        {
+            return await _userManager.FindByEmailAsync(email) != null;
+        }
+
+        [HttpGet("address")]
+        [Authorize]
+        public async Task<ActionResult<Address>> GetUserAddress()
+        {
+             var email = User.FindFirstValue(ClaimTypes.Email);
+
+             var user = await _userManager.FindByEmailAsync(email);
+
+             return user.Address;
         }
     }
 }
