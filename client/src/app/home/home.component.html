@@ -1,197 +1,231 @@
 <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-      <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
-      <!-- Float links to the right. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-        <a href="#about" class="w3-bar-item w3-button">About</a>
-        <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-      </div>
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
     </div>
   </div>
+</div>
 
 <!-- home.component.html -->
 
+<div class="d-flex mt-2">
+  <button routerLink="/shop" class="btn btn-link ms-3">shop</button>
+</div>
+<button (click)="onTypeSelected(1)">Select Type 1</button>
+<button (click)="onTypeSelected(2)">Select Type 2</button>
+<button (click)="onTypeSelected(3)">Select Type 3</button>
+<button (click)="onTypeSelected(4)">Select Type 4</button>
 
-
-  <div class="d-flex mt-2">
-    <button routerLink="/shop" class="btn btn-link ms-3">
-      shop
-    </button>
+<!-- Header -->
+<header
+  class="w3-display-container w3-content w3-wide"
+  style="max-width: 1500px"
+  id="home"
+>
+  <img
+    class="w3-image"
+    src="https://timelinecovers.pro/facebook-cover/download/general-technology-computer-background-facebook-cover.jpg"
+    alt="Architecture"
+    width="1500"
+    height="800"
+  />
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white">
+      <span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span>
+      <span class="w3-hide-small w3-text-light-grey">Architects</span>
+    </h1>
   </div>
-  <button (click)="onTypeSelected(1)">Select Type 1</button>
-  <button (click)="onTypeSelected(2)">Select Type 2</button>
-  <button (click)="onTypeSelected(3)">Select Type 3</button>
-  <button (click)="onTypeSelected(4)">Select Type 4</button>
+</header>
 
-  
-  <!-- Header -->
-  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <img class="w3-image" src="https://timelinecovers.pro/facebook-cover/download/general-technology-computer-background-facebook-cover.jpg" alt="Architecture" width="1500" height="800">
-    <div class="w3-display-middle w3-margin-top w3-center">
-      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
-    </div>
-  </header>
-  
-  <!-- Page content -->
-  <div class="w3-content w3-padding" style="max-width:1564px">
-  
-    <!-- Project Section -->
-    <div class="w3-container w3-padding-32" id="projects">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
-    </div>
-  
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:100%">
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:100%">
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:100%">
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:100%">
-        </div>
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width: 1564px">
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+      Projects
+    </h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 100%"
+        />
       </div>
     </div>
-  
-    <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:99%">
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:99%">
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:99%">
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-          <img src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg" alt="House" style="width:99%">
-        </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 100%"
+        />
       </div>
     </div>
-  
-    <!-- About Section -->
-    <div class="w3-container w3-padding-32" id="about">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-    </div>
-    </div>
-    <footer>
-      <div class="footer-line"></div>
-      <div class="footer-wrapper">
-          <div class="footer-columns">
-              <section class="footer-logo">
-                <img src="/assets/images/logo2.jpg" alt="logo" style="max-height: 140px" />
-                  
-              </section>
-              <section>
-                  <h3>Product</h3>
-                  <ul>
-                      <li>
-                          <a  routerLink="shop/type/1" title="CPU">CPU</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Pricing">Pricing</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Documentation">Documentation</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Release Notes">Release Notes</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Status">Status</a>
-                      </li>
-                  </ul>
-              </section>
-              <section>
-                  <h3>Resources</h3>
-                  <ul>
-                      <li>
-                          <a href="#" title="Support">Support</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Sitemap">Sitemap</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Newsletter">Newsletter</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Help Centre">Help Centre</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Investor">Investor</a>
-                      </li>
-                  </ul>
-              </section>
-              <section>
-                  <h3>Company</h3>
-                  <ul>
-                      <li>
-                          <a href="#" title="About Us">About Us</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Blog">Blog</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Careers">Careers</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Press">Press</a>
-                      </li>
-                      <li>
-                          <a href="#" title="Contact">Contact</a>
-                      </li>
-                  </ul>
-              </section>
-          </div>
-          <div class="footer-bottom">
-              <small>© Component Kingdom Ltd. <span id="year"></span>, All rights reserved</small>
-              <span class='social-links'>
-                  <a href="#" title="Instagram">
-                      <img src="/assets/images/instagram.svg" alt='Instagram'>                       
-                  </a>
-                  <a href="#" title="Linkedin">
-                      <img src="/assets/images/linkedin.svg" alt='Linkedin'>
-                  </a>
-                  <a href="#" title="Twitter">
-                      <img src="/assets/images/twitter.svg" alt='Twitter'>
-                  </a>
-                  <a href="#" title="Youtube">
-                      <img src="/assets/images/youtube.svg" alt='YouTube'>
-                  </a>
-                  <a href="#" title="GitHub">
-                      <img src="/assets/images/github.svg" alt='GitHub'>
-                  </a>
-              </span>
-          </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 100%"
+        />
       </div>
-  </footer>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 99%"
+        />
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 99%"
+        />
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 99%"
+        />
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+        <img
+          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
+          alt="House"
+          style="width: 99%"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  <hr>
+</div>
+<footer>
+  <div class="footer-line"></div>
+  <div class="footer-wrapper">
+    <div class="footer-columns">
+      <section>
+        <h3>Product</h3>
+        <ul>
+          <li>
+            <a routerLink="shop/type/1" title="CPU">CPU</a>
+          </li>
+          <li>
+            <a href="#" title="Pricing">Pricing</a>
+          </li>
+          <li>
+            <a href="#" title="Documentation">Documentation</a>
+          </li>
+          <li>
+            <a href="#" title="Release Notes">Release Notes</a>
+          </li>
+          <li>
+            <a href="#" title="Status">Status</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Resources</h3>
+        <ul>
+          <li>
+            <a href="#" title="Support">Support</a>
+          </li>
+          <li>
+            <a href="#" title="Sitemap">Sitemap</a>
+          </li>
+          <li>
+            <a href="#" title="Newsletter">Newsletter</a>
+          </li>
+          <li>
+            <a href="#" title="Help Centre">Help Centre</a>
+          </li>
+          <li>
+            <a href="#" title="Investor">Investor</a>
+          </li>
+        </ul>
+      </section>
+      <section class="footer-logo">
+        <img
+          src="/assets/images/logo2.jpg"
+          alt="logo"
+          style="max-height: 140px"
+        />
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <small
+        >© Component Kingdom Ltd. <span id="year"></span>, All rights
+        reserved</small
+      >
+      <span class="social-links">
+        <a href="#" title="Instagram">
+          <img src="/assets/images/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="#" title="Linkedin">
+          <img src="/assets/images/linkedin.svg" alt="Linkedin" />
+        </a>
+        <a href="#" title="Twitter">
+          <img src="/assets/images/twitter.svg" alt="Twitter" />
+        </a>
+        <a href="#" title="Youtube">
+          <img src="/assets/images/youtube.svg" alt="YouTube" />
+        </a>
+        <a href="#" title="GitHub">
+          <img src="/assets/images/github.svg" alt="GitHub" />
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
