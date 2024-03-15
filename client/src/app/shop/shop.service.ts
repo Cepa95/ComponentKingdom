@@ -67,8 +67,4 @@ export class ShopService {
     return throwError(errorMessage);
   }
 
-
-
-
-
 }

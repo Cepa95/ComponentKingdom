@@ -4,7 +4,7 @@
       <img
         src="{{ product.pictureUrl }}"
         alt="{{ product.name }}"
-        class="img-fluid"
+        class="img-fluid smaller-image"
       />
     </div>
     <div class="col-lg-6 mt-5">
@@ -28,13 +28,14 @@
           {{ buttonText }}
         </button>
       </div>
-      <div class="row">
-        <div class="col">
-          <h4 class="fw-bold mb-3">Description</h4>
-          <p>{{ product.description }}</p>
-        </div>
-      </div>
     </div>
+  </div>
+</div>
+<div class="row" *ngIf="product">
+  <hr>
+  <div class="col">
+    <h4 class="fw-bold mb-3">Description</h4>
+    <p>{{ product.description }}</p>
   </div>
 </div>
 <div class="container" *ngIf="errorMessage">

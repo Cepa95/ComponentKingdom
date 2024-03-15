@@ -33,6 +33,13 @@ export class ShopComponent implements OnInit {
     this.getBrands();
     this.getTypes();
     this.loadProductType();
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+      if (id) {
+        this.shopParams.typeId = +id;
+        this.getProducts();
+      }
+    });
   }
 
 
