@@ -1,146 +1,314 @@
 [
   {
-    "Name": "AMD Ryzen 5 3600",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
+    "Name": "AMD Ryzen 5 3600 (6C/12T, up to 4.2GHz, 32MB, AM4)",
+    "Description": "The AMD Ryzen 5 3600 features six cores and twelve threads, with a base clock speed of 3.6 GHz and a boost clock speed of up to 4.2 GHz. This allows for smooth and responsive computing across a wide range of applications, from demanding games to intensive productivity tasks. With support for simultaneous multithreading (SMT), it efficiently utilizes available resources to enhance performance in threaded workloads. The processor integrates AMD's advanced Precision Boost 2 technology, which dynamically adjusts clock speeds based on workload requirements, ensuring optimal performance in any scenario. Additionally, Precision Boost Overdrive (PBO) further enhances performance by intelligently increasing clock speeds within thermal and electrical limits, providing extra headroom for overclocking enthusiasts. Equipped with a large 32MB L3 cache, the Ryzen 5 3600 facilitates rapid data access, reducing latency and improving overall responsiveness. Its compatibility with PCIe 4.0 enables high-speed data transfer for compatible graphics cards and storage devices, unlocking the full potential of next-generation components.",
+    "Price": 199.99,
     "PictureUrl": "https://www.njuskalo.hr/image-w920x690/procesori/procesor-amd-ryzen-5-3600-6c-12t-3.6ghz-4.2ghz-32mb-am4-slika-184634530.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 1
-  },
-  {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 1,
-    "ProductBrandId": 1
-  },
-  {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 1,
     "ProductBrandId": 2
   },
   {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
+    "Name": "Procesor Intel Core i9-14900KF (24C/32T, up to 6.0GHz, 36MB",
+    "Description": "The Intel Core i9-14900KF is a high-performance processor designed for enthusiasts, professionals, and gamers who demand exceptional computing power. With 24 cores and 32 threads, this CPU offers massive parallel processing capabilities, allowing it to handle demanding workloads with ease. The Intel Core i9-14900KF features a base clock speed and boost clock speed capable of reaching up to 6.0GHz, providing blazing-fast performance for tasks ranging from gaming to content creation and beyond. With a sizable 36MB of cache memory, this processor ensures rapid data access, reducing latency and improving overall system responsiveness. The large cache size enables efficient data storage and retrieval, facilitating smooth multitasking and seamless performance in complex computing scenarios. Built on Intel's latest processor architecture, the Core i9-14900KF combines advanced technology and innovative features to deliver superior performance and efficiency. Whether you're gaming, streaming, video editing, rendering, or running demanding software applications, this processor offers the computational power needed to tackle any task with confidence. The Intel Core i9-14900KF is unlocked for overclocking, providing enthusiasts with the flexibility to push the limits of performance even further. Its compatibility with high-speed DDR5 memory and PCIe 5.0 technology ensures future-proofing and support for the latest hardware innovations, unlocking new levels of performance and efficiency for your computing experience.",
+    "Price": 759.98,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/procesor-intel-core-i9-13900k-58ghz-36mb-lga1700-bx807151390-94208-inp-13700k-41285_1.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 1,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 1,
-    "ProductBrandId": 5
-  },
-  {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 2,
-    "ProductBrandId": 2
-  },
-  {
-    "Name": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "https://bit-tech.net/media/image/2019/8/ee7f0bc0-6579-4e27-8177-b65a1204d8af.jpg",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 15,
-    "PictureUrl": "https://www.proshop.dk/Images/915x900/2776912_826a8872e098.jpg",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 18,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
-  },
-  {
-    "Name": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 15,
-    "PictureUrl": "https://www.computerhope.com/jargon/c/compute.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
-  },
-  {
-    "Name": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Yellow React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 3,
     "ProductBrandId": 6
   },
   {
-    "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 3,
+    "Name": "AMD Ryzen 9 5900X (12C/24T, up to 4.8GHz, 64MB, AM4)",
+    "Description": "The AMD Ryzen 9 5900X stands as a flagship CPU within AMD's Ryzen 5000 series lineup, delivering exceptional performance tailored for enthusiasts, content creators, and gamers seeking uncompromising power. With its 12 cores and 24 threads, the Ryzen 9 5900X offers a potent blend of high core count and multithreading capability, ensuring seamless multitasking and responsiveness across a diverse array of computing tasks. Sporting a base clock speed of 3.7 GHz and a boost clock speed of up to 4.8 GHz, this processor harnesses the power of AMD's Zen 3 architecture, boasting significant IPC (Instructions Per Cycle) improvements for enhanced single-threaded performance and efficiency. The Ryzen 9 5900X features a sizable 64MB L3 cache, facilitating rapid data access and reducing latency, which translates into smoother overall system performance. AMD's Precision Boost 2 technology dynamically adjusts clock speeds to optimize performance based on workload demands, while Precision Boost Overdrive (PBO) provides enthusiasts with additional headroom for overclocking, enabling even higher performance levels for those seeking to push the limits of their systems. With PCIe 4.0 support, the Ryzen 9 5900X enables lightning-fast data transfer rates for compatible graphics cards and storage devices, unlocking the full potential of next-generation hardware. The CPU's AM4 socket compatibility ensures broad compatibility with a wide range of motherboards, offering flexibility for system builders and upgraders alike. Additionally, the Ryzen 9 5900X is bundled with AMD's Wraith Prism cooler, featuring efficient thermal performance to help keep temperatures in check during demanding workloads. Whether tackling intensive gaming sessions, video editing, 3D rendering, or other demanding tasks, the AMD Ryzen 9 5900X stands as a formidable option, delivering exceptional performance, efficiency, and versatility for users who demand the best from their computing experience.",
+    "Price": 359.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/procesor-amd-ryzen-9-5900x-12c-24t-48ghz-inp-000155_2.jpg",
+    "ProductTypeId": 1,
     "ProductBrandId": 2
   },
   {
-    "Name": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
-    "ProductTypeId": 3,
+    "Name": "GIGABYTE GeForce RTX4060",
+    "Description": "The GeForce RTX 4060 Gaming OC is a high-performance graphics card designed by NVIDIA, tailored for gaming enthusiasts and content creators seeking exceptional graphical fidelity and performance. Equipped with 8GB of GDDR6 video memory, this GPU delivers ample memory bandwidth to handle demanding gaming scenarios, high-resolution textures, and complex visual effects with ease. Featuring NVIDIA's latest Ampere architecture, the RTX 4060 Gaming OC incorporates advanced ray tracing and AI-based technologies to deliver stunning visuals and realistic lighting effects in supported games and applications. With dedicated RT (Ray Tracing) Cores and Tensor Cores, this GPU accelerates ray tracing calculations and AI-based features, enhancing immersion and realism in modern titles. The Gaming OC variant of the RTX 4060 is optimized for overclocking and sustained performance, boasting a robust cooling solution with multiple fans and heat pipes to effectively dissipate heat during extended gaming sessions or heavy workloads. Its factory overclocked settings provide a performance boost out of the box, while users can further fine-tune performance through manual overclocking for even greater performance gains. The GeForce RTX 4060 Gaming OC offers comprehensive connectivity options, including multiple DisplayPort and HDMI outputs, enabling users to connect multiple displays or VR headsets for immersive gaming experiences or productive multitasking setups. With support for NVIDIA's DLSS (Deep Learning Super Sampling) technology, the RTX 4060 enhances performance in supported games by using AI to upscale lower-resolution images, resulting in smoother frame rates without sacrificing image quality. Overall, the GeForce RTX 4060 Gaming OC is a powerhouse graphics card that combines cutting-edge technology, robust cooling, and versatile connectivity to deliver an exceptional gaming and content creation experience for enthusiasts and professionals alike.",
+    "Price": 429,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/graphics-card-gigabyte-geforce-rtx-4060-gaming-oc-8g-8gb-gdd-36869-gigvg-rtx_4060_234775.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Asus GeForce RTX4090 ROG Strix OC, PCI Express 4.0",
+    "Description": "The Asus GeForce RTX 4090 ROG Strix OC represents the pinnacle of gaming graphics cards, offering unparalleled performance and features for enthusiasts and professionals alike. Engineered by Asus, a leading manufacturer in the gaming hardware industry, this GPU is designed to deliver extraordinary gaming experiences and excel in demanding content creation tasks. At its core lies the powerful NVIDIA Ampere architecture, featuring advanced ray tracing capabilities, AI-based technologies, and massive computational power. With dedicated Ray Tracing Cores and Tensor Cores, the RTX 4090 ROG Strix OC delivers lifelike lighting effects, realistic shadows, and immersive environments, pushing the boundaries of visual fidelity in modern games and applications. Equipped with a generous amount of video memory, the RTX 4090 ROG Strix OC ensures smooth performance in high-resolution gaming scenarios, complex simulations, and intensive multitasking workloads. The ROG Strix variant of this graphics card features premium components and robust cooling solutions, including multiple Axial-tech fans and a large heatsink array, ensuring efficient heat dissipation and stable performance even under heavy load. As part of the ROG (Republic of Gamers) lineup, this graphics card boasts a sleek and aggressive design aesthetic, complemented by customizable RGB lighting elements, allowing users to personalize their gaming rig to suit their preferences. Additionally, Asus' GPU Tweak II software provides advanced tools for overclocking, monitoring, and fine-tuning performance, enabling enthusiasts to squeeze every ounce of performance from their hardware. Connectivity options on the RTX 4090 ROG Strix OC include multiple DisplayPort and HDMI outputs, enabling users to connect multiple monitors, VR headsets, or high-resolution displays for immersive gaming experiences and productive work setups. With support for NVIDIA DLSS (Deep Learning Super Sampling) technology, this GPU enhances performance in supported games by using AI to upscale lower-resolution images, delivering smoother frame rates without compromising visual quality.",
+    "Price": 2589.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/asus-video-card-nvidia-rog-strix-geforce-rtx-4090-oc-edition-59212-90yv0id0-m0na00_266403.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Sapphire AMD Radeon RX7700XT Nitro+, 12GB GDDR6",
+    "Description": "The AMD Radeon RX 7700 XT Graphics Card, featuring a 5nm GPU built on the cutting-edge AMD RDNA 3 Architecture, represents a significant leap forward in graphics performance and efficiency. With a Boost Clock reaching up to 2599 MHz and a Game Clock of up to 2276 MHz, this GPU delivers blistering speeds to handle even the most demanding gaming and content creation tasks. Boasting 3456 Stream Processors and 54 Compute Units equipped with RT (Ray Tracing) and AI Accelerators, it excels in rendering realistic visuals and enhancing overall gaming experiences. The 48MB of Infinity Cache and 54 Ray Accelerators further contribute to its computational prowess, ensuring smooth performance in both traditional and ray-traced applications. In terms of memory, the RX 7700 XT comes equipped with 12GB of high-speed GDDR6 VRAM connected via a 192-bit bus, clocked at an effective rate of 18 Gbps. This generous memory capacity and bandwidth allow for seamless gaming at resolutions up to 1440P across a maximum of four displays, with HDMI and DisplayPort connectivity supporting resolutions up to an impressive 7680×4320. The GPU interfaces with the system via PCI-Express 4.0 x16, ensuring optimal data transfer rates. In terms of cooling, the RX 7700 XT features a triple-fan design, incorporating Sapphire's Tri-X Cooling Technology and Intelligent Fan Control for efficient heat dissipation and quiet operation. The card's 3-slot ATX form factor ensures compatibility with most PC cases, while premium features such as Dual BIOS, TriXX Software Switch, and Precision Fan Control offer users flexibility and customization options. Additionally, the card is reinforced with a metal backplate and aluminum alloy frame for added durability and stability. Power requirements include a minimum 700 Watt power supply and two 8-pin power connectors, with a total board power consumption of 252W. Sapphire's proprietary features such as NITRO Glow, TriXX Boost, and External RGB LED MB Synchronization enhance the card's aesthetic appeal and functionality. With its combination of cutting-edge technology, robust cooling, and premium features, the AMD Radeon RX 7700 XT Graphics Card sets a new standard for high-performance gaming GPUs.",
+    "Price": 555,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/11335-02-20G_1.jpg",
+    "ProductTypeId": 2,
     "ProductBrandId": 2
   },
   {
-    "Name": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
+    "Name": "Hard disk WD Blue (3.5', 4TB, SATA3 6Gb/s, 256MB Cache, 5400rpm)",
+    "Description": "The WD HDD with NoTouch Ramp Load Technology is a 3.5-inch internal drive offering a capacious 4TB of storage space, ideal for desktop computers, NAS systems, and various other storage applications. Its innovative NoTouch Ramp Load Technology ensures that the recording head never makes contact with the disk media during operation or when the drive is powered off, minimizing wear and tear on both components and providing added protection during transportation. Furthermore, WD conducts rigorous compatibility testing on hundreds of systems and platforms in their FIT Lab, instilling confidence in customers that the drive will seamlessly integrate into their setup. With a SATA interface facilitating high-speed data transfers of up to 215MB/s and a generous 256MB cache size for improved performance, this HDD offers reliable and efficient storage for large files, multimedia content, applications, and more. Operating at 5400rpm, the drive strikes a balance between performance and energy efficiency, making it suitable for a wide range of use cases. Utilizing Conventional Magnetic Recording (CMR) technology, the drive ensures data reliability and compatibility across various systems and applications. In summary, the WD HDD combines innovative features, extensive compatibility testing, and robust performance to provide users with a dependable and high-capacity storage solution for their computing needs.",
+    "Price": 122.29,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/WD40EZAX_1.jpg",
     "ProductTypeId": 3,
+    "ProductBrandId": 8
+  },
+  {
+    "Name": "Hard disk Toshiba P300 (3.5', 1TB, SATA3 6Gb/s, 64MB Cache, 7200rpm)",
+    "Description": "The Toshiba P300 is a 3.5-inch internal hard disk drive with a capacity of 1TB, designed to provide reliable storage for desktop computers, workstations, and gaming rigs. Featuring SATA3 6Gb/s interface connectivity, this HDD ensures fast and efficient data transfer rates, allowing users to quickly access and store their files. With a generous 64MB cache size and operating at 7200rpm, the P300 delivers smooth performance and responsiveness, making it suitable for a variety of computing tasks, including gaming, multimedia content creation, and everyday computing needs. One of the standout features of the Toshiba P300 is its implementation of NoTouch Ramp Load technology, which ensures that the recording head never makes physical contact with the disk media during operation or while the drive is powered off. This innovative technology minimizes wear and tear on the recording head and disk media, enhancing the drive's durability and longevity while also providing better protection during transportation and handling. Furthermore, Toshiba conducts extensive compatibility testing on hundreds of systems and platforms in their FIT Lab, ensuring that the P300 HDD is compatible with a wide range of hardware configurations. This testing process instills confidence in customers, reassuring them that the drive will seamlessly integrate into their systems without any compatibility issues.",
+    "Price": 49.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/toshiba-35-quot1tb-7200-64mb-sata-3-p300-hard-drive-44064-toshd-hdwd110uzsva_1_1.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 7
+  },
+  {
+    "Name": "WD Gold (3.5', 2TB, SATA3 6Gb/s, 128MB Cache, 7200rpm)",
+    "Description": "The WD Gold 2TB HDD is a high-performance, enterprise-grade internal hard disk drive designed for demanding storage applications in servers, workstations, and data centers. With a capacity of 2TB, it offers ample storage space for critical data, applications, and workloads. The HDD is equipped with a generous 128MB cache size, allowing for efficient data access and retrieval, which is essential for handling large datasets and multiple concurrent operations. Featuring a SATA interface with a data transfer rate of 6Gb/s, the WD Gold HDD ensures fast and reliable connectivity to compatible systems. This interface standard is widely supported across various platforms, making the drive compatible with Windows, Windows Server, and Linux operating systems, providing versatility in deployment and integration into existing infrastructure. Operating at a spindle speed of 7200rpm, the WD Gold HDD delivers high-speed performance, enabling swift data access and processing. This makes it suitable for applications that require quick read and write operations, such as database management, virtualization, and content delivery. As an enterprise-grade storage solution, the WD Gold HDD meets RoHS compliance standards, ensuring environmental sustainability and safety in manufacturing processes. Additionally, its design incorporates features optimized for enterprise environments, including robust durability, reliability, and data integrity.",
+    "Price": 145.59,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/hard-disk-wd-gold-2tb-sata-6gb-s-128mb-c-wd-0061_1.jpg",
+    "ProductTypeId": 3,
+    "ProductBrandId": 8
+  },
+  {
+    "Name": "Asus Prime H510M-R, Intel LGA1200, Micro ATX",
+    "Description": "The Asus Prime H510M-R is a Micro ATX motherboard designed for Intel LGA1200 processors, offering a compact yet versatile platform for building budget-friendly desktop systems. With its LGA1200 socket, this motherboard supports a wide range of Intel's 10th and 11th generation Core processors, providing users with flexibility in choosing the CPU that best suits their needs, whether it's for everyday computing tasks or light gaming. Featuring the H510 chipset, the Prime H510M-R offers essential features and connectivity options while maintaining affordability. The motherboard supports up to 64GB of DDR4 memory across two DIMM slots, allowing for efficient multitasking and system responsiveness. Although it lacks overclocking capabilities inherent in higher-end chipsets, it still provides stable and reliable performance for most users. In terms of expansion slots, the Prime H510M-R offers one PCIe 4.0 x16 slot for graphics cards and PCIe-based expansion cards, as well as two PCIe 3.0 x1 slots for additional peripherals. This configuration provides adequate flexibility for adding expansion cards such as sound cards, network adapters, or SSDs. Connectivity-wise, the motherboard features a range of ports and headers, including USB 3.2 Gen 1 and USB 2.0 ports for high-speed data transfer and peripheral connectivity. Additionally, it offers Gigabit Ethernet LAN for reliable wired networking, ensuring seamless connectivity to the internet and local networks. The Asus Prime H510M-R also includes comprehensive audio features, with Realtek ALC887 codec providing high-quality sound output for an immersive audio experience during gaming, multimedia consumption, or content creation.",
+    "Price": 73,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/maticna-ploca-asus-prime-h510m-r-intek-lga1200-micro-atx-40677-0001241231_234970.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Gigabyte A520M DS3H V2, AMD AM4, Micro ATX",
+    "Description": "The Gigabyte A520M DS3H V2 is a Micro ATX motherboard designed to support AMD AM4 processors, providing a compact yet feature-rich platform for building budget-friendly desktop systems. With its AM4 socket, this motherboard supports a wide range of AMD Ryzen processors, including Ryzen 5000 series CPUs, offering users flexibility in choosing the right CPU for their computing needs, whether it's for everyday tasks, light gaming, or content creation. Built around the A520 chipset, the A520M DS3H V2 offers essential features and connectivity options while maintaining affordability. The motherboard supports up to 128GB of DDR4 memory across four DIMM slots, enabling efficient multitasking and system responsiveness. While it lacks support for overclocking, it still provides stable and reliable performance for most users. In terms of expansion slots, the A520M DS3H V2 features one PCIe 3.0 x16 slot for graphics cards and PCIe-based expansion cards, as well as two PCIe 3.0 x1 slots for additional peripherals. This configuration provides flexibility for adding expansion cards such as sound cards, network adapters, or NVMe SSDs. Connectivity-wise, the motherboard offers a range of ports and headers, including USB 3.2 Gen 1 and USB 2.0 ports for high-speed data transfer and peripheral connectivity. It also includes Gigabit Ethernet LAN for reliable wired networking, ensuring seamless connectivity to the internet and local networks. The Gigabyte A520M DS3H V2 features comprehensive audio capabilities, with Realtek ALC887 codec providing high-quality audio output for an immersive sound experience during gaming, multimedia playback, or content creation.",
+    "Price": 77.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/A520M-DS3H-V2_1.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Corsair LL120, 120mm, PWM, RGB",
+    "Description": "The Corsair LL120 is a 120mm RGB fan designed to provide both efficient cooling performance and vibrant lighting effects for gaming PCs and custom builds. With its PWM (Pulse Width Modulation) control, the fan offers dynamic speed adjustment to balance cooling performance and noise levels according to system demands. The LL120 features customizable RGB lighting with individually addressable LEDs, allowing users to create stunning lighting effects and patterns through Corsair's iCUE software. With millions of colors to choose from and various lighting modes, users can personalize their PC build to match their style or synchronize lighting effects with other Corsair RGB components for a cohesive look. In terms of performance, the fan utilizes a specially designed fan blade and PWM control to deliver efficient airflow and static pressure, making it suitable for use as both case fans and radiator fans in liquid cooling setups. The fan's hydraulic bearing ensures quiet operation and long-term reliability, while anti-vibration rubber pads help minimize noise and vibrations during operation.",
+    "Price": 29.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/cor-co-9050071-ww.jpg",
+    "ProductTypeId": 5,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Corsair AF120 Elite, 120mm, PWM",
+    "Description": "The Corsair LL120 is a 120mm RGB fan designed to provide both efficient cooling performance and vibrant lighting effects for gaming PCs and custom builds. With its PWM (Pulse Width Modulation) control, the fan offers dynamic speed adjustment to balance cooling performance and noise levels according to system demands. The LL120 features customizable RGB lighting with individually addressable LEDs, allowing users to create stunning lighting effects and patterns through Corsair's iCUE software. With millions of colors to choose from and various lighting modes, users can personalize their PC build to match their style or synchronize lighting effects with other Corsair RGB components for a cohesive look. In terms of performance, the fan utilizes a specially designed fan blade and PWM control to deliver efficient airflow and static pressure, making it suitable for use as both case fans and radiator fans in liquid cooling setups. The fan's hydraulic bearing ensures quiet operation and long-term reliability, while anti-vibration rubber pads help minimize noise and vibrations during operation.",
+    "Price": 25,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/ventilator-za-kuciste-corsair-af120-elit-cor-co-9050140-ww_1.jpg",
+    "ProductTypeId": 5,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Asus TUF Gaming 750B, 750W, 80+ Bronze, ATX",
+    "Description": "The Asus TUF Gaming 750B is a robust power supply unit (PSU) designed to provide reliable and efficient power delivery for gaming and high-performance computing systems. With a power output of 750W, this PSU offers ample power for demanding components such as high-end graphics cards and multi-core processors, ensuring stable and consistent performance under heavy loads. Featuring an 80+ Bronze efficiency rating, the TUF Gaming 750B PSU delivers energy efficiency, minimizing wasted power and reducing electricity costs while maintaining reliable performance. This efficiency rating certifies that the PSU operates at a high level of efficiency, particularly under typical load conditions, making it suitable for gaming rigs and enthusiast builds. The ATX form factor of the TUF Gaming 750B PSU ensures compatibility with standard ATX cases, providing ease of installation and integration into a wide range of PC setups. Additionally, the PSU is part of Asus' TUF Gaming lineup, known for its durability and reliability, ensuring long-term performance and peace of mind for users. Equipped with high-quality components and robust protection features, including overvoltage protection (OVP), overcurrent protection (OCP), short circuit protection (SCP), and over temperature protection (OTP), the TUF Gaming 750B PSU safeguards connected components from potential damage due to power fluctuations or electrical faults.",
+    "Price": 89.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/napajanje-asus-tuf-gaming-750b-750w-80-bronze-atx-38733-90ye00d0-b0na00_256162.jpg",
+    "ProductTypeId": 6,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Asus ROG Strix Aura Edition, 1000W, 80+ Gold, modular, RGB, ATX",
+    "Description": "The Asus ROG Strix Aura Edition is a high-performance power supply unit (PSU) designed to meet the demanding needs of gaming enthusiasts and PC builders. With a power output of 1000W, this PSU delivers ample power to support high-end gaming rigs, multi-GPU configurations, and overclocked components, ensuring stable and reliable performance even under heavy loads. Featuring an 80+ Gold efficiency rating, the ROG Strix Aura Edition PSU offers superior energy efficiency, minimizing wasted power and reducing electricity costs while maintaining optimal performance. This efficiency rating certifies that the PSU operates at high efficiency levels across a wide range of loads, making it an ideal choice for users seeking both performance and energy savings. The modular design of the ROG Strix Aura Edition PSU allows for customizable cable management, enabling users to connect only the cables they need for their specific build. This not only helps improve airflow and aesthetics inside the PC case but also simplifies installation and maintenance. One of the standout features of the ROG Strix Aura Edition PSU is its RGB lighting, which adds a touch of customization and personalization to the PC build. With customizable RGB lighting effects and synchronization capabilities, users can match the PSU's lighting with other RGB components in their system or create unique lighting patterns to suit their preferences. Built with high-quality components and premium materials, the ROG Strix Aura Edition PSU ensures reliability, durability, and long-term performance. Advanced protection features, including overvoltage protection (OVP), overcurrent protection (OCP), short circuit protection (SCP), and over temperature protection (OTP), safeguard connected components from potential damage due to power fluctuations or electrical faults.",
+    "Price": 333,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/90YE00P1-B0NA00_3.jpg",
+    "ProductTypeId": 6,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Gigabyte Aorus RGB, 16GB (2x8GB), DDR4 3733MHz, CL19",
+    "Description": "The Gigabyte Aorus RGB DDR4 memory kit is a high-performance RAM solution designed to meet the demanding needs of gamers, enthusiasts, and content creators. With a total capacity of 16GB, consisting of two 8GB modules, this memory kit provides ample memory for multitasking, gaming, and productivity tasks. Operating at a blazing-fast frequency of 3733MHz, the Aorus RGB DDR4 memory delivers rapid data transfer rates, ensuring smooth and responsive performance in gaming and computing applications. The high-speed frequency enables quick loading times, faster data access, and seamless multitasking, enhancing overall system performance. Featuring a CAS latency (CL) of 19, the Aorus RGB DDR4 memory strikes a balance between speed and latency, offering excellent performance for both gaming and productivity workloads. Lower CAS latency values indicate faster response times, contributing to smoother system operation and improved overall responsiveness. One of the standout features of the Aorus RGB DDR4 memory is its vibrant RGB lighting. With customizable RGB lighting effects and synchronization capabilities, users can personalize their gaming rig with stunning lighting effects that match their build's aesthetic or sync with other RGB components for a cohesive look. The RGB lighting adds flair and style to the memory modules, enhancing the visual appeal of the system. Built with high-quality components and premium materials, the Aorus RGB DDR4 memory ensures reliability, stability, and long-term performance. The memory modules undergo rigorous testing and validation to ensure compatibility, reliability, and stability, providing users with peace of mind and confidence in their system's performance.",
+    "Price": 70,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/gigabyte-16gb-2x8gb-ddr4-3733mhz-aorus-rgb-6589-gigds-ars16g37_243911.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Corsair Vengeance LPX, 8GB, DDR4 3000MHz, CL16",
+    "Description": "The Corsair Vengeance LPX is a reliable and high-performance DDR4 memory module designed for gamers, enthusiasts, and PC builders seeking dependable performance at an affordable price point. With a capacity of 8GB, this single module offers sufficient memory for gaming, multitasking, and everyday computing tasks. Operating at a frequency of 3000MHz, the Vengeance LPX DDR4 memory delivers fast data transfer rates, ensuring smooth performance in gaming and computing applications. While not the highest frequency available, 3000MHz still provides excellent performance for most gaming and productivity workloads. Featuring a CAS latency (CL) of 16, the Vengeance LPX DDR4 memory strikes a balance between speed and latency, offering responsive performance for both gaming and productivity tasks. Lower CAS latency values indicate faster response times, contributing to smoother system operation and improved overall responsiveness. The Vengeance LPX memory modules feature a low-profile design, making them compatible with a wide range of CPU coolers and allowing for easy installation, even in compact PC builds. The black aluminum heatspreader not only adds to the module's durability but also helps dissipate heat efficiently, ensuring stable performance under load. While lacking RGB lighting, the Vengeance LPX memory modules are known for their reliability, stability, and compatibility with various motherboards and systems. They undergo rigorous testing and validation to meet Corsair's high standards for performance and quality, providing users with peace of mind and confidence in their system's stability.",
+    "Price": 24.88,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/memorija-corsair-vengeance-lpx-8gb-ddr4--cor-cmk8gx4m1d300c16_2.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "SSD Corsair MP600 Force, 500GB, M.2 NVMe PCIe Gen4, R7000/W2200",
+    "Description": "The MP600 Force is a high-performance solid-state drive (SSD) designed for enthusiasts, gamers, and content creators seeking blazing-fast storage solutions. With a storage capacity of 500GB, this M.2 NVMe PCIe Gen4 SSD offers ample space for operating systems, applications, and frequently accessed data. Operating on the PCIe Gen4 interface, the MP600 Force SSD delivers exceptional data transfer rates, with read speeds of up to 7000MB/s and write speeds of up to 2200MB/s. These ultra-fast speeds ensure rapid loading times, snappy system responsiveness, and smooth performance in demanding tasks such as gaming, content creation, and multimedia editing. Featuring M.2 form factor, the MP600 Force SSD fits directly into compatible motherboards, saving space and reducing cable clutter in your PC build. The compact design makes it ideal for small form factor builds and allows for easy installation without the need for additional cables or brackets. Built with high-quality NAND flash memory and advanced controller technology, the MP600 Force SSD offers reliability, durability, and long-term performance. It also incorporates advanced data protection features, including over-provisioning, wear-leveling, and error correction, to ensure data integrity and longevity.",
+    "Price": 60,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/corsair-ssd-2tb-mp600-nvme-cor-cssd-f2000gbmp60_1.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Acer AMD Radeon RX7700XT Nitro OC, 12GB GDDR6",
+    "Description": "The Acer AMD Radeon RX7700XT Nitro OC is a high-performance graphics card designed for gaming enthusiasts and content creators who demand exceptional graphics performance and visual fidelity. Equipped with 12GB of GDDR6 memory, this GPU offers ample VRAM for rendering detailed textures, handling high-resolution textures, and supporting immersive gaming experiences at high resolutions and refresh rates. Featuring AMD's RDNA 3 architecture, the Radeon RX7700XT Nitro OC delivers cutting-edge graphics performance, advanced features, and efficient power consumption. The RDNA 3 architecture introduces significant improvements in performance per watt, enabling smoother gameplay, faster rendering times, and enhanced visual effects compared to previous generations. The Nitro OC variant of the Radeon RX7700XT features factory overclocking, allowing it to achieve higher clock speeds out of the box for increased performance. This overclocking potential, combined with advanced cooling solutions, ensures stable operation under heavy loads and during extended gaming sessions. With its advanced cooling system, the Radeon RX7700XT Nitro OC maintains optimal temperatures even under demanding workloads, thanks to features such as large heatsinks, multiple heat pipes, and efficient fan designs. This ensures reliable performance and longevity while minimizing noise levels for a quieter gaming experience. The Radeon RX7700XT Nitro OC supports a wide range of gaming technologies and features, including AMD FidelityFX Super Resolution (FSR), DirectX 12 Ultimate support, and hardware-accelerated ray tracing. These features enhance visual fidelity, improve performance, and enable lifelike lighting and shadows in supported games. In terms of connectivity, the Radeon RX7700XT Nitro OC offers a variety of display outputs, including HDMI and DisplayPort, allowing users to connect multiple monitors or high-resolution displays for immersive gaming and multitasking experiences.",
+    "Price": 444.45,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/graficka-acer-amd-radeon-rx7700xt-nitro-oc-12gb-gddr6-81401-47093547_1.jpg",
+    "ProductTypeId": 2,
     "ProductBrandId": 1
   },
   {
-    "Name": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "https://itsale.in/wp-content/uploads/2023/02/Ant-value-H81Mad3-N-Gaming-Matx-Motherboard-1.jpg",
+    "Name": " Intel Core i9-11900K (8C/16T, up to 5.2GHz, 16MB, LGA1200), BX8070811900K",
+    "Description": "The Intel Core i9-11900K is a high-performance processor designed for enthusiasts, gamers, and content creators seeking exceptional computing power. With 8 cores and 16 threads, this CPU offers significant parallel processing capabilities, allowing it to handle demanding workloads with ease. The i9-11900K features a base clock speed and a boost clock speed of up to 5.2GHz, providing blistering-fast performance for gaming, content creation, and multitasking. Equipped with 16MB of L3 cache, the i9-11900K ensures rapid data access and retrieval, reducing latency and improving overall system responsiveness. The generous cache size enables efficient processing of large datasets, enhancing performance in gaming, multimedia editing, and other CPU-intensive tasks. The i9-11900K utilizes the LGA1200 socket, making it compatible with Intel's 10th and 11th generation Core processors. This compatibility offers users flexibility in choosing the right CPU for their needs, whether it's for gaming, content creation, or productivity workloads. One of the standout features of the i9-11900K is its unlocked multiplier, which allows for easy overclocking, enabling enthusiasts to push the CPU beyond its stock performance limits for even greater performance gains. Additionally, the CPU supports Intel's Turbo Boost Max Technology 3.0, which dynamically boosts the performance of the fastest cores based on workload demands, ensuring optimal performance in single-threaded applications. Built on Intel's latest processor architecture, the i9-11900K combines advanced technology and innovative features to deliver superior performance and efficiency. Whether you're gaming, streaming, video editing, rendering, or running demanding software applications, this CPU offers the computational power needed to tackle any task with confidence.",
+    "Price": 520.45,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/procesor-intel-core-i9-10900k--inp-000173_1.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Intel Core i7-13700K (16C/24T, up to 5.4GHz, 30MB, LGA1700), BX8071513700K",
+    "Description": "The Intel Core i7-13700K is a high-performance processor designed to cater to the needs of enthusiasts, gamers, and content creators who require exceptional computing power. With a substantial 16 cores and 24 threads, this CPU offers immense parallel processing capabilities, ensuring smooth multitasking and efficient handling of demanding workloads. The i7-13700K boasts impressive clock speeds, featuring a base frequency and turbo boost frequency of up to 5.4GHz. This ensures lightning-fast performance across a variety of tasks, including gaming, content creation, video editing, and more. Equipped with a spacious 30MB of L3 cache, the i7-13700K ensures rapid data access and retrieval, reducing latency and enhancing overall system responsiveness. This generous cache size enables efficient processing of large datasets, contributing to improved performance in CPU-intensive tasks. The CPU utilizes the LGA1700 socket, providing compatibility with motherboards designed for Intel's 12th generation Alder Lake processors. This compatibility offers users the flexibility to build powerful and versatile systems tailored to their specific needs and requirements. The i7-13700K also features an unlocked multiplier, allowing for easy overclocking to extract even greater performance from the processor. This flexibility enables enthusiasts to push the CPU beyond its stock performance limits for enhanced performance in demanding applications and workloads. Built on Intel's latest processor architecture, the i7-13700K incorporates advanced technology and innovative features to deliver superior performance and efficiency. Whether you're gaming, streaming, content creation, or tackling demanding software applications, this CPU offers the computational power needed to handle any task with ease.",
+    "Price": 525.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/procesor-intel-core-i7-13700k-54ghz-30mb-lga1700-bx807151370-54265-inp-13700k_1.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "AMD Ryzen Threadripper Pro 5995WX (64C/128T, up to 4.5GHz, sWRX8), 100-100000444WOF",
+    "Description": " The Ryzen Threadripper PRO 5995WX features an impressive 64 cores and 128 threads, providing unparalleled parallel processing capabilities for multitasking, content creation, rendering, and other CPU-intensive tasks. With such a high core count, this processor excels in scenarios that require massive computational power, such as 3D rendering, video editing, and scientific simulations. Operating at a base clock speed of 4.5GHz, the Ryzen Threadripper PRO 5995WX offers exceptional single-threaded performance, ensuring snappy system responsiveness and smooth multitasking. Additionally, with precision boost technology, the CPU can dynamically adjust its clock speeds to meet the demands of the workload, providing optimal performance when needed. The Threadripper PRO 5995WX is built on AMD's Zen 3 architecture, which delivers significant improvements in performance, efficiency, and scalability compared to previous generations. This architecture ensures that the CPU can handle even the most demanding workloads with ease, while also offering energy efficiency for reduced power consumption. With its large L3 cache and quad-channel memory support, the Ryzen Threadripper PRO 5995WX provides fast data access and efficient memory bandwidth utilization, further enhancing its performance in memory-intensive applications.",
+    "Price": 7499.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/procesor-amd-ryzen-threadripper-pro-5995wx-64c128t45ghz-swrx-15035-100-100000444wof_1.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 2
+  },
+  {
+    "Name": "Asus GeForceRTX4090 ROG Strix OC White, 24GB GDDR6X",
+    "Description": "The Asus GeForce RTX 4090 ROG Strix OC White is a high-end graphics card designed for gaming enthusiasts, content creators, and professionals who demand exceptional performance and visual fidelity. With 24GB of GDDR6X memory, this GPU offers ample VRAM for handling high-resolution textures, rendering complex scenes, and supporting immersive gaming experiences at ultra-high resolutions and refresh rates. As part of the ROG Strix series, this graphics card features a premium design with a white color scheme, customizable RGB lighting, and high-quality components. The aesthetic appeal of the card is complemented by its advanced cooling solution, which includes multiple fans, heat pipes, and heatsinks to keep temperatures in check under heavy loads. Powered by Nvidia's Ampere architecture, the GeForce RTX 4090 delivers groundbreaking performance, real-time ray tracing, and AI-enhanced graphics capabilities. With dedicated ray-tracing cores and Tensor cores, this GPU enables realistic lighting, shadows, and reflections in supported games and applications, enhancing visual fidelity and immersion.The ROG Strix OC variant of the GeForce RTX 4090 features factory overclocking, allowing it to achieve higher clock speeds out of the box for increased performance. This overclocking potential, combined with advanced cooling solutions, ensures stable operation and sustained performance during intense gaming sessions and GPU-intensive workloads. The GeForce RTX 4090 supports a wide range of gaming technologies and features, including Nvidia DLSS (Deep Learning Super Sampling) for improved performance and image quality, Nvidia Reflex for reduced input latency, and Nvidia Broadcast for advanced AI-powered streaming and content creation capabilities. In terms of connectivity, the GeForce RTX 4090 offers a variety of display outputs, including HDMI and DisplayPort, allowing users to connect multiple monitors or high-resolution displays for immersive gaming and multitasking experiences.",
+    "Price": 2689.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/90YV0ID2-M0NA00_1.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Gigabyte GeForce RTX4070Ti Aorus Xtreme Waterforce, 12GB GDDR6X",
+    "Description": "",
+    "Price": 1299.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/graficka-gigabyte-geforce-rtx4070ti-aorus-xtreme-waterforce--96003-gigvg-rtx_4070ti_7_251838.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Gigabyte Geforce RTX4070Ti Aero V2 OC, 12GB GDDR6X",
+    "Description": "The Gigabyte GeForce RTX 4070 Ti Aero V2 OC is a high-performance graphics card designed for gaming enthusiasts and professionals who demand exceptional performance and reliability. With 12GB of GDDR6X memory, this GPU offers ample VRAM for handling high-resolution textures, rendering complex scenes, and supporting immersive gaming experiences at ultra-high resolutions and refresh rates. Featuring Gigabyte's Aero V2 cooling solution, this graphics card is equipped with a custom cooling design optimized for efficient heat dissipation and quiet operation. The dual-fan configuration and heat pipes help keep temperatures in check under heavy loads, ensuring stable performance and longevity. Powered by Nvidia's Ampere architecture, the GeForce RTX 4070 Ti delivers groundbreaking performance, real-time ray tracing, and AI-enhanced graphics capabilities. With dedicated ray-tracing cores and Tensor cores, this GPU enables realistic lighting, shadows, and reflections in supported games and applications, enhancing visual fidelity and immersion. The Aero V2 OC variant of the GeForce RTX 4070 Ti features factory overclocking, allowing it to achieve higher clock speeds out of the box for increased performance. This overclocking potential, combined with the advanced cooling solution, ensures stable operation and sustained performance during intense gaming sessions and GPU-intensive workloads. In terms of connectivity, the GeForce RTX 4070 Ti Aero V2 OC offers a variety of display outputs, including HDMI and DisplayPort, allowing users to connect multiple monitors or high-resolution displays for immersive gaming and multitasking experiences.",
+    "Price": 999.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/graficka-gigabyte-geforce-rtx4070ti-aero-v2-oc-12gb-gddr6x-55993-gigvg-rtx_4070ti_4_238993.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Toshiba Enterprise MG (3.5', 8TB, SATA3 6Gb/s, 256MB, 7200rpm)",
+    "Description": "The Toshiba Enterprise MG is a high-capacity, high-performance hard disk drive (HDD) designed for enterprise applications where reliability, durability, and storage capacity are paramount. With a storage capacity of 8TB, this HDD offers ample space for storing large volumes of data, making it suitable for data centers, servers, and other demanding storage environments. Operating on the SATA 3.0 interface with a transfer rate of 6Gb/s, the Toshiba Enterprise MG ensures fast data transfer speeds, allowing for quick access to stored data and efficient data processing. This makes it ideal for applications that require high throughput and low latency, such as data analytics, content delivery, and archival storage. Featuring a generous 256MB cache, the Toshiba Enterprise MG enhances data access and retrieval speeds, reducing latency and improving overall system performance. The large cache size enables efficient caching of frequently accessed data, further optimizing storage performance in enterprise environments. Operating at a rotational speed of 7200 revolutions per minute (RPM), the Toshiba Enterprise MG delivers fast and reliable performance, ensuring smooth operation and consistent data access even under heavy workloads. This makes it suitable for applications that require high-speed data processing and continuous operation. Built with enterprise-grade components and advanced error-correction technologies, the Toshiba Enterprise MG offers exceptional reliability, durability, and data integrity. It incorporates features such as rotational vibration (RV) sensors and advanced format technology (AFT) to ensure stable performance and data integrity in multi-drive configurations",
+    "Price": 199.49,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/MG08ADA800E_1.jpg",
     "ProductTypeId": 3,
+    "ProductBrandId": 7
+  },
+  {
+    "Name": "Asus ROG Crosshair X670E Hero, AMD AM5, WiFi, Bluetooth, ATX",
+    "Description": "The Asus ROG Crosshair X670E Hero is a premium motherboard designed for high-performance gaming PCs and enthusiast systems, built around the AMD AM5 socket. Offering support for the latest AMD Ryzen processors, this motherboard provides a powerful foundation for gaming, content creation, and overclocking. With its ATX form factor, the Crosshair X670E Hero offers ample space for expansion and customization, making it suitable for high-end builds with multiple graphics cards, storage devices, and other peripherals. The ATX form factor also ensures compatibility with a wide range of PC cases, providing flexibility in system integration.Equipped with built-in WiFi and Bluetooth connectivity, the Crosshair X670E Hero offers convenient wireless networking options, allowing users to connect to their home networks, wireless peripherals, and other devices without the need for additional adapters or cables. This enhances flexibility and convenience, particularly in setups where wired connections are not practical. The motherboard features premium components and robust power delivery solutions to ensure stable operation and reliable performance, even under heavy loads and overclocking scenarios. It incorporates advanced cooling solutions, including heatsinks and fan headers, to keep critical components cool and ensure optimal thermal performance. As part of the Republic of Gamers (ROG) lineup, the Crosshair X670E Hero boasts a range of gaming-centric features and customization options. This includes support for RGB lighting, customizable BIOS settings, and dedicated gaming-centric software utilities for optimizing performance, tweaking settings, and monitoring system health.",
+    "Price": 779.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/maticna-ploca-asus-rog-crosshair-x670e-hero-amd-am5-wifi-blu-65549-0001282959_1.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Asus ROG Strix X670E-A Gaming WiFi, AMD AM5, WiFi, Bluetooth, ATX",
+    "Description": "The Asus ROG Strix X670E-A Gaming WiFi is a high-performance motherboard tailored for gaming enthusiasts and PC builders seeking top-tier features and reliability. Designed around the AMD AM5 socket, this motherboard offers compatibility with the latest AMD Ryzen processors, providing a powerful platform for gaming, content creation, and overclocking endeavors. Sporting the ATX form factor, the ROG Strix X670E-A Gaming WiFi provides ample space for hardware expansion and customization, making it suitable for high-end builds with multiple GPUs, storage drives, and other peripherals. Its ATX size also ensures compatibility with a wide range of PC cases, facilitating easy system integration. Equipped with integrated WiFi and Bluetooth connectivity, this motherboard eliminates the need for separate adapters or cables, enabling seamless wireless networking and peripheral connectivity. This feature enhances convenience and flexibility, especially in setups where wired connections may not be practical or feasible. The ROG Strix X670E-A Gaming WiFi incorporates premium components and robust power delivery solutions to ensure stable performance and reliable operation, even under demanding workloads and overclocking scenarios. Advanced cooling solutions, including heatsinks and fan headers, help maintain optimal thermal performance for critical components. As part of the Republic of Gamers (ROG) Strix series, this motherboard offers a plethora of gaming-centric features and customization options. From customizable RGB lighting to dedicated gaming software utilities, users can tailor their gaming experience to their preferences, optimizing performance, tweaking settings, and monitoring system health.",
+    "Price": 399.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/90MB1BM0-M0EAY0_1.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Asus Prime A320M-K, AMD AM4, Micro ATX",
+    "Description": "The Asus Prime A320M-K is a reliable and budget-friendly motherboard designed for AMD Ryzen processors, featuring the Micro ATX form factor. With support for the AMD AM4 socket, this motherboard provides compatibility with a wide range of Ryzen CPUs, catering to various computing needs from basic office tasks to light gaming. Equipped with the A320 chipset, the Prime A320M-K offers essential features and connectivity options for mainstream PC builds. While it lacks some of the advanced functionalities found in higher-end chipsets, such as overclocking support, it provides a cost-effective solution for users who prioritize stability and reliability over performance tuning. Featuring DDR4 memory support, the Prime A320M-K allows users to take advantage of modern memory technology, offering faster data transfer rates and improved system responsiveness compared to older DDR3 memory. This enables smooth multitasking and efficient data processing for everyday computing tasks. Despite its compact size, the Prime A320M-K motherboard offers essential connectivity options, including USB ports, SATA connectors, and PCIe slots, allowing users to connect storage drives, expansion cards, and other peripherals as needed. This ensures versatility and expandability for users building budget-friendly PC systems. While it may lack some of the bells and whistles of higher-end motherboards, the Prime A320M-K prioritizes reliability, affordability, and ease of use, making it an excellent choice for budget-conscious users and entry-level PC builds. Whether for office productivity, web browsing, or casual gaming, this motherboard provides a solid foundation for building a functional and reliable PC system.",
+    "Price": 49.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/maticna-ploca-asus-prime-a320m-k-am4-amd-0202041_1.jpg",
+    "ProductTypeId": 2,
     "ProductBrandId": 1
+  },
+  {
+    "Name": "Asus Prime B760M-K D4 DDR4, Intel LGA1700, Micro ATX",
+    "Description": "The Asus Prime B760M-K D4 DDR4 is a versatile and reliable motherboard designed for mainstream computing needs, offering compatibility with Intel processors and DDR4 memory. Featuring the Micro ATX form factor, this motherboard is suitable for compact PC builds while still providing essential features and connectivity options. Built around the Intel LGA1700 socket, the Prime B760M-K D4 DDR4 motherboard supports a range of Intel processors, providing users with flexibility in choosing the right CPU for their needs. Whether for everyday computing tasks, office work, or light gaming, this motherboard offers sufficient performance for a variety of usage scenarios. Equipped with DDR4 memory support, the Prime B760M-K D4 motherboard allows users to take advantage of modern memory technology, providing faster data transfer rates and improved system responsiveness compared to older DDR3 memory. This ensures smooth multitasking and efficient data processing for everyday computing tasks. Despite its compact size, the Prime B760M-K D4 motherboard offers essential connectivity options, including USB ports, SATA connectors, and PCIe slots, allowing users to connect storage drives, expansion cards, and other peripherals as needed. This enables users to build a functional and versatile PC system tailored to their requirements. While lacking advanced gaming features and overclocking capabilities found in higher-end motherboards, the Prime B760M-K D4 DDR4 motherboard prioritizes reliability, compatibility, and affordability, making it an excellent choice for budget-conscious users and mainstream PC builds.",
+    "Price": 135.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/maticna-ploca-asus-prime-b760m-k-d4-intel-lga1700-micro-atx-98542-asumb-primeb760mkd4_207845.jpg",
+    "ProductTypeId": 4,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Corsair iCUE QL140, 140mm, RGB, PWM, crni",
+    "Description": "The Corsair iCUE QL140 is a high-performance RGB fan designed to provide efficient cooling and customizable lighting effects for gaming PCs and enthusiast systems. With a size of 140mm, these fans are optimized for maximum airflow and static pressure, making them suitable for use as case fans or radiator fans in liquid cooling setups. Featuring Corsair's signature RGB lighting, the iCUE QL140 fans add vibrant and customizable lighting effects to your PC build. With individually addressable RGB LEDs embedded in the fan hub and fan blades, users can create stunning lighting patterns, effects, and color schemes to match their system aesthetics or synchronize with other Corsair RGB components. Equipped with PWM (Pulse-Width Modulation) control, the iCUE QL140 fans offer precise fan speed control, allowing users to adjust the fan speed according to their cooling needs and noise preferences. This ensures optimal cooling performance while minimizing noise levels, even under heavy system loads. The fans come in a sleek black color, providing a clean and modern look that complements a wide range of PC builds. The black color scheme allows the RGB lighting effects to stand out, creating a visually stunning showcase for your gaming rig or enthusiast system. The iCUE QL140 fans are compatible with Corsair's iCUE software, which offers intuitive control over lighting effects, fan speeds, and system monitoring. With iCUE software, users can easily customize and synchronize lighting effects across multiple Corsair RGB components, creating a cohesive and immersive lighting experience for their PC setup.",
+    "Price": 44.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/corsair-icue-ql140-rgb-140mm-pwm-single--cor-co-9050099-ww_1.jpg",
+    "ProductTypeId": 5,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Corsair AF120, 120mm, red LED, crni",
+    "Description": "The Corsair AF120 is a high-quality case fan designed to provide efficient airflow and reliable cooling for gaming PCs and enthusiast systems. With a size of 120mm, these fans are optimized for balanced airflow, making them suitable for use as intake or exhaust fans in PC cases. Featuring vibrant red LED lighting, the Corsair AF120 adds a touch of style and personality to your PC build. The red LED illumination creates a bold and eye-catching visual effect, enhancing the aesthetics of your system and giving it a distinct look. The AF120 fans are built with a focus on performance and reliability. Equipped with anti-vibration rubber pads and rifle-bearing technology, these fans operate quietly and efficiently, minimizing noise levels while providing reliable cooling performance. This ensures a quiet and comfortable gaming or working environment, even under heavy system loads. With its sleek black color, the AF120 fan blends seamlessly into most PC builds, complementing a wide range of case designs and color schemes. The black color scheme adds a touch of elegance to your system while allowing the red LED lighting to stand out and create a visually striking effect. The Corsair AF120 fan is easy to install and compatible with most PC cases and cooling setups. Whether you're building a gaming rig, a workstation, or a home theater PC, these fans provide the airflow and cooling performance needed to keep your system running smoothly and reliably.",
+    "Price": 11.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/co-9050080-ww.jpg",
+    "ProductTypeId": 5,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Corsair CX550, 550W, 80+ Bronze, ATX",
+    "Description": "The CX550 is a reliable and budget-friendly power supply unit (PSU) designed to provide stable and efficient power delivery for gaming PCs, workstations, and general computing systems. With a power output of 550 watts, this PSU offers sufficient capacity to support mid-range to upper mid-range PC builds, including single GPU configurations. Featuring an 80+ Bronze efficiency rating, the CX550 PSU meets stringent energy efficiency standards, ensuring that it operates with minimal energy wastage and produces less heat during operation. This not only helps reduce electricity bills but also contributes to the overall reliability and longevity of the PSU. Built with reliability in mind, the CX550 PSU incorporates high-quality components and advanced circuitry to deliver stable and clean power to your PC components. This helps prevent voltage fluctuations and electrical noise, ensuring consistent performance and protecting your hardware from potential damage. With its ATX form factor, the CX550 PSU is compatible with most standard PC cases, making it easy to install in your system. It comes with the necessary cables and connectors to accommodate typical PC configurations, including motherboards, graphics cards, storage drives, and peripherals. While it may lack some of the advanced features found in higher-end PSUs, such as modular cabling or higher efficiency ratings, the CX550 PSU prioritizes affordability and reliability, making it an excellent choice for budget-conscious users and entry-level PC builds.",
+    "Price": 69,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/napajanje-corsair-cx550-550w-80-bronze-atx-53168-cor-cp-9020277-eu_1.jpg",
+    "ProductTypeId": 6,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "Gigabyte P650B, 650W, 80+ Bronze, ATX",
+    "Description": "The Gigabyte P650B is a reliable and efficient power supply unit (PSU) designed to provide stable power delivery for gaming PCs, workstations, and general computing systems. With a power output of 650 watts, this PSU offers ample capacity to support mid-range to upper mid-range PC builds, including single GPU configurations and moderate overclocking. Featuring an 80+ Bronze efficiency rating, the P650B PSU meets rigorous energy efficiency standards, ensuring that it operates with minimal energy wastage and produces less heat during operation. This helps reduce electricity bills and contributes to the overall reliability and longevity of the PSU. Built with quality components and advanced circuitry, the P650B PSU delivers stable and clean power to your PC components, helping to prevent voltage fluctuations and electrical noise. This ensures consistent performance and protects your hardware from potential damage caused by power surges or fluctuations. With its ATX form factor, the P650B PSU is compatible with most standard PC cases, making it easy to install in your system. It comes with a set of sleeved cables that are neatly organized and easy to manage, facilitating a clean and tidy build. While it may lack some of the advanced features found in higher-end PSUs, such as modular cabling or higher efficiency ratings, the P650B PSU offers a balance of performance, efficiency, and affordability. It is an excellent choice for budget-conscious users and those looking for a reliable power supply solution for their PC build.",
+    "Price": 69,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/napajanje-gigabyte-p650b-650w-80-bronze--gp-p650b_1.jpg",
+    "ProductTypeId": 6,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Corsair Vengeance, 64GB (2x32GB), DDR5 5200MHz, CL40",
+    "Description": "The Corsair Vengeance DDR5 RAM kit, consisting of two 32GB modules totaling 64GB, offers high-speed memory performance tailored for demanding computing tasks. With a blazing-fast speed of 5200MHz and CL40 latency, this memory kit is optimized for high-performance computing applications, including gaming, content creation, and professional workloads. DDR5 technology represents the next generation of memory standards, offering significant improvements in data transfer rates, bandwidth, and efficiency compared to DDR4. With its increased data rates and bandwidth, DDR5 memory enables faster data access and processing, resulting in smoother multitasking and improved overall system responsiveness. The Vengeance DDR5 memory modules are meticulously engineered to deliver reliable performance and stability under demanding conditions. Featuring Corsair's renowned build quality and rigorous testing procedures, these modules are designed to meet the highest standards of reliability and compatibility, ensuring optimal performance in a wide range of PC systems. The 64GB capacity provided by this memory kit offers ample space for multitasking, content creation, and running memory-intensive applications. Whether you're gaming at high resolutions, editing 4K videos, or working with large datasets, this memory kit provides the capacity and speed needed to handle your computing tasks with ease.",
+    "Price": 229,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/corsair-2x32gb-ddr5-5200-c40-73471-cor-cmk64gx5m2b52c40_1.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 4
+  },
+  {
+    "Name": "WD Black SN850X, 4TB, M.2 NVMe PCIe Gen4, R7300/W6600",
+    "Description": "The WD Black SN850X is a high-performance M.2 NVMe SSD designed to deliver blazing-fast storage speeds and uncompromising reliability for gaming, content creation, and professional workloads. With a massive capacity of 4TB, this SSD offers ample storage space for large files, games, and multimedia content, making it ideal for enthusiasts and professionals who require high-speed storage with ample capacity. Utilizing PCIe Gen4 interface technology, the WD Black SN850X SSD achieves exceptional read and write speeds, significantly faster than traditional SATA SSDs and previous-generation NVMe drives. With read speeds of up to 7300 MB/s and write speeds of up to 6600 MB/s, this SSD delivers lightning-fast data access and transfer rates, reducing load times and improving system responsiveness. The WD Black SN850X is built with cutting-edge components and advanced NAND flash memory technology, ensuring reliable performance and durability over the long term. Whether you're gaming, editing 8K videos, or running data-intensive applications, this SSD provides the speed and reliability needed to keep up with your demands. As an M.2 form factor SSD, the WD Black SN850X is compact and easy to install, making it suitable for desktop PCs, workstations, and gaming laptops that support M.2 NVMe drives. Its compact size and high-speed performance make it an excellent choice for systems where space is limited but high-speed storage is essential.",
+    "Price": 410.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/ssd-western-digital-black-sn850x-4tb-m2-nvme-pcie-gen4-r7300-20109-46120050_1.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 8
+  },
+  {
+    "Name": "Intel 670p Series, 512GB, M.2 NVMe PCIe Gen3, R3000/W1600",
+    "Description": "The Intel 670p Series SSD is a reliable and high-performance M.2 NVMe PCIe Gen3 solid-state drive designed to provide fast storage solutions for a wide range of computing needs. With a storage capacity of 512GB, this SSD offers ample space for storing operating systems, applications, games, and multimedia files, making it suitable for both mainstream users and enthusiasts. Utilizing the PCIe Gen3 interface, the Intel 670p Series SSD delivers fast read and write speeds, ensuring quick data access and transfer rates. With sequential read speeds of up to 3000 MB/s and sequential write speeds of up to 1600 MB/s, this SSD offers snappy performance for everyday computing tasks, such as booting up your system, launching applications, and transferring files. The Intel 670p Series SSD is built with high-quality NAND flash memory and advanced controller technology, ensuring reliable performance and durability over the long term. Whether you're gaming, working, or multitasking, this SSD provides the speed and reliability needed to keep up with your demands. As an M.2 form factor SSD, the Intel 670p Series SSD is compact and easy to install, making it suitable for desktop PCs, laptops, and ultrabooks that support M.2 NVMe drives. Its compact size and high-speed performance make it an excellent choice for systems where space is limited but fast storage is essential.",
+    "Price": 55,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/intel-ssd-670p-series-512gb-m2-80mm-pcie-30-x4-3d4-qlc-retai-79186-ssdpeknu512gzx1_238677.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Gigabyte GSM2NE3256GNTD, 256GB, M.2 NVMe PCIe Gen3, R1700/W1100",
+    "Description": "The Gigabyte GSM2NE3256GNTD is a solid-state drive (SSD) designed to offer fast and reliable storage solutions for various computing needs. With a storage capacity of 256GB, this SSD provides ample space for storing operating systems, applications, and frequently accessed files, making it suitable for use in both desktop and laptop systems. Utilizing the PCIe Gen3 interface, the Gigabyte GSM2NE3256GNTD SSD delivers fast read and write speeds to ensure quick data access and transfer rates. With sequential read speeds of up to 1700 MB/s and sequential write speeds of up to 1100 MB/s, this SSD offers snappy performance for everyday computing tasks, such as booting up your system, launching applications, and transferring files. As an M.2 form factor SSD, the Gigabyte GSM2NE3256GNTD is compact and easy to install, making it suitable for systems that support M.2 NVMe drives. Its compact size and high-speed performance make it an excellent choice for desktop PCs, laptops, and ultrabooks where space is limited but fast storage is essential. The Gigabyte GSM2NE3256GNTD SSD is built with high-quality NAND flash memory and advanced controller technology, ensuring reliable performance and durability over the long term. Whether you're gaming, working, or multitasking, this SSD provides the speed and reliability needed to keep up with your demands.",
+    "Price": 25,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/GP-GSM2NE3256GNTD_1.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 5
+  },
+  {
+    "Name": "Gigabyte M30, 512GB, M.2 NVMe PCIe Gen3, R3500/W2600",
+    "Description": "The Gigabyte M30 SSD is a high-performance solid-state drive designed to provide fast and reliable storage solutions for various computing needs. With a storage capacity of 512GB, this SSD offers ample space for storing operating systems, applications, games, and multimedia files, making it suitable for both mainstream users and enthusiasts. Utilizing the PCIe Gen3 interface, the Gigabyte M30 SSD delivers fast read and write speeds to ensure quick data access and transfer rates. With sequential read speeds of up to 3500 MB/s and sequential write speeds of up to 2600 MB/s, this SSD offers snappy performance for everyday computing tasks, such as booting up your system, launching applications, and transferring files. As an M.2 form factor SSD, the Gigabyte M30 is compact and easy to install, making it suitable for desktop PCs, laptops, and ultrabooks that support M.2 NVMe drives. Its compact size and high-speed performance make it an excellent choice for systems where space is limited but fast storage is essential. The Gigabyte M30 SSD is built with high-quality NAND flash memory and advanced controller technology, ensuring reliable performance and durability over the long term. Whether you're gaming, working, or multitasking, this SSD provides the speed and reliability needed to keep up with your demands.",
+    "Price": 53.55,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/GIGSD-GP-GM30512G-G_5.jpg",
+    "ProductTypeId": 8,
+    "ProductBrandId": 5
   }
 ]
