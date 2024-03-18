@@ -237,3 +237,11 @@ footer {
     --gold-color: #D0A933;
   }
 
+a {
+    color: #D0A933;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}

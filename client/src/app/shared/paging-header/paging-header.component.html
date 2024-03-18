@@ -1,13 +1,16 @@
 <header>
   <span *ngIf="totalCount !== 0 && totalCount && pageIndex && pageSize"
     >Showing
-    <strong>
-      {{ (pageIndex - 1) * pageSize + 1 }} -
+    <strong style="color: #d0a933">
+      {{ (pageIndex - 1) * pageSize + 1 }}
+    </strong>
+    -
+    <strong style="color: #d0a933">
       {{
         pageIndex * pageSize > totalCount ? totalCount : pageIndex * pageSize
       }}
     </strong>
-    of <strong>{{ totalCount }} </strong>Results</span
+    of <strong style="color: #d0a933">{{ totalCount }} </strong>Results</span
   >
   <span *ngIf="totalCount === 0">No results!</span>
 </header>

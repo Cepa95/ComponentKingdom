@@ -1,92 +1,71 @@
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    </div>
-  </div>
-</div>
-
 <!-- home.component.html -->
-
-<div class="d-flex mt-2">
-  <button routerLink="/shop" class="btn btn-link ms-3">shop</button>
-</div>
-<button (click)="onTypeSelected(1)">Select Type 1</button>
-<button (click)="onTypeSelected(2)">Select Type 2</button>
-<button (click)="onTypeSelected(3)">Select Type 3</button>
-<button (click)="onTypeSelected(4)">Select Type 4</button>
-
 <!-- Header -->
+<h1 class="text-center mb-2" style="color: #d0a933">
+  Welcome to Component Kingdom
+</h1>
 <header
   class="w3-display-container w3-content w3-wide"
-  style="max-width: 1500px"
+  style="max-width: 1600px"
   id="home"
 >
   <img
     class="w3-image"
-    src="https://timelinecovers.pro/facebook-cover/download/general-technology-computer-background-facebook-cover.jpg"
-    alt="Architecture"
-    width="1500"
-    height="800"
+    src="/assets/images/cover.jpg"
+    alt="cover image"
+    width="1600"
+    height="300"
   />
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white">
-      <span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span>
-      <span class="w3-hide-small w3-text-light-grey">Architects</span>
-    </h1>
-  </div>
 </header>
 
 <!-- Page content -->
-<div class="w3-content w3-padding" style="max-width: 1564px">
+<div class="w3-content w3-padding" style="max-width: 1600px">
   <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-      Projects
+  <div class="w3-container mb-3" id="projects">
+    <h3
+      class="w3-border-bottom w3-border-light-grey w3-padding-1"
+      style="color: #d0a933"
+    >
+      Products
     </h3>
   </div>
 
   <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(1)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+        <div class="w3-display-topleft w3-black w3-padding">CPUs</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/velike/procesor-amd-ryzen-threadripper-pro-5995wx-64c128t45ghz-swrx-15035-100-100000444wof_1.jpg"
+          alt="CPUs"
           style="width: 100%"
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(2)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+        <div class="w3-display-topleft w3-black w3-padding">GPUs</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/male/GV-N4090WF3V2-24GD_1.jpg"
+          alt="GPUs"
           style="width: 100%"
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(3)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+        <div class="w3-display-topleft w3-black w3-padding">HDDs</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/male/hard-disk-wd-blue-35-2tb-sata3-6gbs-256mb-cache-7200rpm-37127-0001214351_1.jpg"
+          alt="HDDs"
           style="width: 100%"
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(4)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+        <div class="w3-display-topleft w3-black w3-padding">Motherboards</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/male/gigabyte-mainboard-desktop-z790-aorus-xtreme-x-28468-z790aorusxtremex_257756.jpg"
+          alt="Motherboards"
           style="width: 100%"
         />
       </div>
@@ -94,42 +73,42 @@
   </div>
 
   <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(5)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+        <div class="w3-display-topleft w3-black w3-padding">PC Fans</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/male/ventilatori-za-kuciste-corsair-icue-ml14-cor-co-9050119-ww_1.jpg"
+          alt="PC Fans"
           style="width: 99%"
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(6)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+        <div class="w3-display-topleft w3-black w3-padding">PSUs</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/male/napajanje-corsair-rm750-750w-80-gold-modularno-atx-59821-cor-cp-9020231-eu_1.jpg"
+          alt="PSUs"
           style="width: 99%"
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(7)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+        <div class="w3-display-topleft w3-black w3-padding">RAMs</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/male/memorija-corsair-vengeance-32gb-2x16gb-ddr5-4800mhz-cl40-43496-cor-cmk32gx5m2b56z40_1.jpg"
+          alt="RAMs"
           style="width: 99%"
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(8)">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+        <div class="w3-display-topleft w3-black w3-padding">SSDs</div>
         <img
-          src="https://content.jdmagicbox.com/comp/def_content/computer_dealers/default-computer-dealers-1.jpg"
-          alt="House"
+          src="https://www.instar-informatika.hr/slike/male/ssd-western-digital-black-sn850x-4tb-m2-nvme-pcie-gen4-r7300-20109-46120050_1.jpg"
+          alt="SSDs"
           style="width: 99%"
         />
       </div>
@@ -137,10 +116,6 @@
   </div>
 </div>
 <div class="container py-5">
-  <h1 class="text-center mb-5" style="color: #d0a933">
-    Welcome to Component Kingdom
-  </h1>
-
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <!-- First Card -->
     <div class="col mb-3">
@@ -153,8 +128,8 @@
             Premier Destination
           </h5>
           <p class="card-text mx-2">
-            Discover top-of-the-line PC components to build your dream gaming
-            rig, workstation, or home PC setup.
+            <a routerLink="/shop">Discover top-of-the-line PC components</a> to
+            build your dream gaming rig, workstation, or home PC setup.
           </p>
         </div>
       </div>
@@ -171,8 +146,15 @@
             Extensive Collection
           </h5>
           <p class="card-text mx-2">
-            Explore our vast selection of high-performance CPUs, GPUs, SSDs,
-            HDDs, motherboards, PSUs, RAM, and PC fans.
+            Explore our vast selection of high-performance
+            <a routerLink="shop/type/1">CPUs</a>,
+            <a routerLink="shop/type/2">GPUs</a>,
+            <a routerLink="shop/type/3">HDDs</a>,
+            <a routerLink="shop/type/4">Motherboards</a>,
+            <a routerLink="shop/type/5">PC Fans</a>,
+            <a routerLink="shop/type/6">PSUs</a>,
+            <a routerLink="shop/type/7">RAMs</a>,
+            <a routerLink="shop/type/8">SSDs</a>.
           </p>
         </div>
       </div>
@@ -190,7 +172,7 @@
           </h5>
           <p class="card-text mx-2">
             Our knowledgeable team is dedicated to providing expert advice and
-            personalized recommendations for your PC needs.
+            personalized recommendations for your  <a routerLink="/shop">PC needs</a>.
           </p>
         </div>
       </div>
@@ -207,7 +189,7 @@
             Trusted Source
           </h5>
           <p class="card-text mx-2">
-            Shop with confidence knowing that Component Kingdom offers fast
+            <a routerLink="/shop">Shop with confidence</a> knowing that Component Kingdom offers fast
             shipping, secure transactions, and hassle-free shopping.
           </p>
         </div>
@@ -225,7 +207,7 @@
             Community
           </h5>
           <p class="card-text mx-2">
-            Join our community of PC enthusiasts and experience the thrill of
+            <a href="https://www.reddit.com/r/buildapc/">Join a community of PC enthusiasts</a> and experience the thrill of
             building, upgrading, and customizing your dream PC.
           </p>
         </div>
@@ -244,7 +226,7 @@
           </h5>
           <p class="card-text mx-2">
             Component Kingdom is your ultimate destination for PC hardware
-            enthusiasts. Start exploring our selection today!
+            enthusiasts. <a routerLink="/shop">Start exploring our selection today!</a>
           </p>
         </div>
       </div>
