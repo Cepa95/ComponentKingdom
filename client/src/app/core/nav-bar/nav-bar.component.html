@@ -18,7 +18,8 @@
           routerLinkActive="text-white"
           [routerLinkActiveOptions]="{ exact: true }"
           (click)="closeNavbar()"
-        >HOME</a>
+          >HOME</a
+        >
       </li>
 
       <li>
@@ -33,29 +34,45 @@
       </li>
 
       <li>
-        <a class="nav-link px-2" routerLink="/contact" routerLinkActive="text-white" (click)="closeNavbar()"
+        <a
+          class="nav-link px-2"
+          routerLink="/contact"
+          routerLinkActive="text-white"
+          (click)="closeNavbar()"
           >CONTACT</a
         >
       </li>
-      <li>
-        <a class="nav-link px-2" routerLink="/account/login" routerLinkActive="text-white" (click)="closeNavbar()"
-          >LOGIN</a
-        >
-      </li>
-      <li>
-        <a class="nav-link px-2" routerLink="/account/register" (click)="closeNavbar()"
-          >SIGN UP</a
-        >
-      </li>
+      <ng-container *ngIf="(accountService.currentUser$ | async) === null">
+        <li>
+          <a
+            class="nav-link px-2"
+            routerLink="/account/login"
+            routerLinkActive="text-white"
+            (click)="closeNavbar()"
+            >LOGIN</a
+          >
+        </li>
+        <li>
+          <a
+            class="nav-link px-2"
+            routerLink="/account/register"
+            (click)="closeNavbar()"
+            >SIGN UP</a
+          >
+        </li>
+      </ng-container>
     </ul>
   </div>
 
   <!-- Cart icon always visible on the right -->
-  <a class="position-relative mr-1 px-2" routerLink="/basket" (click)="closeNavbar()">
+  <a
+    class="position-relative mr-1 px-2"
+    routerLink="/basket"
+    (click)="closeNavbar()"
+  >
     <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
-    <div *ngIf="(basketService.basketSource$ | async) as basket" class="cart-no">
-      {{getCount(basket.items)}}
+    <div *ngIf="basketService.basketSource$ | async as basket" class="cart-no">
+      {{ getCount(basket.items) }}
     </div>
   </a>
 </nav>
-

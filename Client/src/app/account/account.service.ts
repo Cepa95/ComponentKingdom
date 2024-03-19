@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { User } from '../shared/models/user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -16,7 +16,7 @@ export class AccountService {
 
   login(values: any) {
     return this.http.post<User>(this.baseUrl + 'account/login', values).pipe(
-      map((user) => {
+      map((user) => { 
         localStorage.setItem('token', user.token);
         this.currentUserSource.next(user);
       })
@@ -25,7 +25,7 @@ export class AccountService {
 
   register(values: any) {
     return this.http.post<User>(this.baseUrl + 'account/register', values).pipe(
-      map(user => {
+      map((user) => {
         localStorage.setItem('token', user.token);
         this.currentUserSource.next(user);
       })

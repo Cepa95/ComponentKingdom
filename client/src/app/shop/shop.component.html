@@ -1,4 +1,7 @@
 <div class="containter">
+  <ng-container *ngIf="accountService.currentUser$ | async as user">
+    <p>Welcome {{user.displayName}}</p>
+  </ng-container>
   <div class="row">
     <section class="col-lg-3 col-md-4 col-sm-6">
       <h5 class="text-primary">Search</h5>

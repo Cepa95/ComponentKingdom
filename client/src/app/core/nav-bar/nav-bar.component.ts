@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { BasketService } from '../../basket/basket.service';
 import { BasketItem } from '../../shared/models/basket';
+import { AccountService } from '../../account/account.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,7 +11,7 @@ import { BasketItem } from '../../shared/models/basket';
 export class NavBarComponent {
   navbarOpen = false;
 
-  constructor(public basketService: BasketService) { }
+  constructor(public basketService: BasketService, public accountService: AccountService) { }
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;

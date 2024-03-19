@@ -5,6 +5,7 @@ import { Type } from '../shared/models/type';
 import { Brand } from '../shared/models/brand';
 import { ShopParams } from '../shared/models/shopParams';
 import { ActivatedRoute } from '@angular/router';
+import { AccountService } from '../account/account.service';
 
 @Component({
   selector: 'app-shop',
@@ -12,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './shop.component.scss',
 })
 export class ShopComponent implements OnInit {
-  @ViewChild('search') search? : ElementRef;
+  @ViewChild('search') search?: ElementRef;
   products: Product[] = [];
   brands: Brand[] = [];
   types: Type[] = [];
@@ -26,14 +27,18 @@ export class ShopComponent implements OnInit {
   totalCount = 0;
   routeSubscription: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private shopService: ShopService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private shopService: ShopService,
+    public accountService: AccountService
+  ) {}
 
   ngOnInit(): void {
     this.getProducts();
     this.getBrands();
     this.getTypes();
     this.loadProductType();
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
       if (id) {
         this.shopParams.typeId = +id;
@@ -42,14 +47,12 @@ export class ShopComponent implements OnInit {
     });
   }
 
-
   loadProductType() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    if(id) this.shopParams.typeId = +id;
+    if (id) this.shopParams.typeId = +id;
     this.shopParams.pageIndex = 1;
     this.getProducts();
   }
-
 
   getProducts() {
     this.shopService.getProducts(this.shopParams).subscribe({
@@ -106,10 +109,9 @@ export class ShopComponent implements OnInit {
     }
   }
 
-  onSearch(){
+  onSearch() {
     this.shopParams.search = this.search?.nativeElement.value;
     this.shopParams.pageIndex = 1;
     this.getProducts();
   }
-
 }
