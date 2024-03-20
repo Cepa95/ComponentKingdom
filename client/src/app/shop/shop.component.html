@@ -1,6 +1,6 @@
 <div class="containter">
   <ng-container *ngIf="accountService.currentUser$ | async as user">
-    <p>Welcome {{user.displayName}}</p>
+    <span  class="greeting">WELCOME {{user.displayName.toUpperCase()}}</span><span class="hand">&nbsp;👋</span>
   </ng-container>
   <div class="row">
     <section class="col-lg-3 col-md-4 col-sm-6">

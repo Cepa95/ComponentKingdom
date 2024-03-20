@@ -38,6 +38,7 @@
           class="nav-link px-2"
           routerLink="/contact"
           routerLinkActive="text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
           (click)="closeNavbar()"
           >CONTACT</a
         >
@@ -48,6 +49,7 @@
             class="nav-link px-2"
             routerLink="/account/login"
             routerLinkActive="text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
             (click)="closeNavbar()"
             >LOGIN</a
           >
@@ -56,8 +58,32 @@
           <a
             class="nav-link px-2"
             routerLink="/account/register"
+            routerLinkActive="text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
             (click)="closeNavbar()"
             >SIGN UP</a
+          >
+        </li>
+      </ng-container>
+      <ng-container *ngIf="accountService.currentUser$ | async as user">
+        <li>
+          <a
+            class="nav-link px-2"
+            routerLink="/orders"
+            routerLinkActive="text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeNavbar()"
+            >ORDERS</a
+          >
+        </li>
+        <li>
+          <a
+            class="nav-link px-2"
+            (click)="accountService.logout()"
+            routerLinkActive="text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeNavbar()"
+            >LOGOUT</a
           >
         </li>
       </ng-container>

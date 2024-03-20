@@ -1,0 +1,25 @@
+.hand {
+    display: inline-block;
+    animation: wave 2s infinite;
+    transform-origin: 80% 40%;
+    font-size: 20px;
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: rotate(0);
+    }
+    20%, 60% {
+      transform: rotate(-25deg);
+    }
+    40%, 80% {
+      transform: rotate(20deg);
+    }
+  }
+
+  .greeting {
+    color: #d0a933;
+    font-size: 22px;
+    font-weight: 500;
+    
+  }
