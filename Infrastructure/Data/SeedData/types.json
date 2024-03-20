@@ -1,34 +1,38 @@
 [
   {
     "Id": 1,
-    "Name": "Central processing units (CPU)"
+    "Name": "Audio cards"
   },
   {
     "Id": 2,
-    "Name": "Graphics processing units (GPU)"
+    "Name": "Central processing units (CPU)"
   },
   {
     "Id": 3,
-    "Name": "Hard disk drives (HDD)"
+    "Name": "Graphics processing units (GPU)"
   },
   {
     "Id": 4,
-    "Name": "Motherboards"
+    "Name": "Hard disk drives (HDD)"
   },
   {
     "Id": 5,
-    "Name": "PC fans"
+    "Name": "Motherboards"
   },
   {
     "Id": 6,
-    "Name": "Power supply units (PSU)"
+    "Name": "PC fans"
   },
   {
     "Id": 7,
-    "Name": "Random-access memories (RAM)"
+    "Name": "Power supply units (PSU)"
   },
   {
     "Id": 8,
+    "Name": "Random-access memories (RAM)"
+  },
+  {
+    "Id": 9,
     "Name": "Solid state drives (SSD)"
   }
 ]

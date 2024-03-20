@@ -1,20 +1,51 @@
-<div class="d-flex justify-content-center align-items mt-5">
-    <div class="col-5">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="text-center mb-4">
-                <h1 class="mb-3">Login</h1>
+<div class="container-fluid">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height: 88vh"
+  >
+    <div class="col-sm-6">
+      <div class="card p-4 shadow">
+        <div class="card-body text-center">
+          <img
+            src="/assets/images/logo3.jpg"
+            alt="Logo"
+            style="max-height: 120px"
+            class="mb-4"
+          />
+          <div *ngIf="loginError" class="alert alert-danger" role="alert">
+            <p>{{ loginError }}</p>
+          </div>
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <app-text-input
+              [formControl]="loginForm.controls['email']"
+              [label]="'Email'"
+              class="mb-3"
+            ></app-text-input>
+            <app-text-input
+              [formControl]="loginForm.controls['password']"
+              [label]="'Password'"
+              [type]="'password'"
+              class="mb-3"
+            ></app-text-input>
+
+            <div class="d-grid">
+              <button
+                [disabled]="loginForm.invalid"
+                class="btn btn-lg btn-primary mt-3"
+                type="submit"
+                style="border-radius: 22px; font-weight: bold"
+              >
+                Sign in
+              </button>
             </div>
-            <div class="form-floating mb-3">
-                <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Email">
-                <label for="floatingInput">Email</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-lg btn-primary mt-3" type="submit">Sign in</button>
-              </div>
-        </form>
+            <hr />
+            <p class="text-center">
+              New user? <a routerLink="/account/register">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,10 +1,36 @@
 <!-- home.component.html -->
 <!-- Header -->
-<h1 class="text-center mb-2" style="color: #d0a933">
-  Welcome to Component Kingdom
-</h1>
+<header class="large-screen-header">
+  <section class="expand">
+    <img
+      src="/assets/images/expand2.jpg"
+      (mouseenter)="setImage(false)"
+      class="expand"
+    />
+    <img
+      src="/assets/images/expand4.jpg"
+      (mouseenter)="setImage(false)"
+      class="expand"
+    />
+    <img
+      src="/assets/images/cover.jpg"
+      class="{{ isImage ? 'full-size' : '' }}"
+      class="expand"
+    />
+    <img
+      src="/assets/images/expand.jpg"
+      (mouseenter)="setImage(false)"
+      class="expand"
+    />
+    <img
+      src="/assets/images/expand3.jpg"
+      (mouseenter)="setImage(false)"
+      class="expand"
+    />
+  </section>
+</header>
 <header
-  class="w3-display-container w3-content w3-wide"
+  class="small-screen-header w3-display-container w3-content w3-wide"
   style="max-width: 1600px"
   id="home"
 >
@@ -22,7 +48,7 @@
   <!-- Project Section -->
   <div class="w3-container mb-3" id="projects">
     <h3
-      class="w3-border-bottom w3-border-light-grey w3-padding-1"
+      class="w3-border-bottom w3-border-light-grey w3-padding-1 mt-3"
       style="color: #d0a933"
     >
       Products
@@ -30,7 +56,7 @@
   </div>
 
   <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(1)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(2)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">CPUs</div>
         <img
@@ -40,7 +66,7 @@
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(2)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(3)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">GPUs</div>
         <img
@@ -50,7 +76,7 @@
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(3)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(4)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">HDDs</div>
         <img
@@ -60,7 +86,7 @@
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(4)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(5)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Motherboards</div>
         <img
@@ -73,7 +99,7 @@
   </div>
 
   <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(5)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(6)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">PC Fans</div>
         <img
@@ -83,7 +109,7 @@
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(6)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(7)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">PSUs</div>
         <img
@@ -93,7 +119,7 @@
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(7)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(8)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">RAMs</div>
         <img
@@ -103,7 +129,7 @@
         />
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(8)">
+    <div class="w3-col l3 m6 w3-margin-bottom" (click)="onTypeSelected(9)">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">SSDs</div>
         <img
@@ -120,7 +146,7 @@
     <!-- First Card -->
     <div class="col mb-3">
       <div
-        class="card h-100 mx-2 gold-shadow"
+        class="card h-100 mx-2 shadow"
         style="box-shadow: 0 0 0 0.25rem var(--gold-color)"
       >
         <div class="card-body d-flex flex-column">
@@ -138,7 +164,7 @@
     <!-- Second Card -->
     <div class="col mb-3">
       <div
-        class="card h-100 mx-2 gold-shadow"
+        class="card h-100 mx-2 shadow"
         style="box-shadow: 0 0 0 0.25rem var(--gold-color)"
       >
         <div class="card-body d-flex flex-column">
@@ -163,7 +189,7 @@
     <!-- Third Card -->
     <div class="col mb-3">
       <div
-        class="card h-100 mx-2 gold-shadow"
+        class="card h-100 mx-2 shadow"
         style="box-shadow: 0 0 0 0.25rem var(--gold-color)"
       >
         <div class="card-body d-flex flex-column">
@@ -172,7 +198,8 @@
           </h5>
           <p class="card-text mx-2">
             Our knowledgeable team is dedicated to providing expert advice and
-            personalized recommendations for your  <a routerLink="/shop">PC needs</a>.
+            personalized recommendations for your
+            <a routerLink="/shop">PC needs</a>.
           </p>
         </div>
       </div>
@@ -181,7 +208,7 @@
     <!-- Fourth Card -->
     <div class="col mb-3">
       <div
-        class="card h-100 mx-2 gold-shadow"
+        class="card h-100 mx-2 shadow"
         style="box-shadow: 0 0 0 0.25rem var(--gold-color)"
       >
         <div class="card-body d-flex flex-column">
@@ -189,8 +216,9 @@
             Trusted Source
           </h5>
           <p class="card-text mx-2">
-            <a routerLink="/shop">Shop with confidence</a> knowing that Component Kingdom offers fast
-            shipping, secure transactions, and hassle-free shopping.
+            <a routerLink="/shop">Shop with confidence</a> knowing that
+            Component Kingdom offers fast shipping, secure transactions, and
+            hassle-free shopping.
           </p>
         </div>
       </div>
@@ -199,7 +227,7 @@
     <!-- Fifth Card -->
     <div class="col mb-3">
       <div
-        class="card h-100 mx-2 gold-shadow"
+        class="card h-100 mx-2 shadow"
         style="box-shadow: 0 0 0 0.25rem var(--gold-color)"
       >
         <div class="card-body d- flex-column">
@@ -207,8 +235,11 @@
             Community
           </h5>
           <p class="card-text mx-2">
-            <a href="https://www.reddit.com/r/buildapc/">Join a community of PC enthusiasts</a> and experience the thrill of
-            building, upgrading, and customizing your dream PC.
+            <a href="https://www.reddit.com/r/buildapc/"
+              >Join a community of PC enthusiasts</a
+            >
+            and experience the thrill of building, upgrading, and customizing
+            your dream PC.
           </p>
         </div>
       </div>
@@ -217,7 +248,7 @@
     <!-- Sixth Card -->
     <div class="col mb-3">
       <div
-        class="card h-100 mx-2 gold-shadow"
+        class="card h-100 mx-2 shadow"
         style="box-shadow: 0 0 0 0.25rem var(--gold-color)"
       >
         <div class="card-body d-flex flex-column">
@@ -226,7 +257,8 @@
           </h5>
           <p class="card-text mx-2">
             Component Kingdom is your ultimate destination for PC hardware
-            enthusiasts. <a routerLink="/shop">Start exploring our selection today!</a>
+            enthusiasts.
+            <a routerLink="/shop">Start exploring our selection today!</a>
           </p>
         </div>
       </div>
@@ -234,106 +266,4 @@
   </div>
 </div>
 <hr />
-<footer>
-  <div class="footer-line"></div>
-  <div class="footer-wrapper">
-    <div class="footer-columns">
-      <section>
-        <h3 style="color: #0275d8">Brands</h3>
-        <ul>
-          <li>
-            <a
-              href="https://www.acer.com/us-en"
-              title="Acer"
-              style="color: #d0a933"
-              >Acer</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.amd.com/en.html"
-              title="AMD"
-              style="color: #d0a933"
-              >AMD</a
-            >
-          </li>
-          <li>
-            <a href="https://www.asus.com/" title="ASUS" style="color: #d0a933"
-              >ASUS</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.corsair.com/us/en"
-              title="Corsair"
-              style="color: #d0a933"
-              >Corsair</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.gigabyte.com/"
-              title="GIGABYTE"
-              style="color: #d0a933"
-              >GIGABYTE</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.intel.com/content/www/us/en/homepage.html"
-              title="Intel"
-              style="color: #d0a933"
-              >Intel</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.toshiba.com/tai/"
-              title="Toshiba"
-              style="color: #d0a933"
-              >Toshiba</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.westerndigital.com/"
-              title="Western Digital"
-              style="color: #d0a933"
-              >Western Digital</a
-            >
-          </li>
-        </ul>
-      </section>
-      <section class="footer-logo">
-        <img
-          src="/assets/images/logo2.jpg"
-          alt="logo"
-          style="max-height: 120px"
-        />
-      </section>
-    </div>
-    <div class="footer-bottom">
-      <span class="social-links">
-        <a href="https://www.instagram.com/" title="Instagram">
-          <img src="/assets/images/instagram.svg" alt="Instagram" />
-        </a>
-        <a href="https://www.linkedin.com/in/josip-ceprnic/" title="Linkedin">
-          <img src="/assets/images/linkedin.svg" alt="Linkedin" />
-        </a>
-        <a href="https://twitter.com/" title="Twitter">
-          <img src="/assets/images/twitter.svg" alt="Twitter" />
-        </a>
-        <a href="https://www.youtube.com/" title="Youtube">
-          <img src="/assets/images/youtube.svg" alt="YouTube" />
-        </a>
-        <a href="https://github.com/Cepa95" title="GitHub">
-          <img src="/assets/images/github.svg" alt="GitHub" />
-        </a>
-      </span>
-    </div>
-  </div>
-  <small
-    >© Component Kingdom Ltd. <span id="year"></span>, All rights
-    reserved</small
-  >
-</footer>
+<app-footer></app-footer>
