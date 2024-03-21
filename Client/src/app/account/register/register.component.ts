@@ -27,10 +27,16 @@ export class RegisterComponent {
       '',
       [Validators.required, Validators.pattern(this.complexPassword)],
     ],
-    
+    repeatPassword: ['', Validators.required],
   });
 
   onSubmit() {
+    const password = this.registerForm?.get('password')?.value;
+    const repeatPassword = this.registerForm.get('repeatPassword')?.value;
+    if (password !== repeatPassword) {
+      this.errors = ['Passwords do not match.'];
+      return;
+    }
     this.accountService.register(this.registerForm.value).subscribe({
       next: () => this.router.navigateByUrl('/shop'),
       error: (error) => {

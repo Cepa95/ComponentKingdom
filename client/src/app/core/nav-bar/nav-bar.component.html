@@ -54,16 +54,6 @@
             >LOGIN</a
           >
         </li>
-        <li>
-          <a
-            class="nav-link px-2"
-            routerLink="/account/register"
-            routerLinkActive="text-white"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeNavbar()"
-            >SIGN UP</a
-          >
-        </li>
       </ng-container>
       <ng-container *ngIf="accountService.currentUser$ | async as user">
         <li>

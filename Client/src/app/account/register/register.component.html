@@ -12,13 +12,18 @@
             style="max-height: 120px"
             class="mb-4"
           />
-          <div *ngIf="errors" class="alert alert-danger" role="alert">
-            <ul style="list-style-type: none">
+          <div
+            *ngIf="errors"
+            class="alert alert-danger d-flex justify-content-center align-items-center"
+            role="alert"
+          >
+            <ul style="list-style-type: none; padding: 0">
               <li *ngFor="let error of errors">
                 {{ error }}
               </li>
             </ul>
           </div>
+
           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <app-text-input
               [formControl]="registerForm.controls['displayName']"
@@ -36,7 +41,12 @@
               [type]="'password'"
               class="mb-3"
             ></app-text-input>
-            
+            <app-text-input
+              [formControl]="registerForm.controls['repeatPassword']"
+              [label]="'Repeat Password'"
+              [type]="'password'"
+              class="mb-3"
+            ></app-text-input>
 
             <div class="d-grid">
               <button
