@@ -1,19 +1,11 @@
 {
   "Version": 1,
-  "Hash": "EoK2G4cVSwPZDZWCCx5J6F6KJKYXj4H+BUdvE88awP4=",
+  "Hash": "bUm1vPqwZHJejLhtNIB7WgmMI8ngxypkYrDApg4MvgQ=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "API\\wwwroot",
-      "Source": "API",
-      "ContentRoot": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\wwwroot\\",
-      "BasePath": "_content/API",
-      "Pattern": "**"
-    }
-  ],
+  "DiscoveryPatterns": [],
   "Assets": []
 }
