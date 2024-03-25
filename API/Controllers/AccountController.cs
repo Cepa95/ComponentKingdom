@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
 using API.Extensions;
 using AutoMapper;
 
@@ -47,7 +46,7 @@ namespace API.Controllers
             return new UserDto
             {
                 Email = user.Email,
-                Token = _tokenService.CreateToken(user),
+                Token = await _tokenService.CreateToken(user),
                 DisplayName = user.DisplayName
             };
 
@@ -79,22 +78,23 @@ namespace API.Controllers
             return new UserDto
             {
                 DisplayName = user.DisplayName,
-                Token = _tokenService.CreateToken(user),
+                Token = await _tokenService.CreateToken(user),
                 Email = user.Email
             };
         }
 
         [HttpGet]
         [Authorize]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
-        
+
             var user = await _userManager.FindByEmailFromClaimPrincipleWithAddress(User);
 
             return new UserDto
             {
                 DisplayName = user.DisplayName,
-                Token = _tokenService.CreateToken(user),
+                Token = await _tokenService.CreateToken(user),
                 Email = user.Email
             };
         }

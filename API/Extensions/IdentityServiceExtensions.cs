@@ -18,7 +18,10 @@ namespace API.Extensions
                 opt.UseSqlite(config.GetConnectionString("IdentityConnection"));
             });
 
+
+            //[Authorize(Roles = "Admin")]
             services.AddIdentityCore<AppUser>(opt => { })
+            .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddSignInManager<SignInManager<AppUser>>();
 

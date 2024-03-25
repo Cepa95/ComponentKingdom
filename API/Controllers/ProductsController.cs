@@ -7,6 +7,7 @@ using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
 using Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -49,6 +50,8 @@ namespace API.Controllers
             productParams.PageSize, totalItems, data));
         }
 
+
+        
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
