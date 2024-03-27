@@ -32,17 +32,6 @@
           >SHOP</a
         >
       </li>
-
-      <li>
-        <a
-          class="nav-link px-2"
-          routerLink="/contact"
-          routerLinkActive="text-white"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="closeNavbar()"
-          >CONTACT</a
-        >
-      </li>
       <ng-container *ngIf="(accountService.currentUser$ | async) === null">
         <li>
           <a
