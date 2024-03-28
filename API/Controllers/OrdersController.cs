@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-     [Authorize]
+    [Authorize]
     public class OrdersController : BaseApiController
     {
         private readonly IOrderService _orderService;
