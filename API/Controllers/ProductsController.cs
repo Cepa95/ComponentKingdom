@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    
+
     public class ProductsController : BaseApiController
     {
 
@@ -21,23 +21,27 @@ namespace API.Controllers
         private readonly IGenericRepository<ProductBrand> _productBrandRepo;
         private readonly IGenericRepository<ProductType> _productTypeRepo;
         private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
 
         public ProductsController(IGenericRepository<Product> productsRepo,
         IGenericRepository<ProductBrand> productBrandRepo,
         IGenericRepository<ProductType> productTypeRepo,
-        IMapper mapper)
+        IMapper mapper,
+        IUnitOfWork unitOfWork
+        )
         {
             _mapper = mapper;
             _productsRepo = productsRepo;
             _productBrandRepo = productBrandRepo;
             _productTypeRepo = productTypeRepo;
+            _unitOfWork = unitOfWork;
 
         }
 
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
             //jer HttpGet status 415
-            [FromQuery]ProductSpecParams productParams
+            [FromQuery] ProductSpecParams productParams
         )
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
@@ -46,12 +50,12 @@ namespace API.Controllers
             var products = await _productsRepo.ListAsync(spec);
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
 
-            return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, 
+            return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex,
             productParams.PageSize, totalItems, data));
         }
 
 
-        
+
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -77,5 +81,25 @@ namespace API.Controllers
         {
             return Ok(await _productTypeRepo.ListAllAsync());
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteProduct(int id)
+        {
+            var product = await _unitOfWork.Repository<Product>().GetByIdAsync(id);
+
+            if (product == null) return NotFound(new ApiResponse(404, "Product not found"));
+
+            _unitOfWork.Repository<Product>().Delete(product);
+            var result = await _unitOfWork.Complete();
+
+            if (result >= 1) return Ok();
+
+
+            return BadRequest(new ApiResponse(400, "Problem deleting product"));
+        }
+
+
+
+
     }
 }
