@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   loginForm = new FormGroup({
@@ -14,7 +14,6 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required]),
   });
   returnUrl: string;
-
   loginError: string = '';
 
   constructor(
@@ -22,8 +21,12 @@ export class LoginComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    this.returnUrl =
-      this.activatedRoute.snapshot.queryParams['returnUrl'] || '/shop';
+    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/shop';
+    this.activatedRoute.queryParams.subscribe(params => {
+      if (params['error']) {
+        this.loginError = 'Unauthorized access. Please login as an admin.';
+      }
+    });
   }
 
   onSubmit() {
