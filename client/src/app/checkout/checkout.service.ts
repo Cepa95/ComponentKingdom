@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DeliveryMethod } from '../shared/models/deliveryMethod';
 import { map } from 'rxjs';
+import { Order, OrderToCreate } from '../shared/models/order';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +20,9 @@ export class CheckoutService {
           return dm.sort((a, b) => b.price - a.price);
         })
       );
+  }
+
+  createOrder(order: OrderToCreate){
+    return this.http.post<Order>(this.baseUrl + 'orders', order);
   }
 }
