@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   errors: string[] | null = null;
+  showPassword = false;
+  repeatShowPassword = false;
 
   constructor(
     private fb: FormBuilder,

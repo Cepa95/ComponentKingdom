@@ -35,18 +35,38 @@
               [label]="'Email'"
               class="mb-3"
             ></app-text-input>
-            <app-text-input
-              [formControl]="registerForm.controls['password']"
-              [label]="'Password'"
-              [type]="'password'"
-              class="mb-3"
-            ></app-text-input>
-            <app-text-input
-              [formControl]="registerForm.controls['repeatPassword']"
-              [label]="'Repeat Password'"
-              [type]="'password'"
-              class="mb-3"
-            ></app-text-input>
+            <div class="position-relative d-flex align-items-center mb-3">
+              <app-text-input
+                [formControl]="registerForm.controls['password']"
+                [label]="'Password'"
+                [type]="showPassword ? 'text' : 'password'"
+                class="flex-grow-1"
+              ></app-text-input>
+              <div class="form-check eye-icon">
+                <i
+                  class="fa cursor-pointer"
+                  [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="showPassword = !showPassword"
+                >
+                </i>
+              </div>
+            </div>
+            <div class="position-relative d-flex align-items-center mb-3">
+              <app-text-input
+                [formControl]="registerForm.controls['repeatPassword']"
+                [label]="'Repeat Password'"
+                [type]="repeatShowPassword ? 'text' : 'password'"
+                class="flex-grow-1"
+              ></app-text-input>
+              <div class="form-check eye-icon">
+                <i
+                  class="fa cursor-pointer"
+                  [ngClass]="repeatShowPassword ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="repeatShowPassword = !repeatShowPassword"
+                >
+                </i>
+              </div>
+            </div>
 
             <div class="d-grid">
               <button
