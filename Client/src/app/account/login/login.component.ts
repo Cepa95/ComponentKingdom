@@ -15,6 +15,7 @@ export class LoginComponent {
   });
   returnUrl: string;
   loginError: string = '';
+  showPassword = false;
 
   constructor(
     private accountService: AccountService,

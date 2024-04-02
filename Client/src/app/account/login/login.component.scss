@@ -5,3 +5,10 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.eye-icon {
+    position: absolute;
+    right: 10px; 
+    top: 40%;
+    transform: translateY(-50%);
+  }

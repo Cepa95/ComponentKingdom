@@ -11,6 +11,8 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { JwtModule } from '@auth0/angular-jwt';
 import { OrderDetailedComponent } from './order-detailed/order-detailed.component';
+import { FormsModule } from '@angular/forms';
+import {  AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { OrderDetailedComponent } from './order-detailed/order-detailed.componen
     HttpClientModule,
     CoreModule,
     HomeModule,
+    FormsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
