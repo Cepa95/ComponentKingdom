@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ErrorComponent } from './core/error/error.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { AdminGuard } from './core/guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,7 +28,14 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module').then((m) => m.AccountModule),
   },
   {
+    path: 'orders',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule)
+  },
+  {
+    
     path: 'admin',
+    canActivate: [AdminGuard],
     loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
   },
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' },

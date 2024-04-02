@@ -3,7 +3,7 @@
     *ngIf="(basketService.basketSource$ | async) === null"
     class="text-center"
   >
-    <p>There are no items in your basket!</p>
+    <h2>There are no items in your basket!</h2>
   </div>
 
   <ng-container *ngIf="basketService.basketSource$ | async as basket">

@@ -55,7 +55,7 @@ namespace API.Controllers
 
             var order = await _orderService.GetOrderByIdAsync(id, email);
 
-            if (order == null) return NotFound(new ApiResponse(404));
+            if (order == null) return NotFound(new ApiResponse(404, "No order id found for your order"));
 
             return _mapper.Map<OrderToReturnDto>(order);
         }

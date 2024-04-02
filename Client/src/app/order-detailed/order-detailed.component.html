@@ -1,0 +1,87 @@
+<div class="container mt-5">
+  <div class="row" *ngIf="order">
+    <div>
+      <div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead class="text-center">
+              <tr>
+                <th class="bg-dark text-primary">PRODUCT</th>
+                <th class="bg-dark text-primary">PRICE</th>
+                <th class="bg-dark text-primary">QUANTITY</th>
+                <th class="bg-dark text-primary">TOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of order.orderItems">
+                <th>
+                  <div class="p-2 d-inline-block">
+                    <img
+                      src="{{ item.pictureUrl }}"
+                      alt="{{ item.productName }}"
+                      class="img-fluid"
+                      style="max-height: 50px"
+                    />
+                    <div class="ms-3 d-inline-block align-middle">
+                      <h5>
+                        <a
+                          routerLink="/shop/{{ item.productId }}"
+                          class="text-decoration-none"
+                        >
+                          {{ item.productName }}
+                        </a>
+                      </h5>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle text-center">
+                  <strong>{{ item.price | currency : "EUR" }}</strong>
+                </td>
+                <td class="align-middle text-center">
+                  <strong class="font-weight-bold px-2">{{
+                    item.quantity
+                  }}</strong>
+                </td>
+                <td class="align-middle text-center">
+                  <strong>{{
+                    item.price * item.quantity | currency : "EUR"
+                  }}</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h4 class="bg-dark px-4 py-3 text-primary">ORDER SUMMARY</h4>
+      <div class="bg-light p-4">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><strong class="text-muted">Order subtotal</strong></td>
+              <td>
+                <strong>{{ order.subTotal | currency : "EUR" }}</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><strong class="text-muted">Shipping and handling</strong></td>
+              <td>
+                <strong>{{ order.shippingPrice | currency : "EUR" }}</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><strong class="text-muted">Total</strong></td>
+              <td>
+                <strong>{{ order.total | currency : "EUR" }}</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>

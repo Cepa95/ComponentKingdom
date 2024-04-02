@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-hover" style="cursor: pointer">
+          <thead class="text-center">
+            <tr>
+              <th class="bg-dark text-primary">ORDER</th>
+              <th class="bg-dark text-primary">DATE</th>
+              <th class="bg-dark text-primary">TOTAL</th>
+              <th class="bg-dark text-primary">STATUS</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr *ngFor="let order of orders" routerLink="/orders/{{ order.id }}">
+              <th># {{ order.id }}</th>
+                <td>{{ order.orderDate | date : "dd MMMM yyyy 'at' HH:mm:ss" }}</td>
+              <td>{{ order.total | currency : "EUR"}}</td>
+              <td>{{ order.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 text-center">
+  <h2 *ngIf="!orders || orders.length === 0">No orders yet!</h2>
+</div>

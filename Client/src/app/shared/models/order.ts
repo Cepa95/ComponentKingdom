@@ -15,8 +15,8 @@ export interface Order {
     shipToAddress:  Address
     deliveryMethod: string;
     shippingPrice: number;
-    OrderItems: OrderItem[];
-    subtotal: number;
+    orderItems: OrderItem[];
+    subTotal: number;
     total: number;
     status: string;
 }
