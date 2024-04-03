@@ -374,5 +374,53 @@
     "PictureUrl": "https://www.instar-informatika.hr/slike/male/kuciste-asus-rog-hyperion-gr701-full-tower-kaljeno-staklo-be-42870-casasu001_1.jpg",
     "ProductTypeId": 8,
     "ProductBrandId": 3
+  },
+  {
+    "Name": "Network card Asus PCE-AX1800",
+    "Description": "The Asus PCE-AX1800 network card offers AX1800 Wi-Fi speeds, which is the latest Wi-Fi 6 standard, ensuring fast and reliable wireless connectivity. It operates on dual bands, supporting both 2.4GHz and 5GHz frequencies, allowing users to enjoy enhanced performance and reduced interference. With its Wi-Fi 6 capability, this network card provides improved efficiency, higher data rates, and increased capacity compared to previous Wi-Fi standards. It's ideal for demanding tasks such as online gaming, streaming high-definition content, and large file transfers. The Asus PCE-AX1800 network card is designed to deliver seamless connectivity and optimal performance for users who require high-speed wireless internet access for their desktop computers.",
+    "Price": 29.95,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/90IG07A0-MO0B00_3.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Network card Asus PCE-AX58BT ",
+    "Description": "The Asus PCE-AX58BT network card boasts AX3000 Wi-Fi speeds, which represent the latest Wi-Fi 6 standard, ensuring rapid and reliable wireless connectivity. It operates on dual bands, supporting both the 2.4GHz and 5GHz frequencies, offering users the flexibility to choose the best band for their needs and to avoid interference. With Wi-Fi 6 capabilities, this network card provides improved efficiency, higher data rates, and increased capacity compared to previous Wi-Fi standards. It's well-suited for demanding tasks such as online gaming, streaming high-definition content, and transferring large files. The Asus PCE-AX58BT network card is designed to deliver seamless connectivity and optimal performance for users who require high-speed wireless internet access for their desktop computers. Additionally, it features Bluetooth connectivity, adding versatility by allowing users to connect Bluetooth-enabled devices such as headphones, keyboards, and mice.",
+    "Price": 49.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/90IG0610-MO0R00_1.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Network card Asus PCE-AX58BT",
+    "Description": "The Asus PCE-AXE5400 network card is an advanced networking solution offering Tri-band connectivity across 2.4GHz, 5GHz, and 6GHz frequencies. This provides users with an extensive range of options for wireless connectivity, allowing them to optimize their network usage and avoid interference. With support for the latest Wi-Fi 6E standard, this network card delivers blazing-fast speeds and enhanced reliability, making it ideal for demanding applications such as online gaming, 4K streaming, and large file transfers. The inclusion of the 6GHz band ensures even greater bandwidth and reduced congestion, enabling smoother performance in high-density environments. Moreover, the Asus PCE-AXE5400 network card features Bluetooth 5.2 connectivity, allowing users to easily connect Bluetooth-enabled devices such as headphones, keyboards, and mice for added convenience and versatility.",
+    "Price": 55,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/mrezna-kartica-asus-pce-axe5400-tri-band-24ghz5ghz6ghz-bluet-8530-46142801_1.jpg",
+    "ProductTypeId": 7,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "CD/DVD drive Asus SDRW-08U7M-U ZenDrive",
+    "Description": "The Asus SDRW-08U7M-U ZenDrive is an external optical drive designed to provide convenient access to optical media such as CDs and DVDs. It connects via USB, offering universal compatibility with a wide range of devices including laptops, desktops, and even some modern smartphones and tablets. This ZenDrive model features a sleek and elegant silver design, adding a touch of style to your setup. Its compact form factor makes it easy to transport, allowing you to enjoy optical media wherever you go. Whether you need to burn discs, install software, or watch movies, the Asus ZenDrive offers reliable performance and versatility. It's a perfect choice for users who require optical drive functionality on devices that lack built-in drives or need an external option for convenience.",
+    "Price": 56.99,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/eksterni-opticki-uredaj-asus-sdrw-08u7m-u-zendrive-usb-crni-1549-0120454_97780.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "CD/DVD Asus BW-16D1X-U",
+    "Description": "The Asus BW-16D1X-U is an external optical drive designed for various optical media tasks such as reading, writing, and playing CDs, DVDs, and Blu-ray discs. It connects via USB 3.2 interface, ensuring high-speed data transfer rates and compatibility with a wide range of devices, including laptops, desktops, and even some gaming consoles. With its sleek black design, the Asus BW-16D1X-U blends seamlessly with most setups, adding functionality without sacrificing style. It's compact and lightweight, making it easy to transport and use on the go. Whether you're burning discs, installing software, or enjoying high-definition movies, this Asus external optical drive provides reliable performance and versatility. It's an excellent choice for users who need optical drive functionality on devices without built-in drives or who prefer an external option for convenience and flexibility.",
+    "Price": 148.29,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/ASUCD-BDRW_1_1.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "CD/DVD Asus SDRW-08U7M-U",
+    "Description": "The Asus SDRW-08U7M-U is an external optical drive designed for reading and writing CDs and DVDs. It connects via USB, providing compatibility with a wide range of devices including laptops, desktops, and even some modern smartphones and tablets. This model comes in a stylish silver color, adding a touch of elegance to your setup. Its compact and lightweight design makes it easy to carry around, allowing you to use it wherever you go. Whether you need to burn discs, install software, or watch movies, the Asus SDRW-08U7M-U offers reliable performance and versatility. It's an excellent choice for users who require optical drive functionality on devices that lack built-in drives or need an external option for convenience.",
+    "Price": 43,
+    "PictureUrl": "https://www.instar-informatika.hr/slike/velike/eksterni-opticki-uredaj-asus-sdrw-08u7m-u-usb-srebrni-42963-asucd-dvdrw_008_1.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 3
   }
 ]
