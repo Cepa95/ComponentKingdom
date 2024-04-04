@@ -215,6 +215,10 @@
               "target": "Package",
               "version": "[2.7.23, )"
             },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[43.21.0, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[7.4.0, )"

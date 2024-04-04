@@ -45,6 +45,7 @@ export class ShopComponent implements OnInit {
         this.getProducts();
       }
     });
+   
   }
 
   loadProductType() {
@@ -105,6 +106,7 @@ export class ShopComponent implements OnInit {
   onPageChanged(event: any) {
     if (this.shopParams.pageIndex !== event) {
       this.shopParams.pageIndex = event;
+      window.scrollTo(0, 0);
       this.getProducts();
     }
   }
