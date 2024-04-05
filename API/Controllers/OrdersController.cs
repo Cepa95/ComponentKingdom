@@ -15,16 +15,22 @@ namespace API.Controllers
         private readonly IOrderService _orderService;
         private readonly IMapper _mapper;
 
+        private readonly ILogger<OrdersController> _logger;
+
         public OrdersController(IOrderService orderService,
-                               IMapper mapper)
+                               IMapper mapper,
+                               ILogger<OrdersController> logger)
         {
             _orderService = orderService;
             _mapper = mapper;
+            _logger = logger;
         }
 
         [HttpPost]
         public async Task<ActionResult<Order>> CreateOrder(OrderDto orderDto)
         {
+            _logger.LogInformation("Creating order for basketId: {basketId}", orderDto.BasketId);
+
             var email = HttpContext.User.RetrieveEmailFromPrincipal();
 
             var address = _mapper.Map<AddressDto, Address>(orderDto.ShipToAddress);
@@ -41,6 +47,8 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetOrdersForUser()
         {
+            _logger.LogInformation("Getting orders for user");
+
             var email = HttpContext.User.RetrieveEmailFromPrincipal();
 
             var orders = await _orderService.GetOrdersForUserAsync(email);
@@ -51,6 +59,8 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderToReturnDto>> GetOrderByIdForUser(int id)
         {
+            _logger.LogInformation("Getting order for user with id: {id}", id);
+
             var email = HttpContext.User.RetrieveEmailFromPrincipal();
 
             var order = await _orderService.GetOrderByIdAsync(id, email);
@@ -63,6 +73,8 @@ namespace API.Controllers
         [HttpGet("deliveryMethods")]
         public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetDeliveryMethods()
         {
+            _logger.LogInformation("Getting delivery methods");
+            
             return Ok(await _orderService.GetDeliveryMethodsAsync());
         }
         
