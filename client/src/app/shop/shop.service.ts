@@ -55,6 +55,7 @@ export class ShopService {
   }
   
 
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error occurred';
     if (error.error instanceof ErrorEvent) {

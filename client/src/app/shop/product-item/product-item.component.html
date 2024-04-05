@@ -10,6 +10,17 @@
     <div class="btn-group">
       <button class="btn btn-outline-primary" (click)="addItemToBasket()">Buy</button>
       <button routerLink="/shop/{{ product.id }}" class="btn btn-outline-primary">View</button>
+       <ng-container *ngIf="isAdmin()">
+        <button class="btn btn-outline-danger" (click)="openModal(deleteTemplate)">Delete</button>
+       </ng-container>
     </div>
   </div>
 </div>
+
+<ng-template #deleteTemplate>
+  <div class="modal-body text-center">
+    <p>Are you sure you want to delete product: {{product?.name}}?</p>
+    <button type="button" class="btn btn-danger margin-button" (click)="confirmDelete(product?.id)">Yes</button>
+    <button type="button" class="btn btn-primary margin-button" (click)="modalRef?.hide()">No</button>
+  </div>
+</ng-template>

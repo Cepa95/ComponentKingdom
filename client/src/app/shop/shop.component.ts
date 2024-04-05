@@ -6,6 +6,7 @@ import { Brand } from '../shared/models/brand';
 import { ShopParams } from '../shared/models/shopParams';
 import { ActivatedRoute } from '@angular/router';
 import { AccountService } from '../account/account.service';
+import { AdminService } from '../admin/admin.service';
 
 @Component({
   selector: 'app-shop',
@@ -30,7 +31,8 @@ export class ShopComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private shopService: ShopService,
-    public accountService: AccountService
+    public accountService: AccountService,
+    private adminService: AdminService
   ) {}
 
   ngOnInit(): void {
@@ -116,4 +118,10 @@ export class ShopComponent implements OnInit {
     this.shopParams.pageIndex = 1;
     this.getProducts();
   }
+
+  handleProductDeleted(id: number) {
+    this.products = this.products.filter(product => product.id !== id);
+    this.totalCount--;
+  }
+
 }

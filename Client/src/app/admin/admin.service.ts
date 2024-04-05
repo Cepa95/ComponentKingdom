@@ -9,4 +9,8 @@ export class AdminService {
   baseUrl = 'https://localhost:5001/api/';
 
   constructor(private http: HttpClient) {}
+
+  deleteProduct(id: number) {
+    return this.http.delete(this.baseUrl + 'admin/products/' + id);
+  }
 }
