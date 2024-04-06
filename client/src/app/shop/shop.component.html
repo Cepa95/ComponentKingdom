@@ -1,6 +1,7 @@
 <div class="containter">
   <ng-container *ngIf="accountService.currentUser$ | async as user">
-    <span  class="greeting">WELCOME {{user.displayName.toUpperCase()}}</span><span class="hand">&nbsp;👋</span>
+    <span class="greeting">WELCOME {{ user.displayName.toUpperCase() }}</span
+    ><span class="hand">&nbsp;👋</span>
   </ng-container>
   <div class="row">
     <section class="col-lg-3 col-md-4 col-sm-6">
@@ -11,8 +12,13 @@
           class="form-control"
           style="color: #d0a933"
           #search
+          spellcheck="false"
+          (keyup)="searchUpdated.next(search.value)"
         />&nbsp;&nbsp;
-        <button (click)="onSearch()" class="btn btn-outline-primary">
+        <button
+          (click)="onSearch(search.value)"
+          class="btn btn-outline-primary"
+        >
           Search
         </button>
       </div>
@@ -66,7 +72,10 @@
         class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mb-4"
       >
         <div class="col" *ngFor="let product of products">
-          <app-product-item [product]="product" (productDeleted)="handleProductDeleted($event)"></app-product-item>
+          <app-product-item
+            [product]="product"
+            (productDeleted)="handleProductDeleted($event)"
+          ></app-product-item>
         </div>
       </div>
       <app-pager
@@ -77,4 +86,3 @@
     </section>
   </div>
 </div>
-

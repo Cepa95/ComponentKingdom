@@ -7,6 +7,8 @@ import { ShopParams } from '../shared/models/shopParams';
 import { ActivatedRoute } from '@angular/router';
 import { AccountService } from '../account/account.service';
 import { AdminService } from '../admin/admin.service';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shop',
@@ -27,6 +29,7 @@ export class ShopComponent implements OnInit {
   ];
   totalCount = 0;
   routeSubscription: any;
+  searchUpdated = new Subject<string>();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -47,7 +50,9 @@ export class ShopComponent implements OnInit {
         this.getProducts();
       }
     });
-   
+    this.searchUpdated.pipe(debounceTime(300)).subscribe((value) => {
+      this.onSearch(value);
+    });
   }
 
   loadProductType() {
@@ -113,15 +118,14 @@ export class ShopComponent implements OnInit {
     }
   }
 
-  onSearch() {
-    this.shopParams.search = this.search?.nativeElement.value;
+  onSearch(value: string) {
+    this.shopParams.search = value;
     this.shopParams.pageIndex = 1;
     this.getProducts();
   }
 
   handleProductDeleted(id: number) {
-    this.products = this.products.filter(product => product.id !== id);
+    this.products = this.products.filter((product) => product.id !== id);
     this.totalCount--;
   }
-
 }

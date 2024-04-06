@@ -3,16 +3,17 @@ using Core.Entities;
 
 namespace Core.Specifications
 {
-    //ako brandId nije nula ili je productBrandId jednak brandIdu filtrirat ce se po tome
     public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
     {
         public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams)
         : base(x =>
-        //u slucaju da korisnik upise BOARD, umisto board
-        (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains(productParams
-        .Search)) &&
-        (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId) &&
-        (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId))
+               (string.IsNullOrEmpty(productParams.Search) ||
+            productParams.Search.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                       .Select(word => word.Trim().ToLower())
+                       .Where(word => !string.IsNullOrEmpty(word))
+                       .All(word => x.Name.ToLower().Contains(word))) &&
+               (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId) &&
+               (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId))
         {
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
