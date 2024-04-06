@@ -4,8 +4,9 @@
             <input type="radio"
                 id={{method.id}}
                 value={{method.id}}
+                [style.background-color]="'green'"
                 formControlName="deliveryMethod"
-                class="form-check-input"
+                class="form-check-input "
                 (click)="setShippingPrice(method)"
                
             >
@@ -13,6 +14,8 @@
                 <strong>{{method.shortName}} - {{method.price | currency : "EUR"}}</strong>
                 <br />
                 <span class="label-description">{{method.description}}</span>
+                    <br />
+                <span class="label-description">{{method.deliveryTime}}</span>
             </label>
         </div>
     </div>
