@@ -12,6 +12,8 @@ import {
   StripeCardNumberElement,
   loadStripe,
 } from '@stripe/stripe-js';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 @Component({
   selector: 'app-checkout-payment',
@@ -30,11 +32,12 @@ export class CheckoutPaymentComponent implements OnInit {
   cardCvc?: StripeCardCvcElement;
 
   cardErrors: any;
+  cardProblemError: any;
 
   constructor(
     private basketService: BasketService,
     private checkoutService: CheckoutService,
-    private router: Router
+    private router: Router,
   ) {}
   ngOnInit(): void {
     loadStripe(
@@ -67,22 +70,74 @@ export class CheckoutPaymentComponent implements OnInit {
     });
   }
 
+  decodeToken() {
+    const helper = new JwtHelperService();
+    const token = localStorage.getItem('token');
+    const decodedToken = token ? helper.decodeToken(token) : null;
+    const email = decodedToken?.email;
+    return email;
+  }
+
   submitOrder() {
     const basket = this.basketService.getCurrentBasketValue();
     if (!basket) return;
     const orderToCreate = this.getOrderToCreate(basket);
     if (!orderToCreate) return;
+    const email = this.decodeToken();
     this.checkoutService.createOrder(orderToCreate).subscribe({
       next: (order) => {
-        this.basketService.deleteLocalBasket();
-        const navigationExtras: NavigationExtras = { state: order };
-        this.router.navigate(['checkout/success'], navigationExtras);
+        this.stripe
+          ?.confirmCardPayment(basket.clientSecret!, {
+            payment_method: {
+              card: this.cardNumber!, 
+              billing_details: {
+                email: email,
+                name:
+                  this.checkoutForm?.get('addressForm')?.get('firstName')
+                    ?.value +
+                  ' ' +
+                  this.checkoutForm?.get('addressForm')?.get('lastName')
+                    ?.value +
+                  ' with ordered products:' +
+                  ' ' +
+                  basket.items
+                    .map(
+                      (item) =>
+                        `${item.productName} ( ItemId: ${item.id}, Quantity: ${item.quantity}, Price: ${item.price}€)`
+                    )
+                    .join(', '),
+
+                address: {
+                  line1: this.checkoutForm?.get('addressForm')?.get('street')
+                    ?.value,
+                  city: this.checkoutForm?.get('addressForm')?.get('city')
+                    ?.value,
+                  state: this.checkoutForm?.get('addressForm')?.get('state')
+                    ?.value,
+                  postal_code: this.checkoutForm
+                    ?.get('addressForm')
+                    ?.get('zipCode')?.value,
+                },
+              },
+            },
+          })
+          .then((result) => {
+            console.log(result);
+            if (result.paymentIntent) {
+              this.basketService.deleteLocalBasket();
+              const navigationExtras: NavigationExtras = { state: order };
+              this.router.navigate(['checkout/success'], navigationExtras);
+            } else {
+              this.cardProblemError = result.error.message;
+            }
+          });
       },
       error: (error) => {
         console.log(error);
       },
     });
   }
+
   private getOrderToCreate(basket: Basket) {
     const deliveryMethodId = this.checkoutForm
       ?.get('deliveryForm')
