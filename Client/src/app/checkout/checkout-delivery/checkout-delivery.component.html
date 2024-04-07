@@ -1,33 +1,39 @@
 <div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
-    <div class="row" formGroupName="deliveryForm">
-        <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
-            <input type="radio"
-                id={{method.id}}
-                value={{method.id}}
-                [style.background-color]="'green'"
-                formControlName="deliveryMethod"
-                class="form-check-input "
-                (click)="setShippingPrice(method)"
-               
-            >
-            <label for="{{method.id}}" class="form-check-label ms-2 mb-3">
-                <strong>{{method.shortName}} - {{method.price | currency : "EUR"}}</strong>
-                <br />
-                <span class="label-description">{{method.description}}</span>
-                    <br />
-                <span class="label-description">{{method.deliveryTime}}</span>
-            </label>
-        </div>
+  <div class="row" formGroupName="deliveryForm">
+    <h2 class="mb-4">Choose delivery option</h2>
+    <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
+      <input
+        type="radio"
+        id="{{ method.id }}"
+        value="{{ method.id }}"
+        [style.background-color]="'green'"
+        formControlName="deliveryMethod"
+        class="form-check-input"
+        (click)="setShippingPrice(method)"
+      />
+      <label for="{{ method.id }}" class="form-check-label ms-2 mb-3">
+        <strong
+          >{{ method.shortName }} -
+          {{ method.price | currency : "EUR" }}</strong
+        >
+        <br />
+        <span class="label-description">{{ method.description }}</span>
+        <br />
+        <span class="label-description">{{ method.deliveryTime }}</span>
+      </label>
     </div>
+  </div>
 </div>
 
 <div class="d-flex justify-content-between flex-row flex-wrap">
-    <button class="btn btn-outline-primary mb-2" cdkStepperPrevious>
-     Back to address
-    </button>
-    <button class="btn btn-primary mb-2" cdkStepperNext>
-      Go to review
-    </button>
+  <button class="btn btn-outline-primary mb-2" cdkStepperPrevious>
+    Back to address
+  </button>
+  <button
+    [disabled]="checkoutForm?.get('deliveryForm')?.invalid"
+    class="btn btn-primary mb-2"
+    cdkStepperNext
+  >
+    Go to review
+  </button>
 </div>
-  
-

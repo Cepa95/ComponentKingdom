@@ -136,7 +136,9 @@ export class CheckoutPaymentComponent implements OnInit {
                 (item) =>
                   `${item.productName} ( ItemId: ${item.id}, Quantity: ${item.quantity}, Price: ${item.price}€)`
               )
-              .join(', '),
+              .join(', ') +
+            '. Shipping price: ' + basket.shippingPrice + '€',
+          
 
           address: {
             line1: this.checkoutForm?.get('addressForm')?.get('street')?.value,

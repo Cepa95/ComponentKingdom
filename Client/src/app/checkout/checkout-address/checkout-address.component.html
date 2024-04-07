@@ -53,5 +53,11 @@
   <button class="btn btn-outline-primary mb-2" routerLink="/basket">
     Back to basket
   </button>
-  <button class="btn btn-primary mb-2" cdkStepperNext>Go to delivery</button>
+  <button
+    [disabled]="checkoutForm?.get('addressForm')?.invalid"
+    class="btn btn-primary mb-2"
+    cdkStepperNext
+  >
+    Go to delivery
+  </button>
 </div>
