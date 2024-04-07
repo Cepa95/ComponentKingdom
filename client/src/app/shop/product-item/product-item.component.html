@@ -1,4 +1,10 @@
 <div class="card h-100 shadow-sm d-flex flex-column" *ngIf="product">
+  <div class="btn-group">
+  <ng-container *ngIf="isAdmin()">
+    <button [routerLink]="['/admin/update-product', product.id]" class="btn btn-outline-primary">Update</button>
+    <button class="btn btn-outline-danger" (click)="openModal(deleteTemplate)">Delete</button>
+   </ng-container>
+  </div>
   <img src="{{ product.pictureUrl }}" alt="{{ product.name }}" class="card-img-top"/>
   <div class="card-body d-flex flex-column">
     <a routerLink="/shop/{{ product.id }}" class="text-decoration-none">
@@ -10,9 +16,6 @@
     <div class="btn-group">
       <button class="btn btn-outline-primary" (click)="addItemToBasket()">Buy</button>
       <button routerLink="/shop/{{ product.id }}" class="btn btn-outline-primary">View</button>
-       <ng-container *ngIf="isAdmin()">
-        <button class="btn btn-outline-danger" (click)="openModal(deleteTemplate)">Delete</button>
-       </ng-container>
     </div>
   </div>
 </div>

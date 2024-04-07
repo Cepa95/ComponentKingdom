@@ -46,6 +46,16 @@ namespace API.Controllers
             return Ok(await _productTypeRepo.ListAllAsync());
         }
 
+        [HttpGet("product/{id}")]
+        public async Task<ActionResult<ProductCreateDto>> GetProductById(int id)
+        {
+            var product = await _productsRepo.GetByIdAsync(id);
+
+            if (product == null) return NotFound(new ApiResponse(404));
+
+            return Ok(_mapper.Map<Product, ProductCreateDto>(product));
+        }
+
         [HttpPut("products/{id}")]
         public async Task<ActionResult<ProductCreateDto>> UpdateProductAsync(int id, ProductCreateDto productUpdateDto)
         {
