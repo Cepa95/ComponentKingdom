@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Product } from '../shared/models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class AdminService {
 
   baseUrl = 'https://localhost:5001/api/';
+  product?: Product
 
   constructor(private http: HttpClient) {}
 
@@ -28,5 +30,9 @@ export class AdminService {
 
   getBrands() {
     return this.http.get(this.baseUrl + 'admin/brands');
+  }
+
+  addProduct(product: Product) {
+    return this.http.post(this.baseUrl + 'admin/products', product);
   }
 }

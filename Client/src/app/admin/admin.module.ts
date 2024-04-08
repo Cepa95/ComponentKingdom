@@ -4,13 +4,15 @@ import { AdminComponent } from './admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { UpdateProductComponent } from './update-product/update-product.component';
-
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    AddProductComponent,
+    
   ],
   imports: [
     CommonModule,

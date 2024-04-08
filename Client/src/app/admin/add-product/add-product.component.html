@@ -1,7 +1,7 @@
 <div class="container py-5">
   <form
     [formGroup]="productForm"
-    (ngSubmit)="updateProduct()"
+    (ngSubmit)="onSubmit()"
     class="card p-4 shadow"
     style="border-radius: 30px"
   >
@@ -43,8 +43,10 @@
         id="price"
         type="number"
         formControlName="price"
-        spellcheck="false"
         class="form-control"
+        spellcheck="false"
+        step="0.01"
+        min="0.01"
         [class.is-invalid]="
           productForm.controls['price'].invalid &&
           productForm.controls['price'].touched
@@ -59,8 +61,8 @@
         id="pictureUrl"
         type="text"
         formControlName="pictureUrl"
-        spellcheck="false"
         class="form-control"
+        spellcheck="false"
         [class.is-invalid]="
           productForm.controls['pictureUrl'].invalid &&
           productForm.controls['pictureUrl'].touched
@@ -74,7 +76,6 @@
       <select
         id="productTypeId"
         formControlName="productTypeId"
-        spellcheck="false"
         class="form-control"
         [class.is-invalid]="
           productForm.controls['productTypeId'].invalid &&
@@ -105,9 +106,6 @@
         </option>
       </select>
     </div>
-    <div *ngIf="error" class="alert alert-danger mt-3">
-      {{ error }}
-    </div>
 
     <div class="d-flex justify-content-center">
       <button
@@ -115,7 +113,7 @@
         class="btn btn-primary mt-3"
         [disabled]="productForm.invalid || productForm.pristine"
       >
-        Update
+        Add Product
       </button>
     </div>
   </form>
