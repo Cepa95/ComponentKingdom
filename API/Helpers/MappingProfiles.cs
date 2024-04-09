@@ -33,6 +33,12 @@ namespace API.Helpers
 
             CreateMap<ProductCreateDto, Product>().ReverseMap();
 
+            CreateMap<AppUser, CustomerDto>();
+
+            CreateMap<Core.Entities.identity.Address, AddressToReturnDto>();
+
+            
+
 
         
         }

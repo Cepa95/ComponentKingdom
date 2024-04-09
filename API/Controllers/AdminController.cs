@@ -2,9 +2,12 @@ using API.Dtos;
 using API.Errors;
 using AutoMapper;
 using Core.Entities;
+using Core.Entities.identity;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -17,6 +20,7 @@ namespace API.Controllers
         private readonly IGenericRepository<Product> _productsRepo;
         private readonly IMapper _mapper;
         private readonly ILogger<AdminController> _logger;
+        private readonly UserManager<AppUser> _userManager;
 
 
         public AdminController(IUnitOfWork unitOfWork,
@@ -24,7 +28,8 @@ namespace API.Controllers
         IGenericRepository<ProductType> productTypeRepo,
         IGenericRepository<Product> productsRepo,
         IMapper mapper,
-        ILogger<AdminController> logger)
+        ILogger<AdminController> logger,
+        UserManager<AppUser> userManager)
         {
             _mapper = mapper;
             _productsRepo = productsRepo;
@@ -32,6 +37,7 @@ namespace API.Controllers
             _productBrandRepo = productBrandRepo;
             _unitOfWork = unitOfWork;
             _logger = logger;
+            _userManager = userManager;
         }
 
         [HttpGet("brands")]
@@ -102,6 +108,38 @@ namespace API.Controllers
             return Ok(_mapper.Map<ProductCreateDto>(product));
         }
 
+        [HttpGet("customers")]
+        public async Task<ActionResult<IReadOnlyList<CustomerDto>>> GetAllCustomers()
+        {
+            _logger.LogInformation("Getting all customers");
+
+            var users = await _userManager.Users.ToListAsync();
+
+            var userDtos = _mapper.Map<List<CustomerDto>>(users);
+
+            return Ok(userDtos);
+        }
+
+        [HttpGet("addresses/{userId}")]
+        public async Task<ActionResult<List<AddressDto>>> GetAddressesByUserId(string userId)
+        {
+            _logger.LogInformation($"Getting addresses for user with ID: {userId}");
+
+            userId = userId.Trim().ToLower();
+
+            var user = await _userManager.Users
+                .Include(u => u.Address)
+                .SingleOrDefaultAsync(u => u.Id.Trim().ToLower() == userId);
+
+            if (user == null) return NotFound(new ApiResponse(404, $"User with ID: {userId} is not found"));
+
+            var addressDto = _mapper.Map<AddressToReturnDto>(user.Address);
+
+            return Ok(addressDto);
+        }
 
     }
+
+
+
 }
