@@ -35,4 +35,16 @@ export class AdminService {
   addProduct(product: Product) {
     return this.http.post(this.baseUrl + 'admin/products', product);
   }
+
+  getCustomers() {
+    return this.http.get(this.baseUrl + 'admin/customers');
+  }
+
+  getAddress(id: string){
+    return this.http.get(this.baseUrl + 'admin/address/' + id);
+  }
+
+  updateAddress(userId: string, address: any){
+    return this.http.put(`${this.baseUrl}admin/address/${userId}`, address);
+}
 }

@@ -1,5 +1,6 @@
 using API.Dtos;
 using API.Errors;
+using API.Extensions;
 using AutoMapper;
 using Core.Entities;
 using Core.Entities.identity;
@@ -120,26 +121,66 @@ namespace API.Controllers
             return Ok(userDtos);
         }
 
-        [HttpGet("addresses/{userId}")]
-        public async Task<ActionResult<List<AddressDto>>> GetAddressesByUserId(string userId)
+        [HttpGet("address/{userId}")]
+        public async Task<ActionResult<List<AddressDto>>> GetAddressByUserId(string userId)
         {
             _logger.LogInformation($"Getting addresses for user with ID: {userId}");
 
             userId = userId.Trim().ToLower();
 
-            var user = await _userManager.Users
-                .Include(u => u.Address)
-                .SingleOrDefaultAsync(u => u.Id.Trim().ToLower() == userId);
+            var address = await _userManager.Users
+                .Where(u => u.Id.Trim().ToLower() == userId)
+                .Select(u => u.Address)
+                .SingleOrDefaultAsync();
 
-            if (user == null) return NotFound(new ApiResponse(404, $"User with ID: {userId} is not found"));
+            if (address == null) return NotFound(new ApiResponse(404, "address is not found"));
 
-            var addressDto = _mapper.Map<AddressToReturnDto>(user.Address);
+            var addressDto = _mapper.Map<AddressToReturnDto>(address);
 
             return Ok(addressDto);
         }
+        
+
+        [HttpPut("address/{userId}")]
+        public async Task<ActionResult> UpdateAddressByUserId(string userId, AddressDto addressDto)
+        {
+            _logger.LogInformation($"Updating address for user with ID: {userId}");
+
+            userId = userId.Trim().ToLower();
+
+            var user = await _userManager.Users
+                .Include(u => u.Address) 
+                .Where(u => u.Id.Trim().ToLower() == userId)
+                .SingleOrDefaultAsync();
+
+            if (user == null) return NotFound(new ApiResponse(404, "User not found"));
+
+            if (user.Address == null) return NotFound(new ApiResponse(404, "Address not found"));
+
+            _mapper.Map(addressDto, user.Address);
+
+            try
+            {
+                var result = await _userManager.UpdateAsync(user);
+
+                if (!result.Succeeded) return BadRequest(new ApiResponse(400, "Failed to update address"));
+
+                return NoContent();
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, "An error occurred while updating the address");
+                return StatusCode(500, new ApiResponse(500, ex.InnerException?.Message));
+            }
+        }
+
+
+
+
+
+
 
     }
 
-
-
 }
+

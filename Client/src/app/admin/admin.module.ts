@@ -5,6 +5,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { CustomersComponent } from './customers/customers.component';
+import { AddressComponent } from './address/address.component';
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     AdminComponent,
     UpdateProductComponent,
     AddProductComponent,
+    CustomersComponent,
+    AddressComponent,
     
   ],
   imports: [

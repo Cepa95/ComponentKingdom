@@ -1,0 +1,125 @@
+<div class="container py-5" *ngIf="hasAddress && !error">
+  <form
+    [formGroup]="addressForm"
+    (ngSubmit)="updateAddress()"
+    class="card p-4 shadow"
+    style="border-radius: 30px"
+  >
+    <div class="form-group mb-3">
+      <label for="firstName" style="color: #d0a933">First Name</label>
+      <input
+        id="firstName"
+        type="text"
+        formControlName="firstName"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          addressForm.controls['firstName'].invalid &&
+          addressForm.controls['firstName'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="lastName" style="color: #d0a933">Last Name</label>
+      <input
+        id="lastName"
+        type="text"
+        formControlName="lastName"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          addressForm.controls['lastName'].invalid &&
+          addressForm.controls['lastName'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="street" style="color: #d0a933">Street</label>
+      <input
+        id="street"
+        type="text"
+        formControlName="street"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          addressForm.controls['street'].invalid &&
+          addressForm.controls['street'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="city" style="color: #d0a933">City</label>
+      <input
+        id="city"
+        type="text"
+        formControlName="city"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          addressForm.controls['city'].invalid &&
+          addressForm.controls['city'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="state" style="color: #d0a933">State</label>
+      <input
+        id="state"
+        type="text"
+        formControlName="state"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          addressForm.controls['state'].invalid &&
+          addressForm.controls['state'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="zipCode" style="color: #d0a933">Zip Code</label>
+      <input
+        id="zipCode"
+        type="text"
+        formControlName="zipCode"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          addressForm.controls['zipCode'].invalid &&
+          addressForm.controls['zipCode'].touched
+        "
+        required
+      />
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ error }}
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-primary mt-3"
+        [disabled]="addressForm.invalid || addressForm.pristine"
+      >
+        Update Address
+      </button>
+    </div>
+  </form>
+</div>
+<div class="container" *ngIf="error">
+  <div class="card border-danger">
+    <div class="card-body">
+      <h1 class="card-title text-danger">{{error}}</h1>
+    </div>
+  </div>
+</div>
