@@ -6,6 +6,7 @@ using AutoMapper;
 using Core.Entities;
 using Core.Entities.identity;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -42,15 +43,65 @@ namespace API.Controllers
             _userManager = userManager;
         }
 
+
         [HttpGet("brands")]
-        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        public async Task<ActionResult<IReadOnlyList<BrandDto>>> GetProductBrands()
         {
+            _logger.LogInformation("Getting all brands");
+
+            var spec = new BrandsSpecification();
+
+            var brands = await _productBrandRepo.ListAsync(spec);
+
+            var brandsDto = _mapper.Map<IReadOnlyList<ProductBrand>, IReadOnlyList<BrandDto>>(brands);
+
+            return Ok(brandsDto);
+        }
+
+        [HttpDelete("brands/{id}")]
+        public async Task<ActionResult<IReadOnlyList<BrandDto>>> DeleteProductBrand(int id)
+        {
+            _logger.LogInformation($"Deleting a brand under id: {id}");
+
+            var brand = await _productBrandRepo.GetByIdAsync(id);
+
+            if (brand == null) return NotFound(new ApiResponse(404));
+
+            _productBrandRepo.Delete(brand);
+
+            await _unitOfWork.Complete();
+
             return Ok(await _productBrandRepo.ListAllAsync());
         }
 
         [HttpGet("types")]
-        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
+        public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> GetProductTypes()
         {
+            _logger.LogInformation("Getting all types");
+
+            var spec = new TypesSpecification();
+
+            var types = await _productTypeRepo.ListAsync(spec);
+
+            var typesDto = _mapper.Map<IReadOnlyList<ProductType>, IReadOnlyList<ProductTypeDto>>(types);
+
+            return Ok(typesDto);
+
+        }
+
+        [HttpDelete("types/{id}")]
+        public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> DeleteProductType(int id)
+        {
+            _logger.LogInformation($"Deleting a type under id: {id}");
+
+            var type = await _productTypeRepo.GetByIdAsync(id);
+
+            if (type == null) return NotFound(new ApiResponse(404));
+
+            _productTypeRepo.Delete(type);
+
+            await _unitOfWork.Complete();
+
             return Ok(await _productTypeRepo.ListAllAsync());
         }
 

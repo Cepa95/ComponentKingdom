@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { Pagination } from '../shared/models/pagination';
 import { Customer } from '../shared/models/customer';
-import { Observable } from 'rxjs';
 import { CustomerParams } from '../shared/models/customerParams';
+import { Type } from '../shared/models/type';
 
 @Injectable({
   providedIn: 'root'
@@ -29,20 +29,25 @@ export class AdminService {
   }
 
   getTypes() {
-    return this.http.get(this.baseUrl + 'admin/types');
+    return this.http.get<Type[]>(this.baseUrl + 'admin/types');
+  }
+
+  deleteType(id: number) {
+    return this.http.delete(this.baseUrl + 'admin/types/' + id);
   }
 
   getBrands() {
     return this.http.get(this.baseUrl + 'admin/brands');
   }
+  deleteBrand(id: number) {
+    return this.http.delete(this.baseUrl + 'admin/brands/' + id);
+  }
+
+  
 
   addProduct(product: Product) {
     return this.http.post(this.baseUrl + 'admin/products', product);
   }
-
-  // getCustomers() {
-  //   return this.http.get(this.baseUrl + 'admin/customers');
-  // }
 
   getCustomers(customerParams : CustomerParams){
     let params = new HttpParams();

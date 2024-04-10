@@ -7,13 +7,15 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { AddProductComponent } from './add-product/add-product.component';
 import { CustomersComponent } from './customers/customers.component';
 import { AddressComponent } from './address/address.component';
+import { TypesComponent } from './types/types.component';
 
 const routes : Routes = [
   {path: '', component: AdminComponent, canActivate: [AdminGuard]},
   { path: 'update-product/:id', component: UpdateProductComponent, canActivate: [AdminGuard] },
   { path: 'add-product', component: AddProductComponent, canActivate: [AdminGuard] },
   { path: 'customers', component: CustomersComponent, canActivate: [AdminGuard] },
-  { path: 'addresses/:id', component: AddressComponent, canActivate: [AdminGuard] }
+  { path: 'addresses/:id', component: AddressComponent, canActivate: [AdminGuard] },
+  { path: 'types', component: TypesComponent, canActivate: [AdminGuard] }
 ]
 
 

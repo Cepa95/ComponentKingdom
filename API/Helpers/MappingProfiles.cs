@@ -37,6 +37,12 @@ namespace API.Helpers
 
             CreateMap<Core.Entities.identity.Address, AddressToReturnDto>();
 
+            CreateMap<ProductType, ProductTypeDto>();
+
+            CreateMap<ProductBrand, BrandDto>();
+
+            
+
             
 
 

@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-light table-striped table-hover text-center">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Update type</th>
+        <th scope="col">Delete type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let type of types">
+        <td>{{ type.name }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            routerLink="/update-type/{{ type.id }}"
+          >
+            Update
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="deleteType(type.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -77,19 +77,32 @@ namespace API.Controllers
         }
 
         [HttpGet("brands")]
-        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        public async Task<ActionResult<IReadOnlyList<BrandDto>>> GetProductBrands()
         {
             _logger.LogInformation("Getting all brands");
 
-            return Ok(await _productBrandRepo.ListAllAsync());
+            var spec = new BrandsSpecification();
+
+            var brands = await _productBrandRepo.ListAsync(spec);
+
+            var brandsDto = _mapper.Map<IReadOnlyList<ProductBrand>, IReadOnlyList<BrandDto>>(brands);
+
+            return Ok(brandsDto);
         }
 
         [HttpGet("types")]
-        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
+        public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> GetProductTypes()
         {
             _logger.LogInformation("Getting all types");
 
-            return Ok(await _productTypeRepo.ListAllAsync());
+            var spec = new TypesSpecification();
+
+            var types = await _productTypeRepo.ListAsync(spec);
+
+            var typesDto = _mapper.Map<IReadOnlyList<ProductType>, IReadOnlyList<ProductTypeDto>>(types);
+
+            return Ok(typesDto);
+
         }
 
         [HttpDelete("{id}")]

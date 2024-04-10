@@ -7,6 +7,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { AddProductComponent } from './add-product/add-product.component';
 import { CustomersComponent } from './customers/customers.component';
 import { AddressComponent } from './address/address.component';
+import { TypesComponent } from './types/types.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { AddressComponent } from './address/address.component';
     AddProductComponent,
     CustomersComponent,
     AddressComponent,
+    TypesComponent,
     
   ],
   imports: [
