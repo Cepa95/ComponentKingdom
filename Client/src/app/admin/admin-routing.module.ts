@@ -8,6 +8,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { CustomersComponent } from './customers/customers.component';
 import { AddressComponent } from './address/address.component';
 import { TypesComponent } from './types/types.component';
+import { BrandsComponent } from './brands/brands.component';
 
 const routes : Routes = [
   {path: '', component: AdminComponent, canActivate: [AdminGuard]},
@@ -15,7 +16,8 @@ const routes : Routes = [
   { path: 'add-product', component: AddProductComponent, canActivate: [AdminGuard] },
   { path: 'customers', component: CustomersComponent, canActivate: [AdminGuard] },
   { path: 'addresses/:id', component: AddressComponent, canActivate: [AdminGuard] },
-  { path: 'types', component: TypesComponent, canActivate: [AdminGuard] }
+  { path: 'types', component: TypesComponent, canActivate: [AdminGuard] },
+  { path: 'brands', component: BrandsComponent, canActivate: [AdminGuard] }
 ]
 
 

@@ -19,7 +19,7 @@
           </button>
         </td>
         <td>
-          <button class="btn btn-primary" (click)="deleteType(type.id)">
+          <button class="btn btn-danger" (click)="openModal(deleteTemplate, type.id)">
             Delete
           </button>
         </td>
@@ -27,3 +27,12 @@
     </tbody>
   </table>
 </div>
+
+<ng-template #deleteTemplate>
+  <div class="modal-body text-center">
+    <p>Are you sure you want to delete this type?</p>
+    <button type="button" class="btn btn-danger" (click)="confirmDelete(); modalRef?.hide()">Yes</button>
+    &nbsp;
+    <button type="button" class="btn btn-primary" (click)="modalRef?.hide()">No</button>
+  </div>
+</ng-template>

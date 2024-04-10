@@ -5,6 +5,7 @@ import { Pagination } from '../shared/models/pagination';
 import { Customer } from '../shared/models/customer';
 import { CustomerParams } from '../shared/models/customerParams';
 import { Type } from '../shared/models/type';
+import { Brand } from '../shared/models/brand';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,7 @@ export class AdminService {
   }
 
   getBrands() {
-    return this.http.get(this.baseUrl + 'admin/brands');
+    return this.http.get<Brand[]>(this.baseUrl + 'admin/brands');
   }
   deleteBrand(id: number) {
     return this.http.delete(this.baseUrl + 'admin/brands/' + id);
