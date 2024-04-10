@@ -38,7 +38,7 @@ namespace Core.Entities.OrderAggregate
 
         public decimal GetTotal()
         {
-            return SubTotal + DeliveryMethod.Price;
+            return SubTotal + (DeliveryMethod?.Price ?? 0);
         }
     }
 }

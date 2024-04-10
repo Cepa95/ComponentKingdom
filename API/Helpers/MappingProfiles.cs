@@ -41,9 +41,8 @@ namespace API.Helpers
 
             CreateMap<ProductBrand, BrandDto>();
 
-            
+            CreateMap<Order, OrderDto>();
 
-            
 
 
         

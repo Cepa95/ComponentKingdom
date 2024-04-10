@@ -58,9 +58,10 @@ namespace Infrastructure.Services
             var result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;
-  
+
             return order;
         }
+
 
         public async Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
         {
@@ -77,6 +78,13 @@ namespace Infrastructure.Services
         public async Task<IReadOnlyList<Order>> GetOrdersForUserAsync(string buyerEmail)
         {
             var spec = new OrdersWithItemsAndOrderingSpecification(buyerEmail);
+
+            return await _unitOfWork.Repository<Order>().ListAsync(spec);
+        }
+
+        public async Task<IReadOnlyList<Order>> GetAllOrdersAsync()
+        {
+             var spec = new OrdersWithItemsAndOrderingSpecification();
 
             return await _unitOfWork.Repository<Order>().ListAsync(spec);
         }

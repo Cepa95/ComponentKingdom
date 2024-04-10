@@ -5,6 +5,7 @@ using API.Helpers;
 using AutoMapper;
 using Core.Entities;
 using Core.Entities.identity;
+using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.AspNetCore.Authorization;
@@ -24,15 +25,19 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly ILogger<AdminController> _logger;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IGenericRepository<Order> _ordersRepo;
+          private readonly IOrderService _orderService;
 
 
         public AdminController(IUnitOfWork unitOfWork,
         IGenericRepository<ProductBrand> productBrandRepo,
         IGenericRepository<ProductType> productTypeRepo,
         IGenericRepository<Product> productsRepo,
+        IGenericRepository<Order> ordersRepo,
         IMapper mapper,
         ILogger<AdminController> logger,
-        UserManager<AppUser> userManager)
+        UserManager<AppUser> userManager,
+        IOrderService orderService)
         {
             _mapper = mapper;
             _productsRepo = productsRepo;
@@ -41,6 +46,8 @@ namespace API.Controllers
             _unitOfWork = unitOfWork;
             _logger = logger;
             _userManager = userManager;
+            _ordersRepo = ordersRepo;
+            _orderService = orderService;
         }
 
 
@@ -240,6 +247,15 @@ namespace API.Controllers
             }
         }
 
+        [HttpGet("orders")]
+        public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetAllOrders()
+        {
+            _logger.LogInformation("Getting all orders");
+
+            var orders = await _orderService.GetAllOrdersAsync();
+
+            return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
+        }
 
 
 
