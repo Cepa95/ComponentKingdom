@@ -111,13 +111,20 @@ namespace API.Controllers
         }
 
         [HttpGet("customers")]
-        public async Task<ActionResult<Pagination<CustomerDto>>> GetAllCustomers(int pageIndex = 1, int pageSize = 5)
+        public async Task<ActionResult<Pagination<CustomerDto>>> GetAllCustomers(int pageIndex = 1, int pageSize = 8, string search = null)
         {
             _logger.LogInformation("Getting all customers");
 
-            var count = await _userManager.Users.CountAsync();
+            var query = _userManager.Users.AsQueryable();
 
-            var users = await _userManager.Users
+            if (!string.IsNullOrEmpty(search))
+            {
+                query = query.Where(u => u.UserName.Contains(search.ToLower().Trim()));
+            }
+
+            var count = await query.CountAsync();
+
+            var users = await query
                 .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
@@ -181,9 +188,6 @@ namespace API.Controllers
                 return StatusCode(500, new ApiResponse(500, ex.InnerException?.Message));
             }
         }
-
-
-
 
 
 

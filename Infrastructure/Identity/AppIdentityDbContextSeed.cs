@@ -1,6 +1,7 @@
 using Core.Entities.identity;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Identity
@@ -35,6 +36,14 @@ namespace Infrastructure.Identity
                 }
 
                 await userManager.AddToRoleAsync(user, "Admin");
+
+                var userData = await File.ReadAllTextAsync("C:/Users/Josip Čeprnić/Desktop/Webshop/Infrastructure/Data/SeedData/users.json");
+                var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
+
+                foreach (var newUser in users)
+                {
+                    await userManager.CreateAsync(newUser, "Lozinka$123");
+                }
             }
         }
     }

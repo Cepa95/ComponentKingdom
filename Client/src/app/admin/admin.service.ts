@@ -49,6 +49,8 @@ export class AdminService {
   
     params = params.append('pageIndex', customerParams.pageIndex.toString());
     params = params.append('pageSize', customerParams.pageSize);
+    if (customerParams.search) params = params.append('search', customerParams.search);
+    
   
     return this.http.get<Pagination<Customer[]>>(this.baseUrl + 'admin/customers', {params});
   }

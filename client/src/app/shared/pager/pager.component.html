@@ -1,6 +1,5 @@
 <div class="d-flex justify-content-center" *ngIf="totalCount !== 0 && totalCount && pageSize">
     <div class="row">
-      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
         <pagination
           [boundaryLinks]="true"
           [totalItems]="totalCount"
@@ -8,6 +7,5 @@
           [maxSize]="3"
           (pageChanged)="onPageChanged($event)"
         ></pagination>
-      </div>
     </div>
   </div>
