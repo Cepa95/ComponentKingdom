@@ -1,6 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../shared/models/product';
+import { Pagination } from '../shared/models/pagination';
+import { Customer } from '../shared/models/customer';
+import { Observable } from 'rxjs';
+import { CustomerParams } from '../shared/models/customerParams';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +40,17 @@ export class AdminService {
     return this.http.post(this.baseUrl + 'admin/products', product);
   }
 
-  getCustomers() {
-    return this.http.get(this.baseUrl + 'admin/customers');
+  // getCustomers() {
+  //   return this.http.get(this.baseUrl + 'admin/customers');
+  // }
+
+  getCustomers(customerParams : CustomerParams){
+    let params = new HttpParams();
+  
+    params = params.append('pageIndex', customerParams.pageIndex.toString());
+    params = params.append('pageSize', customerParams.pageSize);
+  
+    return this.http.get<Pagination<Customer[]>>(this.baseUrl + 'admin/customers', {params});
   }
 
   getAddress(id: string){

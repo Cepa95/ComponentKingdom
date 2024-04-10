@@ -1,6 +1,7 @@
 using API.Dtos;
 using API.Errors;
 using API.Extensions;
+using API.Helpers;
 using AutoMapper;
 using Core.Entities;
 using Core.Entities.identity;
@@ -110,15 +111,22 @@ namespace API.Controllers
         }
 
         [HttpGet("customers")]
-        public async Task<ActionResult<IReadOnlyList<CustomerDto>>> GetAllCustomers()
+        public async Task<ActionResult<Pagination<CustomerDto>>> GetAllCustomers(int pageIndex = 1, int pageSize = 5)
         {
             _logger.LogInformation("Getting all customers");
 
-            var users = await _userManager.Users.ToListAsync();
+            var count = await _userManager.Users.CountAsync();
+
+            var users = await _userManager.Users
+                .Skip((pageIndex - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
 
             var userDtos = _mapper.Map<List<CustomerDto>>(users);
 
-            return Ok(userDtos);
+            var pagination = new Pagination<CustomerDto>(pageIndex, pageSize, count, userDtos);
+
+            return Ok(pagination);
         }
 
         [HttpGet("address/{userId}")]
@@ -139,7 +147,7 @@ namespace API.Controllers
 
             return Ok(addressDto);
         }
-        
+
 
         [HttpPut("address/{userId}")]
         public async Task<ActionResult> UpdateAddressByUserId(string userId, AddressDto addressDto)
@@ -149,7 +157,7 @@ namespace API.Controllers
             userId = userId.Trim().ToLower();
 
             var user = await _userManager.Users
-                .Include(u => u.Address) 
+                .Include(u => u.Address)
                 .Where(u => u.Id.Trim().ToLower() == userId)
                 .SingleOrDefaultAsync();
 

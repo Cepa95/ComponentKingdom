@@ -10,11 +10,23 @@
     </thead>
     <tbody>
       <tr *ngFor="let customer of customers">
-        <th scope="row">{{customer.id}}</th>
-        <td>{{customer.displayName}}</td>
-        <td>{{customer.username}}</td>
-        <td> <button  class="btn btn-primary" routerLink="/admin/addresses/{{customer.id}}">Update</button></td>
+        <th scope="row">{{ customer.id }}</th>
+        <td>{{ customer.displayName }}</td>
+        <td>{{ customer.username }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            routerLink="/admin/addresses/{{ customer.id }}"
+          >
+            Update
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+<app-pager
+  [totalCount]="totalCount"
+  [pageSize]="customerParams.pageSize"
+  (pageChanged)="onPageChanged($event)"
+></app-pager>

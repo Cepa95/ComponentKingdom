@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
+import { CustomerParams } from '../../shared/models/customerParams';
 
 @Component({
   selector: 'app-customers',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class CustomersComponent implements OnInit {
   customers: any[] = [];
+  customerParams = new CustomerParams();
+  totalCount = 0;
 
   constructor(private adminService: AdminService, private router: Router) {}
 
@@ -17,10 +20,21 @@ export class CustomersComponent implements OnInit {
   }
 
   getCustomers() {
-    this.adminService.getCustomers().subscribe((customers) => {
-      {
-        this.customers = customers as any;
-      }
-    });
+    console.log('Getting customers for page:', this.customerParams.pageIndex);
+    this.adminService
+      .getCustomers(this.customerParams)
+      .subscribe((response) => {
+        this.customers = response.data;
+        this.customerParams.pageIndex = response.pageIndex;
+        this.customerParams.pageSize = response.pageSize;
+        this.totalCount = response.count;
+      });
+  }
+
+  onPageChanged(event: any) {
+    if (event && this.customerParams.pageIndex !== event) {
+      this.customerParams.pageIndex = event;
+      this.getCustomers();
+    }
   }
 }
