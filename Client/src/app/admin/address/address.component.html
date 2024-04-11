@@ -20,6 +20,16 @@
         required
       />
     </div>
+    <div
+      *ngIf="
+        addressForm.controls['firstName'].invalid &&
+        (addressForm.controls['firstName'].dirty ||
+          addressForm.controls['firstName'].touched)
+      "
+      class="alert alert-danger mt-3"
+    >
+      First Name is required.
+    </div>
 
     <div class="form-group mb-3">
       <label for="lastName" style="color: #d0a933">Last Name</label>
@@ -36,6 +46,15 @@
         required
       />
     </div>
+    <div
+    *ngIf="
+      addressForm.controls['lastName'].invalid &&
+      (addressForm.controls['lastName'].dirty || addressForm.controls['lastName'].touched)
+    "
+    class="alert alert-danger mt-3"
+  >
+    Last Name is required.
+  </div>
 
     <div class="form-group mb-3">
       <label for="street" style="color: #d0a933">Street</label>
@@ -52,6 +71,15 @@
         required
       />
     </div>
+    <div
+    *ngIf="
+      addressForm.controls['street'].invalid &&
+      (addressForm.controls['street'].dirty || addressForm.controls['street'].touched)
+    "
+    class="alert alert-danger mt-3"
+  >
+    Street is required.
+  </div>
 
     <div class="form-group mb-3">
       <label for="city" style="color: #d0a933">City</label>
@@ -68,6 +96,15 @@
         required
       />
     </div>
+    <div
+    *ngIf="
+      addressForm.controls['city'].invalid &&
+      (addressForm.controls['city'].dirty || addressForm.controls['city'].touched)
+    "
+    class="alert alert-danger mt-3"
+  >
+    City is required.
+  </div>
 
     <div class="form-group mb-3">
       <label for="state" style="color: #d0a933">State</label>
@@ -84,6 +121,15 @@
         required
       />
     </div>
+    <div
+    *ngIf="
+      addressForm.controls['state'].invalid &&
+      (addressForm.controls['state'].dirty || addressForm.controls['state'].touched)
+    "
+    class="alert alert-danger mt-3"
+  >
+    State is required.
+  </div>
 
     <div class="form-group mb-3">
       <label for="zipCode" style="color: #d0a933">Zip Code</label>
@@ -100,6 +146,15 @@
         required
       />
     </div>
+    <div
+    *ngIf="
+      addressForm.controls['zipCode'].invalid &&
+      (addressForm.controls['zipCode'].dirty || addressForm.controls['zipCode'].touched)
+    "
+    class="alert alert-danger mt-3"
+  >
+    Zip Code is required.
+  </div>
 
     <div *ngIf="errorMessage" class="alert alert-danger mt-3">
       {{ error }}
@@ -119,7 +174,7 @@
 <div class="container" *ngIf="error">
   <div class="card border-danger">
     <div class="card-body">
-      <h1 class="card-title text-danger">{{error}}</h1>
+      <h1 class="card-title text-danger">{{ error }}</h1>
     </div>
   </div>
 </div>

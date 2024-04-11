@@ -1,10 +1,17 @@
 <section class="mb-3">
   <div class="d-flex mt-2">
-    <input (keyup.enter)="onSearch()" type="text" placeholder="Search usernames" class="form-control me-2" #search>
+    <input
+      (keyup.enter)="onSearch()"
+      type="text"
+      placeholder="Search usernames"
+      spellcheck="false"
+      class="form-control me-2"
+      #search
+    />
     <button (click)="onSearch()" class="btn btn-primary mx-2">Search</button>
     <button (click)="onReset()" class="btn btn-danger">Reset</button>
   </div>
-  </section>
+</section>
 
 <div class="table-responsive">
   <table class="table table-light table-striped table-hover text-center">
@@ -33,7 +40,7 @@
     </tbody>
   </table>
 </div>
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex; justify-content: center; align-items: center">
   <app-pager
     [totalCount]="totalCount"
     [pageSize]="customerParams.pageSize"

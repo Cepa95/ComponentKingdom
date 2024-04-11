@@ -9,6 +9,10 @@ import { CustomersComponent } from './customers/customers.component';
 import { AddressComponent } from './address/address.component';
 import { TypesComponent } from './types/types.component';
 import { BrandsComponent } from './brands/brands.component';
+import { UpdateBrandComponent } from './update-brand/update-brand.component';
+import { UpdateTypeComponent } from './update-type/update-type.component';
+import { AddTypeComponent } from './add-type/add-type.component';
+import { AddBrandComponent } from './add-brand/add-brand.component';
 
 
 @NgModule({
@@ -20,6 +24,10 @@ import { BrandsComponent } from './brands/brands.component';
     AddressComponent,
     TypesComponent,
     BrandsComponent,
+    UpdateBrandComponent,
+    UpdateTypeComponent,
+    AddTypeComponent,
+    AddBrandComponent,
     
   ],
   imports: [

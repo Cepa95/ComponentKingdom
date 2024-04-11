@@ -37,14 +37,30 @@ export class AdminService {
     return this.http.delete(this.baseUrl + 'admin/types/' + id);
   }
 
+  updateType(id: number, type: any) {
+    return this.http.put(this.baseUrl + 'admin/types/' + id, type);
+  }
+
+  addType(type: Type) {
+    return this.http.post(this.baseUrl + 'admin/types', type);
+  }
+
   getBrands() {
     return this.http.get<Brand[]>(this.baseUrl + 'admin/brands');
   }
+
   deleteBrand(id: number) {
     return this.http.delete(this.baseUrl + 'admin/brands/' + id);
   }
 
-  
+  updateBrand(id: number, brand: any) {
+    return this.http.put(this.baseUrl + 'admin/brands/' + id, brand);
+  }
+
+  addBrand(brand: Brand) {
+    return this.http.post(this.baseUrl + 'admin/brands', brand);
+  }
+
 
   addProduct(product: Product) {
     return this.http.post(this.baseUrl + 'admin/products', product);

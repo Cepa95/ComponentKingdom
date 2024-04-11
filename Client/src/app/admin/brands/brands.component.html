@@ -1,3 +1,9 @@
+<button
+class="btn btn-primary mb-3"
+routerLink="/admin/add-brand"
+>
+Add brand
+</button>
 <div class="table-responsive">
     <table class="table table-light table-striped table-hover text-center">
       <thead class="table-dark">
@@ -13,7 +19,7 @@
           <td>
             <button
               class="btn btn-primary"
-              routerLink="/update-type/{{ brand.id }}"
+              routerLink="/admin/update-brand/{{ brand.id }}"
             >
               Update
             </button>

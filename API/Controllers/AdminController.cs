@@ -26,7 +26,7 @@ namespace API.Controllers
         private readonly ILogger<AdminController> _logger;
         private readonly UserManager<AppUser> _userManager;
         private readonly IGenericRepository<Order> _ordersRepo;
-          private readonly IOrderService _orderService;
+        private readonly IOrderService _orderService;
 
 
         public AdminController(IUnitOfWork unitOfWork,
@@ -81,6 +81,36 @@ namespace API.Controllers
             return Ok(await _productBrandRepo.ListAllAsync());
         }
 
+        [HttpPut("brands/{id}")]
+        public async Task<ActionResult<BrandUpdateDto>> UpdateProductBrand(int id, BrandUpdateDto brandDto)
+        {
+            _logger.LogInformation($"Updating a brand under id: {id}");
+
+            var brand = await _productBrandRepo.GetByIdAsync(id);
+
+            if (brand == null) return NotFound(new ApiResponse(404));
+
+            _mapper.Map(brandDto, brand);
+
+            _productBrandRepo.Update(brand);
+            await _unitOfWork.Complete();
+
+            return Ok(_mapper.Map<ProductBrand, BrandUpdateDto>(brand));
+        }
+
+        [HttpPost("brands")]
+        public async Task<ActionResult<BrandUpdateDto>> CreateProductBrand(BrandUpdateDto brandDto)
+        {
+            _logger.LogInformation("Creating a new product brand");
+
+            var brand = _mapper.Map<ProductBrand>(brandDto);
+
+            _productBrandRepo.Add(brand);
+            await _unitOfWork.Complete();
+
+            return Ok(_mapper.Map<ProductBrand, BrandUpdateDto>(brand));
+        }
+
         [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> GetProductTypes()
         {
@@ -111,6 +141,37 @@ namespace API.Controllers
 
             return Ok(await _productTypeRepo.ListAllAsync());
         }
+
+        [HttpPut("types/{id}")]
+        public async Task<ActionResult<TypeCreateDto>> UpdateProductType(int id, TypeCreateDto typeDto)
+        {
+            _logger.LogInformation($"Updating a type under id: {id}");
+
+            var type = await _productTypeRepo.GetByIdAsync(id);
+
+            if (type == null) return NotFound(new ApiResponse(404));
+
+            _mapper.Map(typeDto, type);
+
+            _productTypeRepo.Update(type);
+            await _unitOfWork.Complete();
+
+            return Ok(_mapper.Map<ProductType, TypeCreateDto>(type));
+        }
+
+        [HttpPost("types")]
+        public async Task<ActionResult<TypeCreateDto>> CreateProductType(TypeCreateDto typeDto)
+        {
+            _logger.LogInformation("Creating a new product type");
+
+            var type = _mapper.Map<ProductType>(typeDto);
+
+            _productTypeRepo.Add(type);
+            await _unitOfWork.Complete();
+
+            return Ok(_mapper.Map<ProductType, TypeCreateDto>(type));
+        }
+
 
         [HttpGet("product/{id}")]
         public async Task<ActionResult<ProductCreateDto>> GetProductById(int id)

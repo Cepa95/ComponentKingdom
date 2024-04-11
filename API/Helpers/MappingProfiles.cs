@@ -43,6 +43,10 @@ namespace API.Helpers
 
             CreateMap<Order, OrderDto>();
 
+            CreateMap<ProductBrand, BrandUpdateDto>().ReverseMap();
+
+            CreateMap<ProductType, TypeCreateDto>().ReverseMap();
+
 
 
         

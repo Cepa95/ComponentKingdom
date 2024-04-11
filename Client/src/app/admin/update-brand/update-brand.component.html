@@ -1,0 +1,42 @@
+<div class="container py-5">
+    <form
+      [formGroup]="brandForm"
+      (ngSubmit)="onSubmit()"
+      class="card p-4 shadow"
+      style="border-radius: 30px"
+    >
+      <div class="form-group mb-3">
+        <label for="name" style="color: #d0a933">Brand Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          spellcheck="false"
+          [class.is-invalid]="
+            brandForm.controls['name'].invalid &&
+            (brandForm.controls['name'].dirty || brandForm.controls['name'].touched)
+          "
+          required
+        />
+        <div
+          *ngIf="
+            brandForm.controls['name'].invalid &&
+            (brandForm.controls['name'].dirty || brandForm.controls['name'].touched)
+          "
+          class="alert alert-danger mt-3"
+        >
+          Brand name is required.
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-primary mt-3"
+          [disabled]="brandForm.invalid || brandForm.pristine"
+        >
+          Update Brand
+        </button>
+      </div>
+    </form>
+  </div>
