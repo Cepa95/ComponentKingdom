@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
@@ -45,17 +46,28 @@ namespace Infrastructure.Data
 
         public void Add(T entity)
         {
-            _context.Set<T>().Add(entity);}
+            _context.Set<T>().Add(entity);
+        }
 
         public void Update(T entity)
         {
-           _context.Set<T>().Attach(entity);
-           _context.Entry(entity).State = EntityState.Modified;
+            _context.Set<T>().Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         public void Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
+        }
+
+        public async Task<IReadOnlyList<TResult>> GroupByAsync<TResult>(
+            Expression<Func<T, string>> groupBy,
+            Expression<Func<IGrouping<string, T>, TResult>> select)
+        {
+            return await _context.Set<T>()
+            .GroupBy(groupBy)
+            .Select(select)
+            .ToListAsync();
         }
     }
 }

@@ -27,6 +27,7 @@ namespace API.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IGenericRepository<Order> _ordersRepo;
         private readonly IOrderService _orderService;
+        private readonly IGenericRepository<OrderItem> _orderItemsRepo;
 
 
         public AdminController(IUnitOfWork unitOfWork,
@@ -34,6 +35,7 @@ namespace API.Controllers
         IGenericRepository<ProductType> productTypeRepo,
         IGenericRepository<Product> productsRepo,
         IGenericRepository<Order> ordersRepo,
+        IGenericRepository<OrderItem> orderItemsRepo,
         IMapper mapper,
         ILogger<AdminController> logger,
         UserManager<AppUser> userManager,
@@ -48,8 +50,8 @@ namespace API.Controllers
             _userManager = userManager;
             _ordersRepo = ordersRepo;
             _orderService = orderService;
+            _orderItemsRepo = orderItemsRepo;
         }
-
 
         [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<BrandDto>>> GetProductBrands()
@@ -317,6 +319,27 @@ namespace API.Controllers
 
             return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
         }
+
+        [HttpGet("products/sales")]
+        public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales()
+        {
+            _logger.LogInformation("Getting product sales");
+
+            var productSales = await _orderItemsRepo.GroupByAsync(
+                oi => oi.ItemOrdered.ProductName,
+                g => new ProductSalesDto
+                {
+                    ProductName = g.Key,
+                    QuantitySold = g.Sum(oi => oi.Quantity)
+                });
+
+            return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
+        }
+
+
+
+
+
 
 
 
