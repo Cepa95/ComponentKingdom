@@ -8,12 +8,11 @@ import { Type } from '../shared/models/type';
 import { Brand } from '../shared/models/brand';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminService {
-
   baseUrl = 'https://localhost:5001/api/';
-  product?: Product
+  product?: Product;
 
   constructor(private http: HttpClient) {}
 
@@ -61,27 +60,32 @@ export class AdminService {
     return this.http.post(this.baseUrl + 'admin/brands', brand);
   }
 
-
   addProduct(product: Product) {
     return this.http.post(this.baseUrl + 'admin/products', product);
   }
 
-  getCustomers(customerParams : CustomerParams){
+  getCustomers(customerParams: CustomerParams) {
     let params = new HttpParams();
-  
+
     params = params.append('pageIndex', customerParams.pageIndex.toString());
     params = params.append('pageSize', customerParams.pageSize);
-    if (customerParams.search) params = params.append('search', customerParams.search);
-    
-  
-    return this.http.get<Pagination<Customer[]>>(this.baseUrl + 'admin/customers', {params});
+    if (customerParams.search)
+      params = params.append('search', customerParams.search);
+
+    return this.http.get<Pagination<Customer[]>>(
+      this.baseUrl + 'admin/customers',
+      { params }
+    );
   }
 
-  getAddress(id: string){
+  getAddress(id: string) {
     return this.http.get(this.baseUrl + 'admin/address/' + id);
   }
 
-  updateAddress(userId: string, address: any){
+  updateAddress(userId: string, address: any) {
     return this.http.put(`${this.baseUrl}admin/address/${userId}`, address);
-}
+  }
+  getProductSales() {
+    return this.http.get(this.baseUrl + 'admin/products/sales');
+  }
 }

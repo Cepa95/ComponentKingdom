@@ -13,6 +13,7 @@ import { UpdateBrandComponent } from './update-brand/update-brand.component';
 import { UpdateTypeComponent } from './update-type/update-type.component';
 import { AddTypeComponent } from './add-type/add-type.component';
 import { AddBrandComponent } from './add-brand/add-brand.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent, canActivate: [AdminGuard] },
@@ -50,6 +51,7 @@ const routes: Routes = [
   },
   { path: 'add-type', component: AddTypeComponent, canActivate: [AdminGuard] },
   { path: 'add-brand', component: AddBrandComponent, canActivate: [AdminGuard] },
+  { path: 'charts', component: ChartsComponent, canActivate: [AdminGuard] },
 ];
 
 @NgModule({

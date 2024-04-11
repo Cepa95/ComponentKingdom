@@ -13,6 +13,8 @@ import { UpdateBrandComponent } from './update-brand/update-brand.component';
 import { UpdateTypeComponent } from './update-type/update-type.component';
 import { AddTypeComponent } from './add-type/add-type.component';
 import { AddBrandComponent } from './add-brand/add-brand.component';
+import { ChartsComponent } from './charts/charts.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -28,12 +30,14 @@ import { AddBrandComponent } from './add-brand/add-brand.component';
     UpdateTypeComponent,
     AddTypeComponent,
     AddBrandComponent,
+    ChartsComponent,
     
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxChartsModule
   ]
 })
 export class AdminModule { }
