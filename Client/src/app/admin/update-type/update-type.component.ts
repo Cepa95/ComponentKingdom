@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { catchError, of } from 'rxjs';
   templateUrl: './update-type.component.html',
   styleUrl: './update-type.component.scss'
 })
-export class UpdateTypeComponent {
+export class UpdateTypeComponent implements OnInit{
   typeForm: FormGroup = new FormGroup({
     name: new FormControl(null, Validators.required),
   });

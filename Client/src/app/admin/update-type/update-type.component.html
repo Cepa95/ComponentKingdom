@@ -1,42 +1,42 @@
 <div class="container py-5">
-    <form
-      [formGroup]="typeForm"
-      (ngSubmit)="onSubmit()"
-      class="card p-4 shadow"
-      style="border-radius: 30px"
-    >
-      <div class="form-group mb-3">
-        <label for="name" style="color: #d0a933">Type Name</label>
-        <input
-          type="text"
-          id="name"
-          class="form-control"
-          formControlName="name"
-          spellcheck="false"
-          [class.is-invalid]="
-            typeForm.controls['name'].invalid &&
-            (typeForm.controls['name'].dirty || typeForm.controls['name'].touched)
-          "
-          required
-        />
-        <div
-          *ngIf="
-            typeForm.controls['name'].invalid &&
-            (typeForm.controls['name'].dirty || typeForm.controls['name'].touched)
-          "
-          class="alert alert-danger mt-3"
-        >
-          Type name is required.
-        </div>
+  <form
+    [formGroup]="typeForm"
+    (ngSubmit)="onSubmit()"
+    class="card p-4 shadow"
+    style="border-radius: 30px"
+  >
+    <div class="form-group mb-3">
+      <label for="name" style="color: #d0a933">Type Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+        spellcheck="false"
+        [class.is-invalid]="
+          typeForm.controls['name'].invalid &&
+          (typeForm.controls['name'].dirty || typeForm.controls['name'].touched)
+        "
+        required
+      />
+      <div
+        *ngIf="
+          typeForm.controls['name'].invalid &&
+          (typeForm.controls['name'].dirty || typeForm.controls['name'].touched)
+        "
+        class="alert alert-danger mt-3"
+      >
+        Type name is required.
       </div>
-      <div class="d-flex justify-content-center">
-        <button
-          type="submit"
-          class="btn btn-primary mt-3"
-          [disabled]="typeForm.invalid || typeForm.pristine"
-        >
-          Update Type
-        </button>
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-primary mt-3"
+        [disabled]="typeForm.invalid || typeForm.pristine"
+      >
+        Update Type
+      </button>
+    </div>
+  </form>
+</div>
