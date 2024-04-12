@@ -337,19 +337,41 @@ namespace API.Controllers
             return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
         }
 
+        // [HttpGet("orders")]
+        // public async Task<ActionResult<IReadOnlyList<NewOrderDto>>> GetAllOrders()
+        // {
+        //     _logger.LogInformation("Getting all orders");
+
+        //     var orders = await _orderService.GetAllOrdersAsync();
+
+        //     var orderDtos = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<NewOrderDto>>(orders);
+
+        //     return Ok(orderDtos);
+        // }
+
         [HttpGet("orders")]
-        public async Task<ActionResult<IReadOnlyList<NewOrderDto>>> GetAllOrders()
+        public async Task<ActionResult<Pagination<NewOrderDto>>> GetAllOrders(int pageIndex = 1, int pageSize = 2)
         {
             _logger.LogInformation("Getting all orders");
 
-            var orders = await _orderService.GetAllOrdersAsync();
+            var spec = new OrdersWithItemsAndOrderingSpecification();
+            var orders = await _orderService.GetAllOrdersAsync(spec, pageIndex, pageSize);
+
+            var totalOrders = await _unitOfWork.Repository<Order>().CountAsync(spec);
 
             var orderDtos = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<NewOrderDto>>(orders);
 
-            return Ok(orderDtos);
+            var pagination = new Pagination<NewOrderDto>(pageIndex, pageSize, totalOrders, orderDtos);
+
+            return Ok(pagination);
         }
 
-   
+
+
+
+
+
+
 
 
 

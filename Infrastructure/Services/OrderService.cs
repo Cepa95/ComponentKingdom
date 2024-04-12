@@ -82,12 +82,13 @@ namespace Infrastructure.Services
             return await _unitOfWork.Repository<Order>().ListAsync(spec);
         }
 
-        public async Task<IReadOnlyList<Order>> GetAllOrdersAsync()
+        public async Task<IReadOnlyList<Order>> GetAllOrdersAsync(ISpecification<Order> spec, int pageIndex, int pageSize)
         {
-             var spec = new OrdersWithItemsAndOrderingSpecification();
-
-            return await _unitOfWork.Repository<Order>().ListAsync(spec);
+            var orders = await _unitOfWork.Repository<Order>().ListPaginatedAsync(spec, pageIndex, pageSize);
+            return orders;
         }
+
+
 
 
 

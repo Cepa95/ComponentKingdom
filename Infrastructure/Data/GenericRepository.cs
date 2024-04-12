@@ -69,5 +69,13 @@ namespace Infrastructure.Data
             .Select(select)
             .ToListAsync();
         }
+
+        public async Task<IReadOnlyList<T>> ListPaginatedAsync(ISpecification<T> spec, int pageIndex, int pageSize)
+        {
+            return await ApplySpecification(spec)
+                .Skip((pageIndex -1)* pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace Core.Interfaces
         Task<IReadOnlyList<TResult>> GroupByAsync<TResult>(
         Expression<Func<T, string>> groupBy,
         Expression<Func<IGrouping<string, T>, TResult>> select);
+        Task<IReadOnlyList<T>> ListPaginatedAsync(ISpecification<T> spec, int pageIndex, int pageSize);
 
 
     }
