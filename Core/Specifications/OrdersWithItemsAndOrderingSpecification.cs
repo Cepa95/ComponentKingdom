@@ -24,8 +24,15 @@ namespace Core.Specifications
             AddInclude(o => o.DeliveryMethod);
             AddOrderByDescending(o => o.OrderDate);
         }
-          
-  
+
+        public OrdersWithItemsAndOrderingSpecification(Expression<Func<Order, bool>> criteria) : base(criteria)
+        {
+            AddInclude(o => o.OrderItems);
+            AddInclude(o => o.DeliveryMethod);
+            AddOrderByDescending(o => o.OrderDate);
+        }
+
+
 
     }
 }

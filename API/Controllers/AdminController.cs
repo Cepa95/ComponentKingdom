@@ -349,12 +349,35 @@ namespace API.Controllers
         //     return Ok(orderDtos);
         // }
 
+        // [HttpGet("orders")]
+        // public async Task<ActionResult<Pagination<NewOrderDto>>> GetAllOrders(int pageIndex = 1, int pageSize = 2)
+        // {
+        //     _logger.LogInformation("Getting all orders");
+
+        //     var spec = new OrdersWithItemsAndOrderingSpecification();
+        //     var orders = await _orderService.GetAllOrdersAsync(spec, pageIndex, pageSize);
+
+        //     var totalOrders = await _unitOfWork.Repository<Order>().CountAsync(spec);
+
+        //     var orderDtos = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<NewOrderDto>>(orders);
+
+        //     var pagination = new Pagination<NewOrderDto>(pageIndex, pageSize, totalOrders, orderDtos);
+
+        //     return Ok(pagination);
+        // }
+
         [HttpGet("orders")]
-        public async Task<ActionResult<Pagination<NewOrderDto>>> GetAllOrders(int pageIndex = 1, int pageSize = 2)
+        public async Task<ActionResult<Pagination<NewOrderDto>>> GetAllOrders(int pageIndex = 1, int pageSize = 2, string search = null)
         {
             _logger.LogInformation("Getting all orders");
 
             var spec = new OrdersWithItemsAndOrderingSpecification();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                spec = new OrdersWithItemsAndOrderingSpecification(o => o.BuyerEmail.Contains(search.ToLower().Trim()));
+            }
+
             var orders = await _orderService.GetAllOrdersAsync(spec, pageIndex, pageSize);
 
             var totalOrders = await _unitOfWork.Repository<Order>().CountAsync(spec);

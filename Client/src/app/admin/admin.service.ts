@@ -6,6 +6,8 @@ import { Customer } from '../shared/models/customer';
 import { CustomerParams } from '../shared/models/customerParams';
 import { Type } from '../shared/models/type';
 import { Brand } from '../shared/models/brand';
+import { NewOrder } from '../shared/models/newOrder';
+import { OrderParams } from '../shared/models/orderParams';
 
 @Injectable({
   providedIn: 'root',
@@ -90,7 +92,13 @@ export class AdminService {
     return this.http.get(this.baseUrl + 'admin/products/sales');
   }
 
-  getAllOrders() {
-    return this.http.get(this.baseUrl + 'admin/orders');
+  getAllOrders(orderParams: OrderParams) {
+    let params = new HttpParams();
+
+    params = params.append('pageIndex', orderParams.pageIndex.toString());
+    params = params.append('pageSize', orderParams.pageSize);
+    if (orderParams.search)
+      params = params.append('search', orderParams.search);
+    return this.http.get<Pagination<NewOrder[]>>(this.baseUrl + 'admin/orders', {params});
   }
 }
