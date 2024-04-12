@@ -8,11 +8,15 @@ import { AdminService } from './admin.service';
 })
 export class AdminComponent implements OnInit {
   salesData: any[] = [];
+  yearSalesData: any[] = [];
+  selectedYear = new Date().getFullYear();
+  years = Array.from({length: 5}, (_, i) => this.selectedYear - i);
 
   constructor(private adminService: AdminService) {}
 
   ngOnInit() {
     this.getProductSales();
+    
   }
 
   getProductSales() {
@@ -25,4 +29,6 @@ export class AdminComponent implements OnInit {
         .slice(0, 10);
     });
   }
+
+
 }

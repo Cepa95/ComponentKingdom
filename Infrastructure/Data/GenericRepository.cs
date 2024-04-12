@@ -1,5 +1,6 @@
 using System.Linq.Expressions;
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
@@ -73,9 +74,14 @@ namespace Infrastructure.Data
         public async Task<IReadOnlyList<T>> ListPaginatedAsync(ISpecification<T> spec, int pageIndex, int pageSize)
         {
             return await ApplySpecification(spec)
-                .Skip((pageIndex -1)* pageSize)
+                .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
+        }
+
+        public IQueryable<T> Query()
+        {
+             return _context.Set<T>();
         }
     }
 }

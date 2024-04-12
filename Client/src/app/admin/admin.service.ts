@@ -101,4 +101,19 @@ export class AdminService {
       params = params.append('search', orderParams.search);
     return this.http.get<Pagination<NewOrder[]>>(this.baseUrl + 'admin/orders', {params});
   }
+
+  getOrderItemsByOrderId(id: number){
+    return this.http.get(this.baseUrl + 'admin/orderItems/' + id);
+    
+  }
+
+  deleteOrder(id: number){
+    return this.http.delete(this.baseUrl + 'admin/orders/' + id);
+  }
+
+  getProductSalesByYear(year: number){
+    return this.http.get(this.baseUrl + 'admin/products/sales/' + year);
+  }
+
+
 }

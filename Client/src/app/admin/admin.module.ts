@@ -16,6 +16,9 @@ import { AddBrandComponent } from './add-brand/add-brand.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { OrdersComponent } from './orders/orders.component';
+import { OrderItemsComponent } from './order-items/order-items.component';
+import { FormsModule } from '@angular/forms';
+import { YearlySummaryComponent } from './yearly-summary/yearly-summary.component';
 
 
 @NgModule({
@@ -33,13 +36,17 @@ import { OrdersComponent } from './orders/orders.component';
     AddBrandComponent,
     ChartsComponent,
     OrdersComponent,
+    OrderItemsComponent,
+    YearlySummaryComponent,
+    
     
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     SharedModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

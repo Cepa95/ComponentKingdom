@@ -15,6 +15,8 @@ import { AddTypeComponent } from './add-type/add-type.component';
 import { AddBrandComponent } from './add-brand/add-brand.component';
 import { ChartsComponent } from './charts/charts.component';
 import { OrdersComponent } from './orders/orders.component';
+import { OrderItemsComponent } from './order-items/order-items.component';
+import { YearlySummaryComponent } from './yearly-summary/yearly-summary.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent, canActivate: [AdminGuard] },
@@ -54,6 +56,8 @@ const routes: Routes = [
   { path: 'add-brand', component: AddBrandComponent, canActivate: [AdminGuard] },
   { path: 'charts', component: ChartsComponent, canActivate: [AdminGuard] },
   { path: 'orders', component: OrdersComponent, canActivate: [AdminGuard] },
+  { path: 'order-items/:id', component: OrderItemsComponent, canActivate: [AdminGuard] },
+  { path: 'yearly-summary', component: YearlySummaryComponent, canActivate: [AdminGuard] },
 ];
 
 @NgModule({

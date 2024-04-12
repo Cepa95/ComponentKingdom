@@ -21,6 +21,7 @@
         <th scope="col">Display Name</th>
         <th scope="col">Username</th>
         <th scope="col">Address info</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -34,6 +35,14 @@
             routerLink="/admin/addresses/{{ customer.id }}"
           >
             Update
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger"
+            routerLink="/admin/addresses/{{ customer.id }}"
+          >
+            In progress
           </button>
         </td>
       </tr>

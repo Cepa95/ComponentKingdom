@@ -1,7 +1,6 @@
 using API.Dtos;
 using API.Dtos.API.Dtos;
 using API.Errors;
-using API.Extensions;
 using API.Helpers;
 using AutoMapper;
 using Core.Entities;
@@ -40,7 +39,8 @@ namespace API.Controllers
         IMapper mapper,
         ILogger<AdminController> logger,
         UserManager<AppUser> userManager,
-        IOrderService orderService)
+        IOrderService orderService
+        )
         {
             _mapper = mapper;
             _productsRepo = productsRepo;
@@ -389,12 +389,62 @@ namespace API.Controllers
             return Ok(pagination);
         }
 
+        [HttpGet("orderItems/{orderId}")]
+        public async Task<ActionResult<List<OrderItemDto>>> GetOrderItemsByOrderId(int orderId)
+        {
+            _logger.LogInformation($"Getting order items for order with ID: {orderId}");
+
+            var orderItems = await _unitOfWork.Repository<OrderItem>()
+                .ListAsync(new OrderItemSpecification(orderId));
+
+            if (orderItems == null || !orderItems.Any())
+                return NotFound(new ApiResponse(404, "Order items not found"));
+
+            var orderItemDtos = _mapper.Map<List<OrderItemDto>>(orderItems);
+
+            return Ok(orderItemDtos);
+        }
+
+        [HttpDelete("orders/{id}")]
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            _logger.LogInformation($"Deleting order under id: {id}");
+
+            var order = await _unitOfWork.Repository<Order>().GetByIdAsync(id);
+
+            if (order == null) return NotFound(new ApiResponse(404, "Order not found"));
 
 
+            _unitOfWork.Repository<Order>().Delete(order);
+            var result = await _unitOfWork.Complete();
 
+            if (result <= 0) return BadRequest(new ApiResponse(400, "Problem deleting order"));
 
+            return NoContent();
+        }
 
+        [HttpGet("products/sales/{year}")]
+        public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales(int year)
+        {
+            _logger.LogInformation($"Getting product sales for year {year}");
 
+            var productSales = await _orderItemsRepo.Query()
+                .Join(_ordersRepo.Query(),
+                    oi => oi.OrderId,
+                    o => o.Id,
+                    (oi, o) => new { OrderItem = oi, Order = o })
+                .Where(ooi => ooi.Order.OrderDate.Year == year)
+                .GroupBy(ooi => ooi.OrderItem.ItemOrdered.ProductName)
+                .Select(g => new ProductSalesDto
+                {
+                    ProductName = g.Key,
+                    QuantitySold = g.Sum(ooi => ooi.OrderItem.Quantity)
+                })
+                .OrderByDescending(ps => ps.QuantitySold)
+                .ToListAsync();
+
+            return Ok(productSales);
+        }
 
 
 

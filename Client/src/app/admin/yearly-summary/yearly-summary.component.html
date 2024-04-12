@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <h1 class="mb-3 text-center">Best Selling Products of the Year</h1>
+      <div class="col-md-3 mb-2">
+        <select
+          class="form-select form-control-lg col-md-4"
+          [(ngModel)]="selectedYear"
+          (change)="onYearChange(selectedYear)"
+        >
+          <option disabled selected value="">Choose year</option>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <ngx-charts-advanced-pie-chart
+          *ngIf="yearSalesData.length > 0"
+          [results]="yearSalesData"
+          [gradient]="true"
+          [view]="[1100, 530]"
+        >
+        </ngx-charts-advanced-pie-chart>
+      </div>
+    </div>
+  </div>

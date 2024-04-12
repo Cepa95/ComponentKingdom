@@ -20,5 +20,7 @@ namespace Core.Entities.OrderAggregate
 
         public int Quantity { get; set; }
 
+        public int OrderId { get; set; }
+
     }
 }

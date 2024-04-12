@@ -1,6 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { AdminService } from '../admin.service';
 import { OrderParams } from '../../shared/models/orderParams';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-orders',
@@ -12,8 +19,11 @@ export class OrdersComponent implements OnInit {
   orders: any[] = [];
   orderParams = new OrderParams();
   totalCount = 0;
+  modalRef?: BsModalRef;
+  orderIdToDelete?: number;
 
-  constructor(private adminService: AdminService) {}
+
+  constructor(private adminService: AdminService, private modalService: BsModalService) {}
 
   ngOnInit(): void {
     this.getOrders();
@@ -50,5 +60,33 @@ export class OrdersComponent implements OnInit {
     if (this.searchTerm) this.searchTerm.nativeElement.value = '';
     this.orderParams = new OrderParams();
     this.getOrders();
+  }
+
+  openModal(template: TemplateRef<any>, orderId: number) {
+    this.orderIdToDelete = orderId;
+    this.modalRef = this.modalService.show(template, {
+      class: 'modal-sm',
+    });
+  }
+
+  confirmDelete() {
+    if (this.orderIdToDelete !== undefined) {
+      this.adminService.deleteOrder(this.orderIdToDelete).subscribe({
+        next: () => {
+          if (this.modalRef) {
+            this.modalRef.hide();
+          }
+          this.orders = this.orders.filter(
+            (o) => o.id !== this.orderIdToDelete
+          );
+          this.getOrders();
+        },
+        error: () => {
+          console.log(
+            'An error occurred while deleting the order. Please try again.'
+          );
+        },
+      });
+    }
   }
 }

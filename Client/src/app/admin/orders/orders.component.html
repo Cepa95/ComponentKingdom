@@ -27,6 +27,8 @@
         <th scope="col">Sub Total</th>
         <th scope="col">Status</th>
         <th scope="col">Delivery Price</th>
+        <th scope="col">Order Details</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -41,7 +43,19 @@
         <td>{{ order.shipToAddress_ZipCode }}</td>
         <td>{{ order.subTotal | currency : "EUR" }}</td>
         <td>{{ order.status }}</td>
-        <td>{{ order.deliveryMethodPrice | currency : "EUR"}}</td>
+        <td>{{ order.deliveryMethodPrice | currency : "EUR" }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            routerLink="/admin/order-items/{{ order.id }}"
+          >
+            Details
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="openModal(deleteTemplate, order.id)">
+            Delete
+          </button>        </td>
       </tr>
     </tbody>
   </table>
@@ -54,3 +68,11 @@
   ></app-pager>
 </div>
 
+<ng-template #deleteTemplate>
+  <div class="modal-body text-center">
+    <p>Are you sure you want to delete this order?</p>
+    <button type="button" class="btn btn-danger" (click)="confirmDelete(); modalRef?.hide()">Yes</button>
+    &nbsp;
+    <button type="button" class="btn btn-primary" (click)="modalRef?.hide()">No</button>
+  </div>
+</ng-template>
