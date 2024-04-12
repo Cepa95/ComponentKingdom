@@ -1,4 +1,5 @@
 using API.Dtos;
+using API.Dtos.API.Dtos;
 using AutoMapper;
 using Core.Entities;
 using Core.Entities.identity;
@@ -11,20 +12,20 @@ namespace API.Helpers
         public MappingProfiles()
         {
             CreateMap<Product, ProductToReturnDto>()
-            .ForMember(d => d.ProductBrand, o => o.MapFrom( s => s.ProductBrand.Name))
-            .ForMember(d => d.ProductType, o => o.MapFrom( s => s.ProductType.Name));
+            .ForMember(d => d.ProductBrand, o => o.MapFrom(s => s.ProductBrand.Name))
+            .ForMember(d => d.ProductType, o => o.MapFrom(s => s.ProductType.Name));
 
-            CreateMap<Core.Entities.identity.Address, AddressDto>().ReverseMap(); 
+            CreateMap<Core.Entities.identity.Address, AddressDto>().ReverseMap();
 
             CreateMap<CustomerBasketDto, CustomerBasket>();
-            
+
             CreateMap<BasketItemDto, BasketItem>();
 
             CreateMap<AddressDto, Core.Entities.OrderAggregate.Address>();
-    
+
             CreateMap<Order, OrderToReturnDto>()
             .ForMember(d => d.DeliveryMethod, o => o.MapFrom(s => s.DeliveryMethod.ShortName))
-            .ForMember(d => d.ShippingPrice, o => o.MapFrom(s =>s.DeliveryMethod.Price));
+            .ForMember(d => d.ShippingPrice, o => o.MapFrom(s => s.DeliveryMethod.Price));
 
             CreateMap<OrderItem, OrderItemDto>()
             .ForMember(d => d.ProductId, o => o.MapFrom(s => s.ItemOrdered.ProductItemId))
@@ -47,9 +48,17 @@ namespace API.Helpers
 
             CreateMap<ProductType, TypeCreateDto>().ReverseMap();
 
+            CreateMap<Order, NewOrderDto>()
+                .ForMember(dto => dto.ShipToAddress_FirstName, m => m.MapFrom(o => o.ShipToAddress.FirstName))
+                .ForMember(dto => dto.ShipToAddress_LastName, m => m.MapFrom(o => o.ShipToAddress.LastName))
+                .ForMember(dto => dto.ShipToAddress_Street, m => m.MapFrom(o => o.ShipToAddress.Street))
+                .ForMember(dto => dto.ShipToAddress_City, m => m.MapFrom(o => o.ShipToAddress.City))
+                .ForMember(dto => dto.ShipToAddress_State, m => m.MapFrom(o => o.ShipToAddress.State))
+                .ForMember(dto => dto.ShipToAddress_ZipCode, m => m.MapFrom(o => o.ShipToAddress.ZipCode))
+                .ForMember(dto => dto.DeliveryMethodPrice, m => m.MapFrom(o => o.DeliveryMethod.Price));
 
 
-        
+
         }
     }
 }

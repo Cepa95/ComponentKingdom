@@ -15,6 +15,7 @@ import { AddTypeComponent } from './add-type/add-type.component';
 import { AddBrandComponent } from './add-brand/add-brand.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { OrdersComponent } from './orders/orders.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     AddTypeComponent,
     AddBrandComponent,
     ChartsComponent,
+    OrdersComponent,
     
   ],
   imports: [

@@ -1,4 +1,5 @@
 using API.Dtos;
+using API.Dtos.API.Dtos;
 using API.Errors;
 using API.Extensions;
 using API.Helpers;
@@ -310,15 +311,15 @@ namespace API.Controllers
             }
         }
 
-        [HttpGet("orders")]
-        public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetAllOrders()
-        {
-            _logger.LogInformation("Getting all orders");
+        // [HttpGet("orders")]
+        // public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetAllOrders()
+        // {
+        //     _logger.LogInformation("Getting all orders");
 
-            var orders = await _orderService.GetAllOrdersAsync();
+        //     var orders = await _orderService.GetAllOrdersAsync();
 
-            return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
-        }
+        //     return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
+        // }
 
         [HttpGet("products/sales")]
         public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales()
@@ -333,8 +334,25 @@ namespace API.Controllers
                     QuantitySold = g.Sum(oi => oi.Quantity)
                 });
 
-             return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
+            return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
         }
+
+        [HttpGet("orders")]
+        public async Task<ActionResult<IReadOnlyList<NewOrderDto>>> GetAllOrders()
+        {
+            _logger.LogInformation("Getting all orders");
+
+            var orders = await _orderService.GetAllOrdersAsync();
+
+            var orderDtos = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<NewOrderDto>>(orders);
+
+            return Ok(orderDtos);
+        }
+
+   
+
+
+
 
 
 

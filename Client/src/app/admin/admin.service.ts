@@ -85,7 +85,12 @@ export class AdminService {
   updateAddress(userId: string, address: any) {
     return this.http.put(`${this.baseUrl}admin/address/${userId}`, address);
   }
+
   getProductSales() {
     return this.http.get(this.baseUrl + 'admin/products/sales');
+  }
+
+  getAllOrders() {
+    return this.http.get(this.baseUrl + 'admin/orders');
   }
 }
