@@ -1,38 +1,39 @@
-<div class="d-flex justify-content-center flex-wrap align-items-center">
-  <div class="mt-5">
-    <button class="btn btn-primary m-2" style="width: 130px" routerLink="/shop">
-      Orders
-    </button>
-    <button
-      class="btn btn-primary m-2"
-      style="width: 130px"
-      routerLink="/admin/add-product"
+<div class="row">
+  <div class="col-2">
+    <div class="mt-5">
+      <a class="list-group-item list-group-item-action mb-3" routerLink="/shop" style="color: #d0a933">
+        <i class="fas fa-shopping-cart"></i> Orders
+      </a>
+      <a class="list-group-item list-group-item-action mb-3" routerLink="/admin/add-product" style="color: #d0a933">
+        <i class="fas fa-plus-square"></i> Products
+      </a>
+      <a class="list-group-item list-group-item-action mb-3" routerLink="/admin/customers" style="color: #d0a933">
+        <i class="fas fa-users"></i> Customers
+      </a>
+      <a class="list-group-item list-group-item-action mb-3" routerLink="/admin/charts" style="color: #d0a933">
+        <i class="fas fa-chart-line"></i> Reports
+      </a>
+      <a class="list-group-item list-group-item-action mb-3" routerLink="/admin/types" style="color: #d0a933">
+        <i class="fas fa-tags"></i> Types
+      </a>
+      <a class="list-group-item list-group-item-action mb-3" routerLink="/admin/brands" style="color: #d0a933">
+        <i class="fas fa-industry"></i> Brands
+      </a>
+    </div>
+  </div>
+  <div class="col-9">
+    <br>
+    <h2 class="text-center">Top 10 Most Sold Products</h2>
+    <br>
+    <ngx-charts-pie-chart
+      *ngIf="salesData.length > 0"
+      [results]="salesData"
+      [gradient]="true"
+      [doughnut]="false"
+      [arcWidth]="0.25"
+      [labels]="true"
+      [legend]="true"
     >
-      Products
-    </button>
-    <button
-      class="btn btn-primary m-2"
-      style="width: 130px"
-      routerLink="/admin/customers"
-    >
-      Customers
-    </button>
-    <button class="btn btn-primary m-2" style="width: 130px" routerLink="/admin/charts">
-      Reports
-    </button>
-    <button
-      class="btn btn-primary m-2"
-      style="width: 130px"
-      routerLink="/admin/types"
-    >
-      Types
-    </button>
-    <button
-      class="btn btn-primary m-2"
-      style="width: 130px"
-      routerLink="/admin/brands"
-    >
-      Brands
-    </button>
+    </ngx-charts-pie-chart>
   </div>
 </div>

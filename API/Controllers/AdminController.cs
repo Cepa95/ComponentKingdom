@@ -333,7 +333,7 @@ namespace API.Controllers
                     QuantitySold = g.Sum(oi => oi.Quantity)
                 });
 
-            return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
+             return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
         }
 
 
