@@ -76,7 +76,6 @@ namespace API.Controllers
             _logger.LogInformation("Getting delivery methods");
             
             return Ok(await _orderService.GetDeliveryMethodsAsync());
-        }
-        
+        } 
     }
 }

@@ -7,6 +7,7 @@ using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using API.Extensions;
 using AutoMapper;
+using System.Security.Claims;
 
 
 namespace API.Controllers
@@ -22,7 +23,7 @@ namespace API.Controllers
 
 
         public AccountController(UserManager<AppUser> userManager,
-        SignInManager<AppUser> signInManager, 
+        SignInManager<AppUser> signInManager,
         ITokenService tokenService,
         IMapper mapper,
         ILogger<AccountController> logger)
@@ -40,7 +41,7 @@ namespace API.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             _logger.LogInformation("Login attempt for {Email}", loginDto.Email);
-           
+
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
 
             if (user == null) return Unauthorized(new ApiResponse(401));
@@ -62,7 +63,7 @@ namespace API.Controllers
         {
             _logger.LogInformation("Register attempt for {Email}", registerDto.Email);
 
-            if(CheckEmailExists(registerDto.Email).Result.Value)
+            if (CheckEmailExists(registerDto.Email).Result.Value)
             {
                 return new BadRequestObjectResult(new ApiValidationErrorResponse
                 {
@@ -119,9 +120,9 @@ namespace API.Controllers
         {
             _logger.LogInformation("Getting user address");
 
-             var user = await _userManager.FindUserByClaimPrincipleWithAddress(User);
+            var user = await _userManager.FindUserByClaimPrincipleWithAddress(User);
 
-             return _mapper.Map<Address, AddressDto>(user.Address);
+            return _mapper.Map<Address, AddressDto>(user.Address);
         }
 
         [HttpPut("address")]
@@ -135,11 +136,37 @@ namespace API.Controllers
             user.Address = _mapper.Map<AddressDto, Address>(address);
 
             var result = await _userManager.UpdateAsync(user);
-            
+
             if (result.Succeeded) return Ok(_mapper.Map<AddressDto>(user.Address));
 
             return BadRequest("Problem updating the user");
         }
+
+        [HttpPost("changePassword")]
+        [Authorize]
+        public async Task<ActionResult> ChangePassword(ChangePasswordDto changePasswordDto)
+        {
+            _logger.LogInformation("Changing user password");
+
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null) return NotFound("User not found");
+
+
+            var result = await _userManager.ChangePasswordAsync(user, changePasswordDto.CurrentPassword, changePasswordDto.NewPassword);
+
+            if (changePasswordDto.NewPassword == changePasswordDto.CurrentPassword) return BadRequest("New password cannot be the same as the current password");
+
+            if (result.Succeeded) return Ok("Password changed successfully");
+
+
+            return BadRequest("Error changing password");
+        }
+
+
+
+
     }
 
 }

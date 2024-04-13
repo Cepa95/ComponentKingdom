@@ -4,12 +4,14 @@
       <img
         src="{{ product.pictureUrl }}"
         alt="{{ product.name }}"
-        class="img-fluid smaller-image"
+        class="img-fluid smaller-image rounded"
       />
     </div>
     <div class="col-lg-6 mt-5">
-      <h2 class="fw-bold mb-4">{{ product.name }}</h2>
-      <p class="fw-bold fs-5 mb-4">{{ product.price | currency : "EUR" }}</p>
+      <h2 class="fw-bold mb-4 text-primary">{{ product.name }}</h2>
+      <p class="fw-bold fs-3 mb-4" style="color: #d0a933">
+        {{ product.price | currency : "EUR" }}
+      </p>
       <div class="d-flex justify-content-start align-items-center mb-4">
         <button
           class="btn btn-outline-primary me-2"
@@ -17,7 +19,7 @@
         >
           -
         </button>
-        <span class="fw-bold fs-4">{{ quantity }}</span>
+        <span class="fw-bold fs-3" style="color: #d0a933">{{ quantity }}</span>
         <button
           class="btn btn-outline-primary ms-2"
           (click)="incrementQuantity()"
@@ -31,14 +33,14 @@
     </div>
   </div>
 </div>
-<div class="row" *ngIf="product">
-  <hr>
+<div class="row mt-5" *ngIf="product">
+  <hr />
   <div class="col">
-    <h4 class="fw-bold mb-3">Description</h4>
-    <p>{{ product.description }}</p>
+    <h4 class="fw-bold mb-3 text-primary">Description</h4>
+    <p class="text-secondary">{{ product.description }}</p>
   </div>
 </div>
-<div class="container" *ngIf="errorMessage">
+<div class="container mt-5" *ngIf="errorMessage">
   <div class="card border-danger">
     <div class="card-body">
       <h1 class="card-title text-danger">
@@ -47,4 +49,3 @@
     </div>
   </div>
 </div>
-

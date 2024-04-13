@@ -80,6 +80,10 @@ export class AdminService {
     );
   }
 
+  deleteCustomer(id: string) {
+    return this.http.delete(this.baseUrl + 'admin/customers/' + id);
+  }
+
   getAddress(id: string) {
     return this.http.get(this.baseUrl + 'admin/address/' + id);
   }
@@ -99,21 +103,21 @@ export class AdminService {
     params = params.append('pageSize', orderParams.pageSize);
     if (orderParams.search)
       params = params.append('search', orderParams.search);
-    return this.http.get<Pagination<NewOrder[]>>(this.baseUrl + 'admin/orders', {params});
+    return this.http.get<Pagination<NewOrder[]>>(
+      this.baseUrl + 'admin/orders',
+      { params }
+    );
   }
 
-  getOrderItemsByOrderId(id: number){
+  getOrderItemsByOrderId(id: number) {
     return this.http.get(this.baseUrl + 'admin/orderItems/' + id);
-    
   }
 
-  deleteOrder(id: number){
+  deleteOrder(id: number) {
     return this.http.delete(this.baseUrl + 'admin/orders/' + id);
   }
 
-  getProductSalesByYear(year: number){
+  getProductSalesByYear(year: number) {
     return this.http.get(this.baseUrl + 'admin/products/sales/' + year);
   }
-
-
 }

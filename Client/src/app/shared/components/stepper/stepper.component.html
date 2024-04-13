@@ -4,9 +4,12 @@
             <div class="div-grid">
                 <button 
                 (click)="onClick(i)"
+                [disabled]="true"
                 [class.active]="selectedIndex === i"
-                class="nav-link py-3 text-uppercase fw-bold">
+                [ngStyle]="{'color': selectedIndex === i ? 'white' : '#d0a933'}"
+                class="nav-link py-3 text-uppercase fw-bold mx-2">
                     {{step.label}}
+               
                 </button>
 
             </div>

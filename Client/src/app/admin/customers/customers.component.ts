@@ -1,7 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
 import { CustomerParams } from '../../shared/models/customerParams';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-customers',
@@ -13,8 +14,10 @@ export class CustomersComponent implements OnInit {
   customers: any[] = [];
   customerParams = new CustomerParams();
   totalCount = 0;
+  modalRef: BsModalRef | undefined;
+  customerIdToDelete: string | undefined;
 
-  constructor(private adminService: AdminService, private router: Router) {}
+  constructor(private adminService: AdminService, private router: Router, private modalService:BsModalService) {}
 
   ngOnInit(): void {
     this.getCustomers();
@@ -49,5 +52,30 @@ export class CustomersComponent implements OnInit {
     if(this.searchTerm) this.searchTerm.nativeElement.value = '';
     this.customerParams = new CustomerParams();
     this.getCustomers();
+  }
+
+  openModal(template: TemplateRef<any>, customerId: string) {
+    this.customerIdToDelete = customerId;
+    this.modalRef = this.modalService.show(template, {
+      class: 'modal-sm',
+    });
+  }
+
+  confirmDelete() {
+    if (this.customerIdToDelete !== undefined) {
+      this.adminService.deleteCustomer(this.customerIdToDelete).subscribe({
+        next: () => {
+          if (this.modalRef) {
+            this.modalRef.hide();
+          }
+          this.customers = this.customers.filter((c) => c.id !== this.customerIdToDelete);
+        },
+        error: () => {
+          console.log(
+            'An error occurred while deleting the customer. Please try again.'
+          );
+        },
+      });
+    }
   }
 }

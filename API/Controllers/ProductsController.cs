@@ -30,7 +30,6 @@ namespace API.Controllers
         IMapper mapper,
         IUnitOfWork unitOfWork,
         ILogger<ProductsController> logger
-
         )
         {
             _mapper = mapper;
@@ -59,8 +58,6 @@ namespace API.Controllers
             return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex,
             productParams.PageSize, totalItems, data));
         }
-
-
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
@@ -119,12 +116,8 @@ namespace API.Controllers
 
             if (result >= 1) return Ok();
 
-
             return BadRequest(new ApiResponse(400, "Problem deleting product"));
         }
-
-
-
 
     }
 }

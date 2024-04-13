@@ -258,6 +258,22 @@ namespace API.Controllers
             return Ok(pagination);
         }
 
+        [HttpDelete("customers/{id}")]
+        public async Task<ActionResult> DeleteCustomer(string id)
+        {
+            _logger.LogInformation($"Deleting a customer under id: {id}");
+
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null) return NotFound(new ApiResponse(404, "User not found"));
+
+            var result = await _userManager.DeleteAsync(user);
+
+            if (!result.Succeeded) return BadRequest(new ApiResponse(400, "Problem deleting user"));
+
+            return NoContent();
+        }
+
         [HttpGet("address/{userId}")]
         public async Task<ActionResult<List<AddressDto>>> GetAddressByUserId(string userId)
         {
@@ -276,7 +292,6 @@ namespace API.Controllers
 
             return Ok(addressDto);
         }
-
 
         [HttpPut("address/{userId}")]
         public async Task<ActionResult> UpdateAddressByUserId(string userId, AddressDto addressDto)
@@ -311,16 +326,6 @@ namespace API.Controllers
             }
         }
 
-        // [HttpGet("orders")]
-        // public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetAllOrders()
-        // {
-        //     _logger.LogInformation("Getting all orders");
-
-        //     var orders = await _orderService.GetAllOrdersAsync();
-
-        //     return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
-        // }
-
         [HttpGet("products/sales")]
         public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales()
         {
@@ -336,35 +341,6 @@ namespace API.Controllers
 
             return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
         }
-
-        // [HttpGet("orders")]
-        // public async Task<ActionResult<IReadOnlyList<NewOrderDto>>> GetAllOrders()
-        // {
-        //     _logger.LogInformation("Getting all orders");
-
-        //     var orders = await _orderService.GetAllOrdersAsync();
-
-        //     var orderDtos = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<NewOrderDto>>(orders);
-
-        //     return Ok(orderDtos);
-        // }
-
-        // [HttpGet("orders")]
-        // public async Task<ActionResult<Pagination<NewOrderDto>>> GetAllOrders(int pageIndex = 1, int pageSize = 2)
-        // {
-        //     _logger.LogInformation("Getting all orders");
-
-        //     var spec = new OrdersWithItemsAndOrderingSpecification();
-        //     var orders = await _orderService.GetAllOrdersAsync(spec, pageIndex, pageSize);
-
-        //     var totalOrders = await _unitOfWork.Repository<Order>().CountAsync(spec);
-
-        //     var orderDtos = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<NewOrderDto>>(orders);
-
-        //     var pagination = new Pagination<NewOrderDto>(pageIndex, pageSize, totalOrders, orderDtos);
-
-        //     return Ok(pagination);
-        // }
 
         [HttpGet("orders")]
         public async Task<ActionResult<Pagination<NewOrderDto>>> GetAllOrders(int pageIndex = 1, int pageSize = 2, string search = null)
@@ -445,18 +421,6 @@ namespace API.Controllers
 
             return Ok(productSales);
         }
-
-
-
-
-
-
-
-
-
-
-
     }
-
 }
 

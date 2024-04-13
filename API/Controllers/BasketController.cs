@@ -53,6 +53,5 @@ namespace API.Controllers
             await _basketRepository.DeleteBasketAsync(id);
 
         }
-
     }
 }
