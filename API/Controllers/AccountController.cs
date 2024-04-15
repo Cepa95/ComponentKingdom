@@ -153,13 +153,12 @@ namespace API.Controllers
 
             if (user == null) return NotFound("User not found");
 
+            if (changePasswordDto.NewPassword == changePasswordDto.CurrentPassword)
+                return BadRequest("New password cannot be the same as the current password");
 
             var result = await _userManager.ChangePasswordAsync(user, changePasswordDto.CurrentPassword, changePasswordDto.NewPassword);
 
-            if (changePasswordDto.NewPassword == changePasswordDto.CurrentPassword) return BadRequest("New password cannot be the same as the current password");
-
             if (result.Succeeded) return Ok("Password changed successfully");
-
 
             return BadRequest("Error changing password");
         }

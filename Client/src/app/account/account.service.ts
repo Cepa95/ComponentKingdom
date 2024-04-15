@@ -88,4 +88,15 @@ export class AccountService {
   updateUserAddress(address: Address) {
     return this.http.put<Address>(this.baseUrl + 'account/address', address);
   }
+
+  changePassword(currentPassword: string, newPassword: string) {
+    return this.http.post(
+      this.baseUrl + 'account/changePassword',
+      {
+        currentPassword,
+        newPassword,
+      },
+      { responseType: 'text' }
+    );
+  }
 }

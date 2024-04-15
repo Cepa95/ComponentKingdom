@@ -1,4 +1,4 @@
-<nav  #navbar class="navbar navbar-dark bg-dark px-2 fixed-top">
+<nav #navbar class="navbar navbar-dark bg-dark px-2 fixed-top">
   <div class="d-flex align-items-center mr-auto">
     <a routerLink="/" (click)="closeNavbar()">
       <img src="/assets/images/logo.png" alt="logo" style="max-height: 45px" />
@@ -58,6 +58,16 @@
         <li>
           <a
             class="nav-link px-2"
+            routerLink="/account/settings"
+            routerLinkActive="text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeNavbar()"
+            >SETTINGS</a
+          >
+        </li>
+        <li>
+          <a
+            class="nav-link px-2"
             (click)="accountService.logout()"
             routerLinkActive="text-white"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -67,17 +77,17 @@
         </li>
       </ng-container>
       <ng-container *ngIf="isAdmin()">
-      <li>
-        <a
-          class="nav-link px-2"
-          routerLink="/admin"
-          routerLinkActive="text-white"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="closeNavbar()"
-          >ADMIN</a
-        >
-      </li>
-    </ng-container>
+        <li>
+          <a
+            class="nav-link px-2"
+            routerLink="/admin"
+            routerLinkActive="text-white"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeNavbar()"
+            >ADMIN</a
+          >
+        </li>
+      </ng-container>
     </ul>
   </div>
 

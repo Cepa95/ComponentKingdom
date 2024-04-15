@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height: 88vh"
+  >
+    <div class="col-sm-6">
+      <div class="card p-4 shadow" style="border-radius: 30px">
+        <div class="card-body text-center">
+          <img
+            src="/assets/images/logo3.jpg"
+            alt="Logo"
+            style="max-height: 120px"
+            class="mb-4"
+          />
+          <div
+            *ngIf="errors"
+            class="alert alert-danger d-flex justify-content-center align-items-center"
+            role="alert"
+          >
+            <ul style="list-style-type: none; padding: 0">
+              <li *ngFor="let error of errors">
+                {{ error }}
+              </li>
+            </ul>
+          </div>
+
+          <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()">
+            <div class="position-relative d-flex align-items-center mb-3">
+              <app-text-input
+                [formControl]="changePasswordForm.controls['oldPassword']"
+                [label]="'Old Password'"
+                [type]="showPassword ? 'text' : 'password'"
+                class="flex-grow-1"
+              ></app-text-input>
+              <div class="form-check eye-icon">
+                <i
+                  class="fa cursor-pointer"
+                  [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="showPassword = !showPassword"
+                >
+                </i>
+              </div>
+            </div>
+            <div class="position-relative d-flex align-items-center mb-3">
+              <app-text-input
+                [formControl]="changePasswordForm.controls['newPassword']"
+                [label]="'New Password'"
+                [type]="changeShowPassword ? 'text' : 'password'"
+                class="flex-grow-1"
+              ></app-text-input>
+              <div class="form-check eye-icon">
+                <i
+                  class="fa cursor-pointer"
+                  [ngClass]="changeShowPassword ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="changeShowPassword = !changeShowPassword"
+                >
+                </i>
+              </div>
+            </div>
+            <div class="position-relative d-flex align-items-center mb-3">
+              <app-text-input
+                [formControl]="changePasswordForm.controls['repeatPassword']"
+                [label]="'Repeat New Password'"
+                [type]="repeatShowPassword ? 'text' : 'password'"
+                class="flex-grow-1"
+              ></app-text-input>
+              <div class="form-check eye-icon">
+                <i
+                  class="fa cursor-pointer"
+                  [ngClass]="repeatShowPassword ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="repeatShowPassword = !repeatShowPassword"
+                >
+                </i>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button
+                [disabled]="changePasswordForm.invalid"
+                class="btn btn-lg btn-primary mt-3"
+                type="submit"
+                style="border-radius: 22px; font-weight: bold"
+              >
+                Change Password
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
