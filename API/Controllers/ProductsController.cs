@@ -4,6 +4,7 @@ using API.Errors;
 using API.Helpers;
 using AutoMapper;
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Core.Specifications;
 using Infrastructure.Data;
@@ -20,16 +21,22 @@ namespace API.Controllers
         private readonly IGenericRepository<Product> _productsRepo;
         private readonly IGenericRepository<ProductBrand> _productBrandRepo;
         private readonly IGenericRepository<ProductType> _productTypeRepo;
+        private readonly IGenericRepository<Order> _ordersRepo;
+        private readonly IGenericRepository<OrderItem> _orderItemsRepo;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<ProductsController> _logger;
+
 
         public ProductsController(IGenericRepository<Product> productsRepo,
         IGenericRepository<ProductBrand> productBrandRepo,
         IGenericRepository<ProductType> productTypeRepo,
         IMapper mapper,
         IUnitOfWork unitOfWork,
-        ILogger<ProductsController> logger
+        ILogger<ProductsController> logger,
+        IGenericRepository<Order> ordersRepo,
+        IGenericRepository<OrderItem> orderItemsRepo
+
         )
         {
             _mapper = mapper;
@@ -38,6 +45,8 @@ namespace API.Controllers
             _productTypeRepo = productTypeRepo;
             _unitOfWork = unitOfWork;
             _logger = logger;
+            _ordersRepo = ordersRepo;
+            _orderItemsRepo = orderItemsRepo;
 
         }
 
@@ -62,7 +71,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
-             _logger.LogInformation($"Getting a product under id: {id}");
+            _logger.LogInformation($"Getting a product under id: {id}");
 
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
@@ -117,6 +126,47 @@ namespace API.Controllers
             if (result >= 1) return Ok();
 
             return BadRequest(new ApiResponse(400, "Problem deleting product"));
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("sales/{year}")]
+        public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales(int year)
+        {
+            _logger.LogInformation($"Getting product sales for year {year}");
+
+            var productSales = await _orderItemsRepo.Query()
+                .Join(_ordersRepo.Query(),
+                    oi => oi.OrderId,
+                    o => o.Id,
+                    (oi, o) => new { OrderItem = oi, Order = o })
+                .Where(ooi => ooi.Order.OrderDate.Year == year)
+                .GroupBy(ooi => ooi.OrderItem.ItemOrdered.ProductName)
+                .Select(g => new ProductSalesDto
+                {
+                    ProductName = g.Key,
+                    QuantitySold = g.Sum(ooi => ooi.OrderItem.Quantity)
+                })
+                .OrderByDescending(ps => ps.QuantitySold)
+                .ToListAsync();
+
+            return Ok(productSales);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("sales")]
+        public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales()
+        {
+            _logger.LogInformation("Getting product sales");
+
+            var productSales = await _orderItemsRepo.GroupByAsync(
+                oi => oi.ItemOrdered.ProductName,
+                g => new ProductSalesDto
+                {
+                    ProductName = g.Key,
+                    QuantitySold = g.Sum(oi => oi.Quantity)
+                });
+
+            return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
         }
 
     }

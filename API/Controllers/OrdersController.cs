@@ -14,16 +14,18 @@ namespace API.Controllers
     {
         private readonly IOrderService _orderService;
         private readonly IMapper _mapper;
-
         private readonly ILogger<OrdersController> _logger;
+        private readonly IUnitOfWork _unitOfWork;
 
         public OrdersController(IOrderService orderService,
                                IMapper mapper,
-                               ILogger<OrdersController> logger)
+                               ILogger<OrdersController> logger,
+                               IUnitOfWork unitOfWork)
         {
             _orderService = orderService;
             _mapper = mapper;
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         [HttpPost]
@@ -40,7 +42,7 @@ namespace API.Controllers
             if (order == null) return BadRequest(new ApiResponse(400, "Problem with creating order"));
 
             return Ok(order);
-            
+
 
         }
 
@@ -55,7 +57,7 @@ namespace API.Controllers
 
             return Ok(_mapper.Map<IReadOnlyList<OrderToReturnDto>>(orders));
         }
-        
+
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderToReturnDto>> GetOrderByIdForUser(int id)
         {
@@ -74,8 +76,27 @@ namespace API.Controllers
         public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetDeliveryMethods()
         {
             _logger.LogInformation("Getting delivery methods");
-            
+
             return Ok(await _orderService.GetDeliveryMethodsAsync());
-        } 
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            _logger.LogInformation($"Deleting order under id: {id}");
+
+            var order = await _unitOfWork.Repository<Order>().GetByIdAsync(id);
+
+            if (order == null) return NotFound(new ApiResponse(404, "Order not found"));
+
+
+            _unitOfWork.Repository<Order>().Delete(order);
+            var result = await _unitOfWork.Complete();
+
+            if (result <= 0) return BadRequest(new ApiResponse(400, "Problem deleting order"));
+
+            return NoContent();
+        }
     }
 }

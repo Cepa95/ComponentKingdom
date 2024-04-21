@@ -89,11 +89,11 @@ export class AdminService {
   }
 
   updateAddress(userId: string, address: any) {
-    return this.http.put(`${this.baseUrl}admin/address/${userId}`, address);
+    return this.http.put(`${this.baseUrl}account/address/${userId}`, address);
   }
 
   getProductSales() {
-    return this.http.get(this.baseUrl + 'admin/products/sales');
+    return this.http.get(this.baseUrl + 'products/sales');
   }
 
   getAllOrders(orderParams: OrderParams) {
@@ -114,10 +114,10 @@ export class AdminService {
   }
 
   deleteOrder(id: number) {
-    return this.http.delete(this.baseUrl + 'admin/orders/' + id);
+    return this.http.delete(this.baseUrl + 'orders/' + id);
   }
 
   getProductSalesByYear(year: number) {
-    return this.http.get(this.baseUrl + 'admin/products/sales/' + year);
+    return this.http.get(this.baseUrl + 'products/sales/' + year);
   }
 }

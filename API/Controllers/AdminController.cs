@@ -25,7 +25,6 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly ILogger<AdminController> _logger;
         private readonly UserManager<AppUser> _userManager;
-        private readonly IGenericRepository<Order> _ordersRepo;
         private readonly IOrderService _orderService;
         private readonly IGenericRepository<OrderItem> _orderItemsRepo;
 
@@ -34,7 +33,6 @@ namespace API.Controllers
         IGenericRepository<ProductBrand> productBrandRepo,
         IGenericRepository<ProductType> productTypeRepo,
         IGenericRepository<Product> productsRepo,
-        IGenericRepository<Order> ordersRepo,
         IGenericRepository<OrderItem> orderItemsRepo,
         IMapper mapper,
         ILogger<AdminController> logger,
@@ -49,7 +47,6 @@ namespace API.Controllers
             _unitOfWork = unitOfWork;
             _logger = logger;
             _userManager = userManager;
-            _ordersRepo = ordersRepo;
             _orderService = orderService;
             _orderItemsRepo = orderItemsRepo;
         }
@@ -293,55 +290,6 @@ namespace API.Controllers
             return Ok(addressDto);
         }
 
-        [HttpPut("address/{userId}")]
-        public async Task<ActionResult> UpdateAddressByUserId(string userId, AddressDto addressDto)
-        {
-            _logger.LogInformation($"Updating address for user with ID: {userId}");
-
-            userId = userId.Trim().ToLower();
-
-            var user = await _userManager.Users
-                .Include(u => u.Address)
-                .Where(u => u.Id.Trim().ToLower() == userId)
-                .SingleOrDefaultAsync();
-
-            if (user == null) return NotFound(new ApiResponse(404, "User not found"));
-
-            if (user.Address == null) return NotFound(new ApiResponse(404, "Address not found"));
-
-            _mapper.Map(addressDto, user.Address);
-
-            try
-            {
-                var result = await _userManager.UpdateAsync(user);
-
-                if (!result.Succeeded) return BadRequest(new ApiResponse(400, "Failed to update address"));
-
-                return NoContent();
-            }
-            catch (DbUpdateException ex)
-            {
-                _logger.LogError(ex, "An error occurred while updating the address");
-                return StatusCode(500, new ApiResponse(500, ex.InnerException?.Message));
-            }
-        }
-
-        [HttpGet("products/sales")]
-        public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales()
-        {
-            _logger.LogInformation("Getting product sales");
-
-            var productSales = await _orderItemsRepo.GroupByAsync(
-                oi => oi.ItemOrdered.ProductName,
-                g => new ProductSalesDto
-                {
-                    ProductName = g.Key,
-                    QuantitySold = g.Sum(oi => oi.Quantity)
-                });
-
-            return Ok(productSales.OrderByDescending(ps => ps.QuantitySold));
-        }
-
         [HttpGet("orders")]
         public async Task<ActionResult<Pagination<NewOrderDto>>> GetAllOrders(int pageIndex = 1, int pageSize = 2, string search = null)
         {
@@ -381,46 +329,6 @@ namespace API.Controllers
             return Ok(orderItemDtos);
         }
 
-        [HttpDelete("orders/{id}")]
-        public async Task<IActionResult> DeleteOrder(int id)
-        {
-            _logger.LogInformation($"Deleting order under id: {id}");
-
-            var order = await _unitOfWork.Repository<Order>().GetByIdAsync(id);
-
-            if (order == null) return NotFound(new ApiResponse(404, "Order not found"));
-
-
-            _unitOfWork.Repository<Order>().Delete(order);
-            var result = await _unitOfWork.Complete();
-
-            if (result <= 0) return BadRequest(new ApiResponse(400, "Problem deleting order"));
-
-            return NoContent();
-        }
-
-        [HttpGet("products/sales/{year}")]
-        public async Task<ActionResult<IReadOnlyList<ProductSalesDto>>> GetProductSales(int year)
-        {
-            _logger.LogInformation($"Getting product sales for year {year}");
-
-            var productSales = await _orderItemsRepo.Query()
-                .Join(_ordersRepo.Query(),
-                    oi => oi.OrderId,
-                    o => o.Id,
-                    (oi, o) => new { OrderItem = oi, Order = o })
-                .Where(ooi => ooi.Order.OrderDate.Year == year)
-                .GroupBy(ooi => ooi.OrderItem.ItemOrdered.ProductName)
-                .Select(g => new ProductSalesDto
-                {
-                    ProductName = g.Key,
-                    QuantitySold = g.Sum(ooi => ooi.OrderItem.Quantity)
-                })
-                .OrderByDescending(ps => ps.QuantitySold)
-                .ToListAsync();
-
-            return Ok(productSales);
-        }
     }
 }
 

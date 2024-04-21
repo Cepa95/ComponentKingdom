@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using API.Extensions;
 using AutoMapper;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace API.Controllers
@@ -161,6 +162,40 @@ namespace API.Controllers
             if (result.Succeeded) return Ok("Password changed successfully");
 
             return BadRequest("Error changing password");
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("address/{userId}")]
+        public async Task<ActionResult> UpdateAddressByUserId(string userId, AddressDto addressDto)
+        {
+            _logger.LogInformation($"Updating address for user with ID: {userId}");
+
+            userId = userId.Trim().ToLower();
+
+            var user = await _userManager.Users
+                .Include(u => u.Address)
+                .Where(u => u.Id.Trim().ToLower() == userId)
+                .SingleOrDefaultAsync();
+
+            if (user == null) return NotFound(new ApiResponse(404, "User not found"));
+
+            if (user.Address == null) return NotFound(new ApiResponse(404, "Address not found"));
+
+            _mapper.Map(addressDto, user.Address);
+
+            try
+            {
+                var result = await _userManager.UpdateAsync(user);
+
+                if (!result.Succeeded) return BadRequest(new ApiResponse(400, "Failed to update address"));
+
+                return NoContent();
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, "An error occurred while updating the address");
+                return StatusCode(500, new ApiResponse(500, ex.InnerException?.Message));
+            }
         }
 
 
