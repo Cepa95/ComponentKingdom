@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, NgZone } from '@angular/core';
 import { BasketService } from './basket/basket.service';
 import { AccountService } from './account/account.service';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,23 @@ import { AccountService } from './account/account.service';
 })
 export class AppComponent implements OnInit {
   title = 'Webshop';
+  scrollPercent = 0;
 
   constructor(
     private basketService: BasketService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private ngZone: NgZone,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.loadBasket();
     this.loadCurrentUser();
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.scrollPercent = 0;
+      }
+    });
   }
 
   loadBasket() {
@@ -28,5 +37,16 @@ export class AppComponent implements OnInit {
   loadCurrentUser() {
     const token = localStorage.getItem('token');
     this.accountService.loadCurrentUser(token).subscribe();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.ngZone.runOutsideAngular(() => {
+      const winScroll = window.scrollY || 0;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      this.ngZone.run(() => {
+        this.scrollPercent = (winScroll / height) * 100;
+      });
+    });
   }
 }
