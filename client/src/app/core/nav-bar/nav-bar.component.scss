@@ -1,13 +1,58 @@
 .cart-no {
-    position: absolute;
-    min-height: 25px;
-    min-width: 25px;
-    border-radius: 50%;
-    background: #0d6efd;
-    color: white;
-    text-align: center;
-    top: -6px;
-    right: 29px;
+  position: absolute;
+  min-height: 25px;
+  min-width: 25px;
+  border-radius: 50%;
+  background: #d0a933;
+  color: white;
+  text-align: center;
+  top: -7px;
+  right: 25px;
 }
 
+.nav-link-custom {
+  color: #d0a933;
+  &:hover {
+    color: #3366d0;
+  }
+}
+
+.active-link {
+  color: #3366d0;
+}
+
+
+.custom-dropdown-menu {
+  min-width: 55px !important; 
+  
+}
+
+.custom-dropdown-menu button i {
+  color: #d0a933;
+  &:hover{
+    color: #3366d0;
+  }
+}
+
+#dropdownBasic {
+  color: #d0a933;
+  background-color: transparent;
+  border: 1px solid #d0a933;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#dropdownBasic:hover {
+  color: #fff;
+  background-color: #d0a933;
+}
+
+#dropdownBasic:focus,
+#dropdownBasic:active {
+  outline: none;
+  box-shadow: none;
+}
 

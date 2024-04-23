@@ -13,7 +13,7 @@ export class AddBrandComponent implements OnInit {
     name: new FormControl(null, Validators.required),
   });
 
-  error: string | undefined;
+  error?: string;
 
   constructor(private adminService: AdminService, private router: Router) {}
 
@@ -25,7 +25,8 @@ export class AddBrandComponent implements OnInit {
         next: () => {
           this.router.navigate(['/admin/brands']);
         },
-        error: () => {
+        error: (error) => {
+          console.log(error)
           this.error = 'An error occurred while adding the brand. Please try again.';
         },
       });

@@ -19,21 +19,14 @@ namespace API.Controllers
     public class AdminController : BaseApiController
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IGenericRepository<ProductBrand> _productBrandRepo;
-        private readonly IGenericRepository<ProductType> _productTypeRepo;
         private readonly IGenericRepository<Product> _productsRepo;
         private readonly IMapper _mapper;
         private readonly ILogger<AdminController> _logger;
         private readonly UserManager<AppUser> _userManager;
         private readonly IOrderService _orderService;
-        private readonly IGenericRepository<OrderItem> _orderItemsRepo;
-
 
         public AdminController(IUnitOfWork unitOfWork,
-        IGenericRepository<ProductBrand> productBrandRepo,
-        IGenericRepository<ProductType> productTypeRepo,
         IGenericRepository<Product> productsRepo,
-        IGenericRepository<OrderItem> orderItemsRepo,
         IMapper mapper,
         ILogger<AdminController> logger,
         UserManager<AppUser> userManager,
@@ -42,136 +35,11 @@ namespace API.Controllers
         {
             _mapper = mapper;
             _productsRepo = productsRepo;
-            _productTypeRepo = productTypeRepo;
-            _productBrandRepo = productBrandRepo;
             _unitOfWork = unitOfWork;
             _logger = logger;
             _userManager = userManager;
             _orderService = orderService;
-            _orderItemsRepo = orderItemsRepo;
         }
-
-        [HttpGet("brands")]
-        public async Task<ActionResult<IReadOnlyList<BrandDto>>> GetProductBrands()
-        {
-            _logger.LogInformation("Getting all brands");
-
-            var spec = new BrandsSpecification();
-
-            var brands = await _productBrandRepo.ListAsync(spec);
-
-            var brandsDto = _mapper.Map<IReadOnlyList<ProductBrand>, IReadOnlyList<BrandDto>>(brands);
-
-            return Ok(brandsDto);
-        }
-
-        [HttpDelete("brands/{id}")]
-        public async Task<ActionResult<IReadOnlyList<BrandDto>>> DeleteProductBrand(int id)
-        {
-            _logger.LogInformation($"Deleting a brand under id: {id}");
-
-            var brand = await _productBrandRepo.GetByIdAsync(id);
-
-            if (brand == null) return NotFound(new ApiResponse(404));
-
-            _productBrandRepo.Delete(brand);
-
-            await _unitOfWork.Complete();
-
-            return Ok(await _productBrandRepo.ListAllAsync());
-        }
-
-        [HttpPut("brands/{id}")]
-        public async Task<ActionResult<BrandUpdateDto>> UpdateProductBrand(int id, BrandUpdateDto brandDto)
-        {
-            _logger.LogInformation($"Updating a brand under id: {id}");
-
-            var brand = await _productBrandRepo.GetByIdAsync(id);
-
-            if (brand == null) return NotFound(new ApiResponse(404));
-
-            _mapper.Map(brandDto, brand);
-
-            _productBrandRepo.Update(brand);
-            await _unitOfWork.Complete();
-
-            return Ok(_mapper.Map<ProductBrand, BrandUpdateDto>(brand));
-        }
-
-        [HttpPost("brands")]
-        public async Task<ActionResult<BrandUpdateDto>> CreateProductBrand(BrandUpdateDto brandDto)
-        {
-            _logger.LogInformation("Creating a new product brand");
-
-            var brand = _mapper.Map<ProductBrand>(brandDto);
-
-            _productBrandRepo.Add(brand);
-            await _unitOfWork.Complete();
-
-            return Ok(_mapper.Map<ProductBrand, BrandUpdateDto>(brand));
-        }
-
-        [HttpGet("types")]
-        public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> GetProductTypes()
-        {
-            _logger.LogInformation("Getting all types");
-
-            var spec = new TypesSpecification();
-
-            var types = await _productTypeRepo.ListAsync(spec);
-
-            var typesDto = _mapper.Map<IReadOnlyList<ProductType>, IReadOnlyList<ProductTypeDto>>(types);
-
-            return Ok(typesDto);
-
-        }
-
-        [HttpDelete("types/{id}")]
-        public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> DeleteProductType(int id)
-        {
-            _logger.LogInformation($"Deleting a type under id: {id}");
-
-            var type = await _productTypeRepo.GetByIdAsync(id);
-
-            if (type == null) return NotFound(new ApiResponse(404));
-
-            _productTypeRepo.Delete(type);
-
-            await _unitOfWork.Complete();
-
-            return Ok(await _productTypeRepo.ListAllAsync());
-        }
-
-        [HttpPut("types/{id}")]
-        public async Task<ActionResult<TypeCreateDto>> UpdateProductType(int id, TypeCreateDto typeDto)
-        {
-            _logger.LogInformation($"Updating a type under id: {id}");
-
-            var type = await _productTypeRepo.GetByIdAsync(id);
-
-            if (type == null) return NotFound(new ApiResponse(404));
-
-            _mapper.Map(typeDto, type);
-
-            _productTypeRepo.Update(type);
-            await _unitOfWork.Complete();
-
-            return Ok(_mapper.Map<ProductType, TypeCreateDto>(type));
-        }
-
-        [HttpPost("types")]
-        public async Task<ActionResult<TypeCreateDto>> CreateProductType(TypeCreateDto typeDto)
-        {
-            _logger.LogInformation("Creating a new product type");
-
-            var type = _mapper.Map<ProductType>(typeDto);
-
-            _productTypeRepo.Add(type);
-            await _unitOfWork.Complete();
-
-            return Ok(_mapper.Map<ProductType, TypeCreateDto>(type));
-        }
-
 
         [HttpGet("product/{id}")]
         public async Task<ActionResult<ProductCreateDto>> GetProductById(int id)

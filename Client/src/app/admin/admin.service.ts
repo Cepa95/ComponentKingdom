@@ -31,35 +31,35 @@ export class AdminService {
   }
 
   getTypes() {
-    return this.http.get<Type[]>(this.baseUrl + 'admin/types');
+    return this.http.get<Type[]>(this.baseUrl + 'types');
   }
 
   deleteType(id: number) {
-    return this.http.delete(this.baseUrl + 'admin/types/' + id);
+    return this.http.delete(this.baseUrl + 'types/' + id);
   }
 
   updateType(id: number, type: any) {
-    return this.http.put(this.baseUrl + 'admin/types/' + id, type);
+    return this.http.put(this.baseUrl + 'types/' + id, type);
   }
 
   addType(type: Type) {
-    return this.http.post(this.baseUrl + 'admin/types', type);
+    return this.http.post(this.baseUrl + 'types', type);
   }
 
   getBrands() {
-    return this.http.get<Brand[]>(this.baseUrl + 'admin/brands');
+    return this.http.get<Brand[]>(this.baseUrl + 'brands');
   }
 
   deleteBrand(id: number) {
-    return this.http.delete(this.baseUrl + 'admin/brands/' + id);
+    return this.http.delete(this.baseUrl + 'brands/' + id);
   }
 
   updateBrand(id: number, brand: any) {
-    return this.http.put(this.baseUrl + 'admin/brands/' + id, brand);
+    return this.http.put(this.baseUrl + 'brands/' + id, brand);
   }
 
   addBrand(brand: Brand) {
-    return this.http.post(this.baseUrl + 'admin/brands', brand);
+    return this.http.post(this.baseUrl + 'brands', brand);
   }
 
   addProduct(product: Product) {

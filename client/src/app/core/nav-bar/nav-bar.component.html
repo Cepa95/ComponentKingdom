@@ -1,105 +1,115 @@
-<nav #navbar class="navbar navbar-dark bg-dark px-2 fixed-top">
-  <div class="d-flex align-items-center mr-auto">
-    <a routerLink="/" (click)="closeNavbar()">
-      <img src="/assets/images/logo.png" alt="logo" style="max-height: 45px" />
-    </a>
+<nav #navbar class="navbar navbar-expand-lg navbar-dark bg-dark px-2 fixed-top">
+  <div class="container-fluid d-flex justify-content-between">
+    <!-- Logo on the left -->
+    <div>
+      <a routerLink="/" (click)="closeNavbar()">
+        <img src="/assets/images/logo.png" alt="logo" style="max-height: 50px" />
+      </a>
 
-    <button class="navbar-toggler mr-5" type="button" (click)="toggleNavbar()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-
-  <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
-    <ul class="navbar-nav">
-      <li>
-        <a
-          class="nav-link px-2"
-          routerLink="/"
-          routerLinkActive="text-white"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="closeNavbar()"
-          >HOME</a
-        >
-      </li>
-
-      <li>
-        <a
-          class="nav-link px-2"
-          routerLink="/shop"
-          routerLinkActive="text-white"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="closeNavbar()"
-          >SHOP</a
-        >
-      </li>
-      <ng-container *ngIf="(accountService.currentUser$ | async) === null">
-        <li>
-          <a
-            class="nav-link px-2"
-            routerLink="/account/login"
-            routerLinkActive="text-white"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeNavbar()"
-            >LOGIN</a
-          >
-        </li>
-      </ng-container>
-      <ng-container *ngIf="accountService.currentUser$ | async as user">
-        <li>
-          <a
-            class="nav-link px-2"
-            routerLink="/orders"
-            routerLinkActive="text-white"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeNavbar()"
-            >ORDERS</a
-          >
-        </li>
-        <li>
-          <a
-            class="nav-link px-2"
-            routerLink="/account/settings"
-            routerLinkActive="text-white"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeNavbar()"
-            >SETTINGS</a
-          >
-        </li>
-        <li>
-          <a
-            class="nav-link px-2"
-            (click)="accountService.logout()"
-            routerLinkActive="text-white"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeNavbar()"
-            >LOGOUT</a
-          >
-        </li>
-      </ng-container>
-      <ng-container *ngIf="isAdmin()">
-        <li>
-          <a
-            class="nav-link px-2"
-            routerLink="/admin"
-            routerLinkActive="text-white"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeNavbar()"
-            >ADMIN</a
-          >
-        </li>
-      </ng-container>
-    </ul>
-  </div>
-
-  <!-- Cart icon always visible on the right -->
-  <a
-    class="position-relative mr-1 px-2"
-    routerLink="/basket"
-    (click)="closeNavbar()"
-  >
-    <img src="/assets/cart.png" alt="logo" style="max-height: 40px" />
-    <div *ngIf="basketService.basketSource$ | async as basket" class="cart-no">
-      {{ getCount(basket.items) }}
+      <button
+        class="navbar-toggler mr-5"
+        type="button"
+        (click)="toggleNavbar()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
-  </a>
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      [ngClass]="{ show: navbarOpen }"
+    >
+      <ul class="navbar-nav">
+        <li>
+          <a
+            class="nav-link px-2 nav-link-custom"
+            routerLink="/"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeNavbar()"
+            ><i class="fas fa-home fa-lg"></i> HOME</a
+          >
+        </li>
+
+        <li>
+          <a
+            class="nav-link px-2 nav-link-custom"
+            routerLink="/shop"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeNavbar()"
+            ><i class="fas fa-shopping-cart fa-lg"></i> SHOP</a
+          >
+        </li>
+
+        <ng-container *ngIf="accountService.currentUser$ | async as user">
+          <li>
+            <a
+              class="nav-link px-2 nav-link-custom"
+              routerLink="/orders"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="closeNavbar()"
+              ><i class="fas fa-list fa-lg"></i> ORDERS</a
+            >
+          </li>
+        </ng-container>
+
+        <ng-container *ngIf="isAdmin()">
+          <li>
+            <a
+              class="nav-link px-2 nav-link-custom"
+              routerLink="/admin"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="closeNavbar()"
+              ><i class="fas fa-user-shield fa-lg"></i> ADMIN</a
+            >
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="d-flex align-items-center">
+      <a
+        class="position-relative mr-1 px-2"
+        routerLink="/basket"
+        (click)="closeNavbar()"
+      >
+        <i class="fas fa-shopping-basket fa-2x" ></i>
+        <div
+          *ngIf="basketService.basketSource$ | async as basket"
+          class="cart-no"
+        >
+          {{ getCount(basket.items) }}
+        </div>
+      </a>
+      <ng-container *ngIf="accountService.currentUser$ | async as user">
+        <div ngbDropdown class="d-inline-block">
+          <button id="dropdownBasic" ngbDropdownToggle>
+            <i class="fas fa-user-circle fa-lg"></i>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic" class="custom-dropdown-menu">
+            <button ngbDropdownItem routerLink="/account/settings" (click)="closeNavbar()">
+              <i class="fas fa-cog fa-lg"></i> 
+            </button>
+            <button ngbDropdownItem (click)="accountService.logout(); closeNavbar();">
+              <i class="fas fa-sign-out-alt fa-lg"></i>
+            </button>
+          </div>
+        </div>
+      </ng-container>
+      
+
+
+      <ng-container *ngIf="(accountService.currentUser$ | async) === null">
+        <a
+          class="nav-link px-2 nav-link-custom"
+          routerLink="/account/login"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeNavbar()"
+          ><i class="fas fa-sign-in-alt fa-lg"></i></a
+        >
+      </ng-container>
+    </div>
+  </div>
 </nav>
