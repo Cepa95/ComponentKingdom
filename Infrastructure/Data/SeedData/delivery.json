@@ -23,7 +23,7 @@
   {
     "Id": 4,
     "ShortName": "Next Day Shipping",
-    "Description": "Fastest delivery time, arrives the next day",
+    "Description": "Fastest delivery time",
     "DeliveryTime": "1 Day",
     "Price": 20
   }

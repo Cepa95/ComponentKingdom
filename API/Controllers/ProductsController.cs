@@ -49,6 +49,7 @@ namespace API.Controllers
 
         }
 
+        //[Cached(3600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
             //jer HttpGet status 415
@@ -67,6 +68,7 @@ namespace API.Controllers
             productParams.PageSize, totalItems, data));
         }
 
+        //[Cached(3600)]
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
@@ -81,6 +83,7 @@ namespace API.Controllers
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }
 
+        //[Cached(3600)]
         [HttpGet("brands")]
         public async Task<ActionResult<IReadOnlyList<BrandDto>>> GetProductBrands()
         {
@@ -95,6 +98,7 @@ namespace API.Controllers
             return Ok(brandsDto);
         }
 
+        //[Cached(3600)]
         [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> GetProductTypes()
         {

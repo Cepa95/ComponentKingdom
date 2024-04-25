@@ -1,0 +1,61 @@
+.checkout-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .delivery-form {
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .delivery-title {
+    color: #007bff;
+  }
+  
+  .delivery-method {
+    margin-bottom: 20px;
+  }
+  
+  .delivery-radio {
+    margin-right: 10px;
+  }
+  
+  .delivery-label {
+    color: #495057;
+  }
+  
+  .delivery-name {
+    color: #6c757d;
+  }
+  
+  .button-group {
+    margin-top: 20px;
+  }
+
+
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + .delivery-label {
+  position: relative;
+  padding-left: 30px;
+}
+
+input[type="radio"] + .delivery-label .custom-radio {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d0a933;
+  border-radius: 50%;
+  content: "";
+}
+
+input[type="radio"]:checked + .delivery-label .custom-radio {
+  background-color: #d0a933;
+}
