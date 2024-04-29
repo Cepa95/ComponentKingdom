@@ -68,7 +68,6 @@ namespace API.Controllers
             productParams.PageSize, totalItems, data));
         }
 
-        //[Cached(3600)]
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
