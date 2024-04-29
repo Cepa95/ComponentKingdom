@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/NxzPIp6wwT7IDQcq5PsxUbHi74vcGF38NAPj7frjnJcdP+KFWFqsEj1Yaw1NjZYs+IW3vbREV0G1QgfOrHePw==",
+  "dgSpecHash": "8D8T6tukPuPRqDXT3y64cf9GqRL1IwP3EMsWetcY0Pfv1W3N7MMLHlau6HE9BLDENoGc2/KpO67PFSFrIu772w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Josip Čeprnić\\Desktop\\Webshop\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -70,6 +70,8 @@
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\npgsql\\8.0.2\\npgsql.8.0.2.nupkg.sha512",
+    "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.2\\npgsql.entityframeworkcore.postgresql.8.0.2.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\Josip Čeprnić\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",

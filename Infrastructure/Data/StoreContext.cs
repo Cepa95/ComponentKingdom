@@ -29,6 +29,15 @@ namespace Infrastructure.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+            modelBuilder.Entity<ProductBrand>().Property(p => p.Id)
+            .HasIdentityOptions(startValue: 100);
+
+            modelBuilder.Entity<ProductType>().Property(p => p.Id)
+            .HasIdentityOptions(startValue: 100);
+
+            modelBuilder.Entity<DeliveryMethod>().Property(p => p.Id)
+            .HasIdentityOptions(startValue: 100);
+
             //zbog sqllite jer on ne podrzava decimal u order by klauzulama
             if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {
