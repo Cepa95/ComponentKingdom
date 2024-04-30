@@ -12,6 +12,10 @@
   * [For Administrators](#for-administrators)   
 * [Additional Features](#additional-features)
 * [Technologies](#technologies)
+* [Video preview for](#video-preview-for)
+  * [Unauthenticated Users](#for-unauthenticated-users)
+  * [Authenticated Users](#for-authenticated-users)
+  * [Administrators](#for-administrators) 
 
 
 ## Goal of the Application
@@ -77,6 +81,18 @@ In addition to the core features mentioned above, Component Kingdom also offers:
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" height="70"/>
 </p>
 
+## Video preview for
+
+### Unauthenticated Users
+https://github.com/Cepa95/Webshop/assets/124800316/a22e7a54-59f7-48f4-a9e0-185d0b7b0a07
+
+### Authenticated Users
+
+https://github.com/Cepa95/Webshop/assets/124800316/c67782e9-90af-4631-8d17-9b4142619d70
+
+### Administrators
+
+https://github.com/Cepa95/Webshop/assets/124800316/8705af6e-b614-47dc-92ea-ac8cbd1111b1
 
 
 
