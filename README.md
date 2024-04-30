@@ -13,9 +13,9 @@
 * [Additional Features](#additional-features)
 * [Technologies](#technologies)
 * [Video preview for](#video-preview-for)
-  * [Unauthenticated Users](#for-unauthenticated-users)
-  * [Authenticated Users](#for-authenticated-users)
-  * [Administrators](#for-administrators) 
+  * [Unauthenticated Users](#unauthenticated-users)
+  * [Authenticated Users](#authenticated-users)
+  * [Administrators](#administrators) 
 
 
 ## Goal of the Application
