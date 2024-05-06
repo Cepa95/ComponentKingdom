@@ -2,6 +2,8 @@
 
 ![home](https://github.com/Cepa95/Webshop/assets/124800316/f4823ebb-333c-4d71-9ae3-7518115dbf9c)
 ![login](https://github.com/Cepa95/Webshop/assets/124800316/a2c154d2-37e8-40bd-9b8b-67a3e7021b04)
+![shop](https://github.com/Cepa95/ComponentKingdom/assets/124800316/a5d02f85-5f1d-4754-8a0d-5d232978fb90)
+
 
 
 ## Table of Contents📜
