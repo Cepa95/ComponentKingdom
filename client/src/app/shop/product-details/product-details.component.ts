@@ -14,7 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   product?: Product;
   errorMessage: string | undefined;
   errorCode: number | undefined;
-  quantity = 1;
+  quantity = 0;
   quantityInBasket = 0;
 
   constructor(

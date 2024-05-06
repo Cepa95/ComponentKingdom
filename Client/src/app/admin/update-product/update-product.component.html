@@ -105,6 +105,21 @@
         </option>
       </select>
     </div>
+    <div class="form-group mb-3">
+      <label for="productAvailable" style="color: #d0a933">Available products</label>
+      <input
+        id="productAvailable"
+        type="number"
+        formControlName="productAvailable"
+        spellcheck="false"
+        class="form-control"
+        [class.is-invalid]="
+          productForm.controls['productAvailable'].invalid &&
+          productForm.controls['productAvailable'].touched
+        "
+        required min="1"
+      />
+    </div>
     <div *ngIf="error" class="alert alert-danger mt-3">
       {{ error }}
     </div>

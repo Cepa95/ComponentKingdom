@@ -111,7 +111,11 @@ export class CheckoutPaymentComponent implements OnInit {
       }
     } catch (error: any) {
       console.log(error);
-      this.cardProblemError = error.message;
+      if (error.status === 400) {
+        this.cardProblemError = 'Product is not available in required quantity'
+      } else {
+        this.cardProblemError = error.message;
+      }
     } finally {
       this.loading = false;
     }

@@ -16,6 +16,7 @@ export class AddProductComponent implements OnInit {
     pictureUrl: new FormControl(null, Validators.required),
     productTypeId: new FormControl(null, Validators.required),
     productBrandId: new FormControl(null, Validators.required),
+    productAvailable: new FormControl(null, Validators.required),
   });
 
   productTypes: any[] = [];

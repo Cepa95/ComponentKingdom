@@ -2,7 +2,7 @@ using Core.Entities;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Core.Specifications;
-using Infrastructure.Data;
+using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.Services
 {
@@ -11,10 +11,15 @@ namespace Infrastructure.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IBasketRepository _basketRepo;
 
-        public OrderService(IBasketRepository basketRepo, IUnitOfWork unitOfWork)
+        private readonly ILogger<OrderService> _logger;
+
+        public OrderService(IBasketRepository basketRepo, 
+                            IUnitOfWork unitOfWork,
+                            ILogger<OrderService> logger)
         {
             _basketRepo = basketRepo;
             _unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         public async Task<Order> CreateOrderAsync(string buyerEmail, int deliveryMethodId, string basketId, Address shippingAddress)
@@ -25,6 +30,14 @@ namespace Infrastructure.Services
             foreach (var item in basket.Items)
             {
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
+
+                if (productItem.ProductAvailable < item.Quantity)
+                {
+                    _logger.LogInformation("Product is not available in required quantity");
+                    throw new Exception("Product is not available in required quantity");
+                }
+
+
                 var itemOrdered = new ProductItemOrdered(productItem.Id,
                                                         productItem.Name,
                                                         productItem.PictureUrl);
@@ -47,15 +60,24 @@ namespace Infrastructure.Services
                 order.SubTotal = subtotal;
                 _unitOfWork.Repository<Order>().Update(order);
             }
-
             else
             {
                 order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal, basket.PaymentIntentId);
                 _unitOfWork.Repository<Order>().Add(order);
-
             }
 
             var result = await _unitOfWork.Complete();
+
+            if (result <= 0) return null;
+
+            foreach (var item in items)
+            {
+                var product = await _unitOfWork.Repository<Product>().GetByIdAsync(item.ItemOrdered.ProductItemId);
+                product.ProductAvailable -= item.Quantity;
+                _unitOfWork.Repository<Product>().Update(product);
+            }
+
+            result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;
 

@@ -16,6 +16,7 @@ export class UpdateProductComponent implements OnInit {
     pictureUrl: ['', Validators.required],
     productTypeId: ['', Validators.required],
     productBrandId: ['', Validators.required],
+    productAvailable: ['', Validators.required],
   });
   productTypes: any[] = [];
   productBrands: any[] = [];
@@ -65,6 +66,7 @@ export class UpdateProductComponent implements OnInit {
           pictureUrl: product.pictureUrl,
           productTypeId: product.productTypeId,
           productBrandId: product.productBrandId,
+          productAvailable: product.productAvailable,
         });
       });
     } else {
