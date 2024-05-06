@@ -30,9 +30,11 @@
           {{ buttonText }}
         </button>
       </div>
+      <div class="fw-bold mb-4 text-primary">Currently available products: {{product.productAvailable - quantity }}</div>
     </div>
   </div>
 </div>
+
 <div class="row mt-5" *ngIf="product">
   <hr />
   <div class="col">

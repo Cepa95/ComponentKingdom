@@ -37,7 +37,7 @@ namespace Infrastructure.Identity
 
                 await userManager.AddToRoleAsync(user, "Admin");
 
-                var userData = await File.ReadAllTextAsync("C:/Users/Josip Čeprnić/Desktop/Webshop/Infrastructure/Data/SeedData/users.json");
+                var userData = await File.ReadAllTextAsync("C:/Users/Josip Čeprnić/Desktop/ComponentKingdom/Infrastructure/Data/SeedData/users.json");
                 var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
 
                 foreach (var newUser in users)

@@ -8,5 +8,6 @@ namespace API.Dtos
         public string PictureUrl { get; set; }
         public int ProductTypeId { get; set; }
         public int ProductBrandId { get; set; }
+        public int  ProductAvailable { get; set; }
     }
 }

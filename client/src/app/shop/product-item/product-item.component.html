@@ -13,8 +13,9 @@
       </h6>
     </a>
     <span class="mt-auto mb-2" style="color:#D0A933" routerLink="/shop/{{ product.id }}">{{ product.price | currency : "EUR" }}</span>
+    <span class="mt-auto mb-2" style="color:#D0A933">Available: <span class="text-primary">{{ product.productAvailable - quantityInBasket}}</span></span>
     <div class="btn-group">
-      <button class="btn btn-outline-primary" (click)="addItemToBasket()">Buy</button>
+      <button class="btn btn-outline-primary" (click)="addItemToBasket()" [disabled]="!product.productAvailable || product.productAvailable - quantityInBasket <= 0">Buy</button>
       <button routerLink="/shop/{{ product.id }}" class="btn btn-outline-primary">View</button>
     </div>
   </div>

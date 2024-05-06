@@ -1,20 +1,27 @@
-import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+} from '@angular/core';
 import { Product } from '../../shared/models/product';
 import { BasketService } from '../../basket/basket.service';
 import { AdminService } from '../../admin/admin.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
-
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.scss',
 })
-export class ProductItemComponent {
+export class ProductItemComponent implements OnInit {
   @Input() product?: Product;
   @Output() productDeleted = new EventEmitter();
   modalRef?: BsModalRef;
+  quantityInBasket = 0;
 
   constructor(
     private basketService: BasketService,
@@ -23,8 +30,26 @@ export class ProductItemComponent {
     private modalService: BsModalService
   ) {}
 
+  ngOnInit(): void {
+    this.loadQuantityInBasket();
+  }
+
   addItemToBasket() {
-    this.product && this.basketService.addItemToBasket(this.product);
+    if (this.product && this.product.productAvailable && this.product.productAvailable - this.quantityInBasket > 0) {
+      this.basketService.addItemToBasket(this.product);
+      this.quantityInBasket++;
+    }
+  }
+
+  loadQuantityInBasket() {
+    this.basketService.basketSource$.subscribe({
+      next: (basket) => {
+        const item = basket?.items.find((x) => x.id === this.product?.id);
+        if (item) {
+          this.quantityInBasket = item.quantity;
+        }
+      },
+    });
   }
 
   deleteProduct(id: number) {
@@ -63,5 +88,4 @@ export class ProductItemComponent {
     }
   }
 
-  
 }

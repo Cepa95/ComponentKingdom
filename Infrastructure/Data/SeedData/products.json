@@ -5,7 +5,8 @@
     "Price": 199.99,
     "PictureUrl": "/assets/images/procesor-amd-ryzen-5-3600-6c-12t-3.6ghz-4.2ghz-32mb-am4-slika-184634530.jpg",
     "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "ProductBrandId": 2,
+    "ProductAvailable": 16
   },
   {
     "Name": "Processor Intel Core i9-14900KF (24C/32T, up to 6.0GHz, 36MB",
@@ -13,7 +14,8 @@
     "Price": 759.98,
     "PictureUrl": "/assets/images/procesor-intel-core-i9-13900k-58ghz-36mb-lga1700-bx807151390-94208-inp-13700k-41285_1.jpg",
     "ProductTypeId": 3,
-    "ProductBrandId": 6
+    "ProductBrandId": 6,
+    "ProductAvailable": 19
   },
   {
     "Name": "Processor AMD Ryzen 9 5900X (12C/24T, up to 4.8GHz, 64MB, AM4)",
@@ -21,7 +23,8 @@
     "Price": 359.99,
     "PictureUrl": "/assets/images/procesor-amd-ryzen-9-5900x-12c-24t-48ghz-inp-000155_2.jpg",
     "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "ProductBrandId": 2,
+    "ProductAvailable": 7
   },
   {
     "Name": "Graphics card GIGABYTE GeForce RTX4060",
@@ -29,7 +32,8 @@
     "Price": 429,
     "PictureUrl": "/assets/images/graphics-card-gigabyte-geforce-rtx-4060-gaming-oc-8g-8gb-gdd-36869-gigvg-rtx_4060_234775.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 19
   },
   {
     "Name": "Graphics card Asus GeForce RTX4090 ROG Strix OC, PCI Express 4.0",
@@ -37,7 +41,8 @@
     "Price": 2589.99,
     "PictureUrl": "/assets/images/asus-video-card-nvidia-rog-strix-geforce-rtx-4090-oc-edition-59212-90yv0id0-m0na00_266403.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 29
   },
   {
     "Name": "Graphics card Sapphire AMD Radeon RX7700XT Nitro+, 12GB GDDR6",
@@ -45,7 +50,8 @@
     "Price": 555,
     "PictureUrl": "/assets/images/11335-02-20G_1.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 2
+    "ProductBrandId": 2,
+    "ProductAvailable": 3
   },
   {
     "Name": "Hard disk WD Blue (3.5', 4TB, SATA3 6Gb/s, 256MB Cache, 5400rpm)",
@@ -53,7 +59,8 @@
     "Price": 122.29,
     "PictureUrl": "/assets/images/WD40EZAX_1.jpg",
     "ProductTypeId": 5,
-    "ProductBrandId": 8
+    "ProductBrandId": 8,
+    "ProductAvailable": 33
   },
   {
     "Name": "Hard disk Toshiba P300 (3.5', 1TB, SATA3 6Gb/s, 64MB Cache, 7200rpm)",
@@ -61,7 +68,8 @@
     "Price": 49.99,
     "PictureUrl": "/assets/images/toshiba-35-quot1tb-7200-64mb-sata-3-p300-hard-drive-44064-toshd-hdwd110uzsva_1_1.jpg",
     "ProductTypeId": 5,
-    "ProductBrandId": 7
+    "ProductBrandId": 7,
+    "ProductAvailable": 38
   },
   {
     "Name": "Hard disk WD Gold (3.5', 2TB, SATA3 6Gb/s, 128MB Cache, 7200rpm)",
@@ -69,7 +77,8 @@
     "Price": 145.59,
     "PictureUrl": "/assets/images/hard-disk-wd-gold-2tb-sata-6gb-s-128mb-c-wd-0061_1.jpg",
     "ProductTypeId": 5,
-    "ProductBrandId": 8
+    "ProductBrandId": 8,
+    "ProductAvailable": 77
   },
   {
     "Name": "Motherboard Asus Prime H510M-R, Intel LGA1200, Micro ATX",
@@ -77,7 +86,8 @@
     "Price": 73,
     "PictureUrl": "/assets/images/maticna-ploca-asus-prime-h510m-r-intek-lga1200-micro-atx-40677-0001241231_234970.jpg",
     "ProductTypeId": 6,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 29
   },
   {
     "Name": "Motherboard Gigabyte A520M DS3H V2, AMD AM4, Micro ATX",
@@ -85,7 +95,8 @@
     "Price": 77.99,
     "PictureUrl": "/assets/images/A520M-DS3H-V2_1.jpg",
     "ProductTypeId": 6,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 37
   },
   {
     "Name": "PC fan Corsair LL120, 120mm, PWM, RGB",
@@ -93,7 +104,8 @@
     "Price": 29.99,
     "PictureUrl": "/assets/images/cor-co-9050071-ww.jpg",
     "ProductTypeId": 9,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 36
   },
   {
     "Name": "PC fan Corsair AF120 Elite, 120mm, PWM",
@@ -101,7 +113,8 @@
     "Price": 25,
     "PictureUrl": "/assets/images/ventilator-za-kuciste-corsair-af120-elit-cor-co-9050140-ww_1.jpg",
     "ProductTypeId": 9,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 21
   },
   {
     "Name": "Power unit Asus TUF Gaming 750B, 750W, 80+ Bronze, ATX",
@@ -109,7 +122,8 @@
     "Price": 89.99,
     "PictureUrl": "/assets/images/napajanje-asus-tuf-gaming-750b-750w-80-bronze-atx-38733-90ye00d0-b0na00_256162.jpg",
     "ProductTypeId": 10,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 13
   },
   {
     "Name": "Power unit Asus ROG Strix Aura Edition, 1000W, 80+ Gold, modular, RGB, ATX",
@@ -117,7 +131,8 @@
     "Price": 333,
     "PictureUrl": "/assets/images/90YE00P1-B0NA00_3.jpg",
     "ProductTypeId": 10,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 8
   },
   {
     "Name": "RAM Gigabyte Aorus RGB, 16GB (2x8GB), DDR4 3733MHz, CL19",
@@ -125,7 +140,8 @@
     "Price": 70,
     "PictureUrl": "/assets/images/gigabyte-16gb-2x8gb-ddr4-3733mhz-aorus-rgb-6589-gigds-ars16g37_243911.jpg",
     "ProductTypeId": 11,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 3
   },
   {
     "Name": "RAM Corsair Vengeance LPX, 8GB, DDR4 3000MHz, CL16",
@@ -133,7 +149,8 @@
     "Price": 24.88,
     "PictureUrl": "/assets/images/memorija-corsair-vengeance-lpx-8gb-ddr4--cor-cmk8gx4m1d300c16_2.jpg",
     "ProductTypeId": 11,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 15
   },
   {
     "Name": "SSD Corsair MP600 Force, 500GB, M.2 NVMe PCIe Gen4, R7000/W2200",
@@ -141,7 +158,8 @@
     "Price": 60,
     "PictureUrl": "/assets/images/corsair-ssd-2tb-mp600-nvme-cor-cssd-f2000gbmp60_1.jpg",
     "ProductTypeId": 12,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 6
   },
   {
     "Name": "Graphics card Acer AMD Radeon RX7700XT Nitro OC, 12GB GDDR6",
@@ -149,7 +167,8 @@
     "Price": 444.45,
     "PictureUrl": "/assets/images/graficka-acer-amd-radeon-rx7700xt-nitro-oc-12gb-gddr6-81401-47093547_1.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 1
+    "ProductBrandId": 1,
+    "ProductAvailable": 19
   },
   {
     "Name": "Processor Intel Core i9-11900K (8C/16T, up to 5.2GHz, 16MB, LGA1200), BX8070811900K",
@@ -157,7 +176,8 @@
     "Price": 520.45,
     "PictureUrl": "/assets/images/procesor-intel-core-i9-10900k--inp-000173_1.jpg",
     "ProductTypeId": 3,
-    "ProductBrandId": 6
+    "ProductBrandId": 6,
+    "ProductAvailable": 33
   },
   {
     "Name": "Processor Intel Core i7-13700K (16C/24T, up to 5.4GHz, 30MB, LGA1700), BX8071513700K",
@@ -165,7 +185,8 @@
     "Price": 525.99,
     "PictureUrl": "/assets/images/procesor-intel-core-i7-13700k-54ghz-30mb-lga1700-bx807151370-54265-inp-13700k_1.jpg",
     "ProductTypeId": 3,
-    "ProductBrandId": 6
+    "ProductBrandId": 6,
+    "ProductAvailable": 38
   },
   {
     "Name": "Processor AMD Ryzen Threadripper Pro 5995WX (64C/128T, up to 4.5GHz, sWRX8), 100-100000444WOF",
@@ -173,7 +194,8 @@
     "Price": 7499.99,
     "PictureUrl": "/assets/images/procesor-amd-ryzen-threadripper-pro-5995wx-64c128t45ghz-swrx-15035-100-100000444wof_1 (1).jpg",
     "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "ProductBrandId": 2,
+    "ProductAvailable": 28
   },
   {
     "Name": "Graphics card Asus GeForceRTX4090 ROG Strix OC White, 24GB GDDR6X",
@@ -181,7 +203,8 @@
     "Price": 2689.99,
     "PictureUrl": "/assets/images/90YV0ID2-M0NA00_1.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 11
   },
   {
     "Name": "Graphics card Gigabyte GeForce RTX4070Ti Aorus Xtreme Waterforce, 12GB GDDR6X",
@@ -189,7 +212,8 @@
     "Price": 1299.99,
     "PictureUrl": "/assets/images/graficka-gigabyte-geforce-rtx4070ti-aorus-xtreme-waterforce--96003-gigvg-rtx_4070ti_7_251838.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 12
   },
   {
     "Name": "Graphics card Gigabyte Geforce RTX4070Ti Aero V2 OC, 12GB GDDR6X",
@@ -197,7 +221,8 @@
     "Price": 999.99,
     "PictureUrl": "/assets/images/graficka-gigabyte-geforce-rtx4070ti-aero-v2-oc-12gb-gddr6x-55993-gigvg-rtx_4070ti_4_238993.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 22
   },
   {
     "Name": "Hard disk Toshiba Enterprise MG (3.5', 8TB, SATA3 6Gb/s, 256MB, 7200rpm)",
@@ -205,7 +230,8 @@
     "Price": 199.49,
     "PictureUrl": "/assets/images/MG08ADA800E_1.jpg",
     "ProductTypeId": 5,
-    "ProductBrandId": 7
+    "ProductBrandId": 7,
+    "ProductAvailable": 35
   },
   {
     "Name": "Motherboard Asus ROG Crosshair X670E Hero, AMD AM5, WiFi, Bluetooth, ATX",
@@ -213,7 +239,8 @@
     "Price": 779.99,
     "PictureUrl": "/assets/images/maticna-ploca-asus-rog-crosshair-x670e-hero-amd-am5-wifi-blu-65549-0001282959_1.jpg",
     "ProductTypeId": 6,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 48
   },
   {
     "Name": "Motherboard Asus ROG Strix X670E-A Gaming WiFi, AMD AM5, WiFi, Bluetooth, ATX",
@@ -221,7 +248,8 @@
     "Price": 399.99,
     "PictureUrl": "/assets/images/90MB1BM0-M0EAY0_1.jpg",
     "ProductTypeId": 6,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 88
   },
   {
     "Name": "Motherboard Asus Prime A320M-K, AMD AM4, Micro ATX",
@@ -229,7 +257,8 @@
     "Price": 49.99,
     "PictureUrl": "/assets/images/maticna-ploca-asus-prime-a320m-k-am4-amd-0202041_1.jpg",
     "ProductTypeId": 6,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 47
   },
   {
     "Name": "Motherboard Asus Prime B760M-K D4 DDR4, Intel LGA1700, Micro ATX",
@@ -237,7 +266,8 @@
     "Price": 135.99,
     "PictureUrl": "/assets/images/maticna-ploca-asus-prime-b760m-k-d4-intel-lga1700-micro-atx-98542-asumb-primeb760mkd4_207845.jpg",
     "ProductTypeId": 6,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 39
   },
   {
     "Name": "PC fan Corsair iCUE QL140, 140mm, RGB, PWM, crni",
@@ -245,7 +275,8 @@
     "Price": 44.99,
     "PictureUrl": "/assets/images/corsair-icue-ql140-rgb-140mm-pwm-single--cor-co-9050099-ww_1.jpg",
     "ProductTypeId": 9,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 38
   },
   {
     "Name": "PC fan Corsair AF120, 120mm, red LED, crni",
@@ -253,7 +284,8 @@
     "Price": 11.99,
     "PictureUrl": "/assets/images/co-9050080-ww.jpg",
     "ProductTypeId": 10,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 27
   },
   {
     "Name": "Power unit Corsair CX550, 550W, 80+ Bronze, ATX",
@@ -261,7 +293,8 @@
     "Price": 69,
     "PictureUrl": "/assets/images/napajanje-corsair-cx550-550w-80-bronze-atx-53168-cor-cp-9020277-eu_1.jpg",
     "ProductTypeId": 10,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 37
   },
   {
     "Name": "Power unit Gigabyte P650B, 650W, 80+ Bronze, ATX",
@@ -269,7 +302,8 @@
     "Price": 69,
     "PictureUrl": "/assets/images/napajanje-gigabyte-p650b-650w-80-bronze--gp-p650b_1.jpg",
     "ProductTypeId": 10,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 27
   },
   {
     "Name": "RAM Corsair Vengeance, 64GB (2x32GB), DDR5 5200MHz, CL40",
@@ -277,7 +311,8 @@
     "Price": 229,
     "PictureUrl": "/assets/images/corsair-2x32gb-ddr5-5200-c40-73471-cor-cmk64gx5m2b52c40_1.jpg",
     "ProductTypeId": 11,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 22
   },
   {
     "Name": "SSD WD Black SN850X, 4TB, M.2 NVMe PCIe Gen4, R7300/W6600",
@@ -285,7 +320,8 @@
     "Price": 410.99,
     "PictureUrl": "/assets/images/ssd-western-digital-black-sn850x-4tb-m2-nvme-pcie-gen4-r7300-20109-46120050_1 (1).jpg",
     "ProductTypeId": 12,
-    "ProductBrandId": 8
+    "ProductBrandId": 8,
+    "ProductAvailable": 25
   },
   {
     "Name": "SSD Intel 670p Series, 512GB, M.2 NVMe PCIe Gen3, R3000/W1600",
@@ -293,7 +329,8 @@
     "Price": 55,
     "PictureUrl": "/assets/images/intel-ssd-670p-series-512gb-m2-80mm-pcie-30-x4-3d4-qlc-retai-79186-ssdpeknu512gzx1_238677.jpg",
     "ProductTypeId": 12,
-    "ProductBrandId": 6
+    "ProductBrandId": 6,
+    "ProductAvailable": 38
   },
   {
     "Name": "SSD Gigabyte GSM2NE3256GNTD, 256GB, M.2 NVMe PCIe Gen3, R1700/W1100",
@@ -301,7 +338,8 @@
     "Price": 25,
     "PictureUrl": "/assets/images/GP-GSM2NE3256GNTD_1.jpg",
     "ProductTypeId": 12,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 13
   },
   {
     "Name": "SSD Gigabyte M30, 512GB, M.2 NVMe PCIe Gen3, R3500/W2600",
@@ -309,7 +347,8 @@
     "Price": 53.55,
     "PictureUrl": "/assets/images/GIGSD-GP-GM30512G-G_5.jpg",
     "ProductTypeId": 12,
-    "ProductBrandId": 5
+    "ProductBrandId": 5,
+    "ProductAvailable": 7
   },
   {
     "Name": "Audio card Asus Strix Soar, 7.1, PCIe",
@@ -317,7 +356,8 @@
     "Price": 84.99,
     "PictureUrl": "/assets/images/zvucna-kartica-asus-strix-soar-71-pcie-40883-souasu005_1.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 22
   },
   {
     "Name": "Audio card Asus Xonar U7 MKII, 7.1, USB",
@@ -325,7 +365,8 @@
     "Price": 81.99,
     "PictureUrl": "/assets/images/zvucna-kartica-asus-xonar-u7-mkii-71-usb-59324-souasu004_1.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 18
   },
   {
     "Name": "Audio card Asus Xonar U5, 5.1, USB",
@@ -333,7 +374,8 @@
     "Price": 52.22,
     "PictureUrl": "/assets/images/zvucna-kartica-asus-xonar-u5-51-usb-69482-souasu003_1.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 20
   },
   {
     "Name": "Audio card Asus Xonar SE, 5.1, PCIe",
@@ -341,7 +383,8 @@
     "Price": 28.77,
     "PictureUrl": "/assets/images/zvucna-kartica-asus-xonar-se-51-pcie-74699-souasu008_1.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 24
   },
   {
     "Name": "RAM Corsair Vengeance LPX Red, 16GB (2x8GB), DDR4 3200MHz, CL16",
@@ -349,7 +392,8 @@
     "Price": 53.23,
     "PictureUrl": "/assets/images/memorija-corsair-vengeance-lpx-16gb-2x8gb-ddr4-3200mhz-cl16--88637-cmk16gx4m2b3200c16r_1.jpg",
     "ProductTypeId": 11,
-    "ProductBrandId": 4
+    "ProductBrandId": 4,
+    "ProductAvailable": 33
   },
   {
     "Name": "PC case Asus ROG Hyperion GR701 white",
@@ -357,7 +401,8 @@
     "Price": 519.99,
     "PictureUrl": "/assets/images/case-asus-rog-hyperion-gr701-big-tower-tempered-glass-white-3936-casasu002_1.jpg",
     "ProductTypeId": 8,
-    "ProductBrandId": 3 
+    "ProductBrandId": 3,
+    "ProductAvailable": 9
   },
   {
     "Name": "PC case Asus ROG Hyperion GR701 EVA-02 Edition case ",
@@ -365,7 +410,8 @@
     "Price": 530,
     "PictureUrl": "/assets/images/case-asus-rog-hyperion-gr701-eva-02-edition-big-tower-temper-89843-casasu003_245947.jpg",
     "ProductTypeId": 8,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 11
   },
   {
     "Name": "PC case Asus ROG Hyperion GR701 black",
@@ -373,7 +419,9 @@
     "Price": 479.99,
     "PictureUrl": "/assets/images/kuciste-asus-rog-hyperion-gr701-full-tower-kaljeno-staklo-be-42870-casasu001_1.jpg",
     "ProductTypeId": 8,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 12
+
   },
   {
     "Name": "Network card Asus PCE-AX1800",
@@ -381,7 +429,9 @@
     "Price": 29.95,
     "PictureUrl": "/assets/images/90IG07A0-MO0B00_3 (1).jpg",
     "ProductTypeId": 7,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 9
+
   },
   {
     "Name": "Network card Asus PCE-AX58BT ",
@@ -389,7 +439,9 @@
     "Price": 49.99,
     "PictureUrl": "/assets/images/90IG0610-MO0R00_1.jpg",
     "ProductTypeId": 7,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 7
+
   },
   {
     "Name": "Network card Asus PCE-AX58BT",
@@ -397,7 +449,9 @@
     "Price": 55,
     "PictureUrl": "/assets/images/mrezna-kartica-asus-pce-axe5400-tri-band-24ghz5ghz6ghz-bluet-8530-46142801_1.jpg",
     "ProductTypeId": 7,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 16
+
   },
   {
     "Name": "CD/DVD drive Asus SDRW-08U7M-U ZenDrive",
@@ -405,7 +459,9 @@
     "Price": 56.99,
     "PictureUrl": "/assets/images/eksterni-opticki-uredaj-asus-sdrw-08u7m-u-zendrive-usb-crni-1549-0120454_97780.jpg",
     "ProductTypeId": 2,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 27
+
   },
   {
     "Name": "CD/DVD Asus BW-16D1X-U",
@@ -413,7 +469,9 @@
     "Price": 148.29,
     "PictureUrl": "/assets/images/ASUCD-BDRW_1_1.jpg",
     "ProductTypeId": 2,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 17
+
   },
   {
     "Name": "CD/DVD Asus SDRW-08U7M-U",
@@ -421,6 +479,8 @@
     "Price": 43,
     "PictureUrl": "/assets/images/eksterni-opticki-uredaj-asus-sdrw-08u7m-u-usb-srebrni-42963-asucd-dvdrw_008_1.jpg",
     "ProductTypeId": 2,
-    "ProductBrandId": 3
+    "ProductBrandId": 3,
+    "ProductAvailable": 17
+
   }
 ]

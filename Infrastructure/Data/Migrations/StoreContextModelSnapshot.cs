@@ -130,6 +130,9 @@ namespace Infrastructure.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("ProductAvailable")
+                        .HasColumnType("integer");
+
                     b.Property<int>("ProductBrandId")
                         .HasColumnType("integer");
 

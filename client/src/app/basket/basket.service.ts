@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Basket, BasketItem, BasketTotals } from '../shared/models/basket';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../shared/models/product';
@@ -138,5 +138,11 @@ export class BasketService {
 
   private isProduct(item: Product | BasketItem): item is Product {
     return (item as Product).productBrand !== undefined;
+  }
+
+  getProductAvailable(id: number): Observable<number | null> {
+    return this.http.get<Product>(`/api/products/${id}`).pipe(
+      map(product => product ? product.productAvailable : null)
+    );
   }
 }
