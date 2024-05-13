@@ -3,6 +3,7 @@ using API.Errors;
 using API.Extensions;
 using AutoMapper;
 using Core.Entities.OrderAggregate;
+using Core.Entities.ProductAggregate;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -80,6 +81,19 @@ namespace API.Controllers
             return _mapper.Map<OrderToReturnDto>(order);
         }
 
+        [Authorize(Roles = "Admin")]
+        [HttpGet("customers/{id}")]
+        public async Task<ActionResult<OrderToReturnDto>> GetOrderByIdForAdmin(int id)
+        {
+            _logger.LogInformation("Getting order with id: {id}", id);
+
+            var order = await _orderService.GetOrderByIdAsync(id);
+
+            if (order == null) return NotFound(new ApiResponse(404, "No order id found for your order"));
+
+            return _mapper.Map<OrderToReturnDto>(order);
+        }
+
         [HttpGet("deliveryMethods")]
         public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetDeliveryMethods()
         {
@@ -107,6 +121,7 @@ namespace API.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<ActionResult<NewOrderDto>> UpdateOrderAsync(int id, NewOrderDto orderUpdateDto)
         {
@@ -122,6 +137,18 @@ namespace API.Controllers
             await _unitOfWork.Complete();
 
             return Ok(_mapper.Map<Order, NewOrderDto>(order));
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("statuses")]
+        public  IActionResult GetProductStatuses()
+        {
+            var statuses = Enum.GetValues(typeof(ProductStatus))
+                            .Cast<ProductStatus>()
+                            .Select(e => new { id = (int)e, name = e.ToString() })
+                            .ToList();
+
+            return Ok(statuses);
         }
     }
 }

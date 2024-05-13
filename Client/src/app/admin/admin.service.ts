@@ -8,6 +8,7 @@ import { Type } from '../shared/models/type';
 import { Brand } from '../shared/models/brand';
 import { NewOrder } from '../shared/models/newOrder';
 import { OrderParams } from '../shared/models/orderParams';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -121,7 +122,15 @@ export class AdminService {
     return this.http.get(this.baseUrl + 'products/sales/' + year);
   }
 
+  getOrder(id: number) {
+    return this.http.get(this.baseUrl + 'orders/customers/' + id);
+  }
+
   updateOrder(id: number, order: any) {
     return this.http.put(this.baseUrl + 'orders/' + id, order);
+  }
+
+  getProductStatuses(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}orders/statuses`);
   }
 }

@@ -57,21 +57,22 @@ namespace API.Helpers
                 .ForMember(dto => dto.ShipToAddress_ZipCode, m => m.MapFrom(o => o.ShipToAddress.ZipCode))
                 .ForMember(dto => dto.DeliveryMethodPrice, m => m.MapFrom(o => o.DeliveryMethod.Price));
 
-           CreateMap<NewOrderDto, Order>()
-            .ForPath(o => o.ShipToAddress.FirstName, m => m.MapFrom(dto => dto.ShipToAddress_FirstName))
-            .ForPath(o => o.ShipToAddress.LastName, m => m.MapFrom(dto => dto.ShipToAddress_LastName))
-            .ForPath(o => o.ShipToAddress.Street, m => m.MapFrom(dto => dto.ShipToAddress_Street))
-            .ForPath(o => o.ShipToAddress.City, m => m.MapFrom(dto => dto.ShipToAddress_City))
-            .ForPath(o => o.ShipToAddress.State, m => m.MapFrom(dto => dto.ShipToAddress_State))
-            .ForPath(o => o.ShipToAddress.ZipCode, m => m.MapFrom(dto => dto.ShipToAddress_ZipCode))
-            .ForMember(o => o.ProductStatus, m => m.MapFrom(dto => Enum.Parse<ProductStatus>(dto.ProductStatus)))
-            .ForMember(o => o.BuyerEmail, m => m.Ignore())
-            .ForMember(o => o.OrderDate, m => m.Ignore())
-            .ForMember(o => o.DeliveryMethod, m => m.Ignore())
-            .ForMember(o => o.OrderItems, m => m.Ignore())
-            .ForMember(o => o.SubTotal, m => m.Ignore())
-            .ForMember(o => o.Status, m => m.Ignore())
-            .ForMember(o => o.PaymentIntentId, m => m.Ignore());
+            CreateMap<NewOrderDto, Order>()
+                .ForPath(o => o.ShipToAddress.FirstName, m => m.MapFrom(dto => dto.ShipToAddress_FirstName))
+                .ForPath(o => o.ShipToAddress.LastName, m => m.MapFrom(dto => dto.ShipToAddress_LastName))
+                .ForPath(o => o.ShipToAddress.Street, m => m.MapFrom(dto => dto.ShipToAddress_Street))
+                .ForPath(o => o.ShipToAddress.City, m => m.MapFrom(dto => dto.ShipToAddress_City))
+                .ForPath(o => o.ShipToAddress.State, m => m.MapFrom(dto => dto.ShipToAddress_State))
+                .ForPath(o => o.ShipToAddress.ZipCode, m => m.MapFrom(dto => dto.ShipToAddress_ZipCode))
+                .ForMember(o => o.ProductStatus, m => m.MapFrom(dto => Enum.Parse<ProductStatus>(dto.ProductStatus)))
+                .ForMember(o => o.BuyerEmail, m => m.Ignore())
+                .ForMember(o => o.OrderDate, m => m.Ignore())
+                .ForMember(o => o.DeliveryMethod, m => m.Ignore())
+                .ForMember(o => o.OrderItems, m => m.Ignore())
+                .ForMember(o => o.SubTotal, m => m.Ignore())
+                .ForMember(o => o.Status, m => m.Ignore())
+                .ForMember(o => o.PaymentIntentId, m => m.Ignore())
+                .ForMember(o => o.Id, m => m.Ignore());
 
         }
     }

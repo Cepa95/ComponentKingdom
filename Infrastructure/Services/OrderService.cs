@@ -13,7 +13,7 @@ namespace Infrastructure.Services
 
         private readonly ILogger<OrderService> _logger;
 
-        public OrderService(IBasketRepository basketRepo, 
+        public OrderService(IBasketRepository basketRepo,
                             IUnitOfWork unitOfWork,
                             ILogger<OrderService> logger)
         {
@@ -110,9 +110,11 @@ namespace Infrastructure.Services
             return orders;
         }
 
+        public async Task<Order> GetOrderByIdAsync(int id)
+        {
+            var spec = new OrderWithItemsSpecification(id);
 
-
-
-
+            return await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+        }
     }
 }

@@ -1,1 +1,132 @@
-<p>update-order works!</p>
+<div class="container py-5">
+  <form
+    [formGroup]="orderForm"
+    (ngSubmit)="updateOrder()"
+    class="card p-4 shadow"
+    style="border-radius: 30px"
+  >
+    <div class="form-group mb-3">
+      <label for="firstName" style="color: #d0a933">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        formControlName="shipToAddress_FirstName"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          orderForm.controls['shipToAddress_FirstName'].invalid &&
+          orderForm.controls['shipToAddress_FirstName'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="lastName" style="color: #d0a933">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        formControlName="shipToAddress_LastName"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          orderForm.controls['shipToAddress_LastName'].invalid &&
+          orderForm.controls['shipToAddress_LastName'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="street" style="color: #d0a933">Street</label>
+      <input
+        type="text"
+        id="street"
+        formControlName="shipToAddress_Street"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          orderForm.controls['shipToAddress_Street'].invalid &&
+          orderForm.controls['shipToAddress_Street'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="city" style="color: #d0a933">City</label>
+      <input
+        type="text"
+        id="city"
+        formControlName="shipToAddress_City"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          orderForm.controls['shipToAddress_City'].invalid &&
+          orderForm.controls['shipToAddress_City'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="state" style="color: #d0a933">State</label>
+      <input
+        type="text"
+        id="state"
+        formControlName="shipToAddress_State"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          orderForm.controls['shipToAddress_State'].invalid &&
+          orderForm.controls['shipToAddress_State'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="zipCode" style="color: #d0a933">Zip Code</label>
+      <input
+        type="text"
+        id="zipCode"
+        formControlName="shipToAddress_ZipCode"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          orderForm.controls['shipToAddress_ZipCode'].invalid &&
+          orderForm.controls['shipToAddress_ZipCode'].touched
+        "
+        required
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="productStatus" style="color: #d0a933">Product Status</label>
+      <select
+        id="productStatus"
+        formControlName="productStatus"
+        class="form-control"
+        spellcheck="false"
+        [class.is-invalid]="
+          orderForm.controls['productStatus'].invalid &&
+          orderForm.controls['productStatus'].touched
+        "
+        required
+      >
+        <option *ngFor="let status of productStatuses" [value]="status.id">
+          {{ status.name }}
+        </option>
+      </select>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-primary mt-3"
+        [disabled]="orderForm.invalid || orderForm.pristine"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>
