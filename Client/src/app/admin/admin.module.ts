@@ -19,6 +19,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { FormsModule } from '@angular/forms';
 import { YearlySummaryComponent } from './yearly-summary/yearly-summary.component';
+import { UpdateOrderComponent } from './update-order/update-order.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { YearlySummaryComponent } from './yearly-summary/yearly-summary.componen
     OrdersComponent,
     OrderItemsComponent,
     YearlySummaryComponent,
+    UpdateOrderComponent,
     
     
   ],

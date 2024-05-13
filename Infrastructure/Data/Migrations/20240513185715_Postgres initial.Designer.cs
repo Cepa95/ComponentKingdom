@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20240506191320_Postgres initial")]
+    [Migration("20240513185715_Postgres initial")]
     partial class Postgresinitial
     {
         /// <inheritdoc />
@@ -69,6 +69,10 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("PaymentIntentId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProductStatus")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Status")

@@ -120,4 +120,8 @@ export class AdminService {
   getProductSalesByYear(year: number) {
     return this.http.get(this.baseUrl + 'products/sales/' + year);
   }
+
+  updateOrder(id: number, order: any) {
+    return this.http.put(this.baseUrl + 'orders/' + id, order);
+  }
 }

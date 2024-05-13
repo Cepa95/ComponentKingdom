@@ -23,5 +23,7 @@ namespace API.Dtos
 
         public string Status { get; set; }
 
+        public string ProductStatus { get; set; }
+
     }
 }

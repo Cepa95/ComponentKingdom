@@ -17,6 +17,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { YearlySummaryComponent } from './yearly-summary/yearly-summary.component';
+import { UpdateOrderComponent } from './update-order/update-order.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent, canActivate: [AdminGuard] },
@@ -52,6 +53,7 @@ const routes: Routes = [
     component: UpdateTypeComponent,
     canActivate: [AdminGuard],
   },
+  { path: 'update-order/:id', component: UpdateOrderComponent, canActivate: [AdminGuard]},
   { path: 'add-type', component: AddTypeComponent, canActivate: [AdminGuard] },
   { path: 'add-brand', component: AddBrandComponent, canActivate: [AdminGuard] },
   { path: 'charts', component: ChartsComponent, canActivate: [AdminGuard] },

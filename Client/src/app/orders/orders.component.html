@@ -12,7 +12,8 @@
               <th class="bg-dark text-primary">ORDER</th>
               <th class="bg-dark text-primary">DATE</th>
               <th class="bg-dark text-primary">TOTAL</th>
-              <th class="bg-dark text-primary">STATUS</th>
+              <th class="bg-dark text-primary"> PAYMENT STATUS</th>
+              <th class="bg-dark text-primary">ORDER STATUS</th>
             </tr>
           </thead>
           <tbody class="text-center">
@@ -21,6 +22,7 @@
                 <td>{{ order.orderDate | date : "dd MMMM yyyy 'at' HH:mm:ss" }}</td>
               <td>{{ order.total | currency : "EUR"}}</td>
               <td>{{ order.status }}</td>
+              <td>{{ order.productStatus }}</td>
             </tr>
           </tbody>
         </table>

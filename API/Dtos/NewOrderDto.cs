@@ -1,7 +1,5 @@
 namespace API.Dtos
 {
-    namespace API.Dtos
-{
     public class NewOrderDto
     {
         public int Id { get; set; }
@@ -15,9 +13,8 @@ namespace API.Dtos
         public string ShipToAddress_ZipCode { get; set; }
         public decimal SubTotal { get; set; }
         public string Status { get; set; }
-
-
+        public string ProductStatus { get; set; }
         public decimal DeliveryMethodPrice { get; set; }
     }
-}
+
 }

@@ -68,6 +68,10 @@ namespace Infrastructure.Data.Migrations
                     b.Property<string>("PaymentIntentId")
                         .HasColumnType("text");
 
+                    b.Property<string>("ProductStatus")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("text");

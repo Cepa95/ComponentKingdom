@@ -1,3 +1,5 @@
+using Core.Entities.ProductAggregate;
+
 namespace Core.Entities.OrderAggregate
 {
     public class Order : BaseEntity
@@ -33,6 +35,8 @@ namespace Core.Entities.OrderAggregate
         public decimal SubTotal { get; set; }
 
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
+
+        public ProductStatus ProductStatus { get; set; } = ProductStatus.Placed;
 
         public string PaymentIntentId { get; set; }
 

@@ -106,5 +106,22 @@ namespace API.Controllers
 
             return NoContent();
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<NewOrderDto>> UpdateOrderAsync(int id, NewOrderDto orderUpdateDto)
+        {
+            _logger.LogInformation($"Updating an order under id: {id}");
+
+            var order = await _unitOfWork.Repository<Order>().GetByIdAsync(id);
+
+            if (order == null) return NotFound(new ApiResponse(404, $"Order under id: {id} is not found"));
+
+            _mapper.Map(orderUpdateDto, order);
+
+            _unitOfWork.Repository<Order>().Update(order);
+            await _unitOfWork.Complete();
+
+            return Ok(_mapper.Map<Order, NewOrderDto>(order));
+        }
     }
 }

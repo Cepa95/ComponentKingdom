@@ -19,6 +19,7 @@ export interface Order {
     subTotal: number;
     total: number;
     status: string;
+    productStatus: string;
 }
 
 export interface OrderToCreate {
